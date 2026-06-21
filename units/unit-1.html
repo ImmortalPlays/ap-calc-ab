@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1: Limits &amp; Continuity — AP Calculus AB</title>
+  <!-- KaTeX: renders the math notation -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Unit 1: Limits &amp; Continuity</h1>
+    <a class="back-link" href="../index.html">&larr; All units</a>
+  </header>
+
+  <main class="container">
+
+    <section class="concept">
+      <h2>1. What is a limit?</h2>
+      <p>A <strong>limit</strong> describes the value a function <em>approaches</em> as the input gets close to some number. We write:</p>
+      <p>$$\lim_{x \to a} f(x) = L$$</p>
+      <p>This reads: “as \(x\) gets close to \(a\), \(f(x)\) gets close to \(L\).” Notice we care about what happens <em>near</em> \(a\), not necessarily <em>at</em> \(a\).</p>
+    </section>
+
+    <section class="concept">
+      <h2>2. One-sided limits</h2>
+      <p>You can approach \(a\) from the left or the right:</p>
+      <ul>
+        <li>Left-hand limit: \(\lim_{x \to a^-} f(x)\)</li>
+        <li>Right-hand limit: \(\lim_{x \to a^+} f(x)\)</li>
+      </ul>
+      <p>The two-sided limit <strong>exists only if both sides agree</strong>:</p>
+      <p>$$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$</p>
+    </section>
+
+    <section class="concept">
+      <h2>3. Evaluating limits</h2>
+      <p>Start by <strong>plugging the number in</strong> (direct substitution). If you get a real number, that’s your answer. If you get the indeterminate form \(\frac{0}{0}\), you must rewrite the function first — usually by <strong>factoring</strong> or <strong>rationalizing</strong>.</p>
+    </section>
+
+    <section class="concept">
+      <h2>4. Continuity</h2>
+      <p>A function is <strong>continuous at \(x = a\)</strong> if all three of these are true:</p>
+      <ol>
+        <li>\(f(a)\) is defined</li>
+        <li>\(\lim_{x \to a} f(x)\) exists</li>
+        <li>\(\lim_{x \to a} f(x) = f(a)\)</li>
+      </ol>
+      <p>If any one fails, there is a discontinuity. The three common types are <strong>removable</strong> (a hole), <strong>jump</strong>, and <strong>infinite</strong> (a vertical asymptote).</p>
+    </section>
+
+    <h2 class="section-heading">Step-by-step solutions</h2>
+
+    <details class="solution">
+      <summary>Example 1 — Direct substitution: \(\lim_{x \to 3}\,(2x^2 - 4x + 1)\)</summary>
+      <ol class="steps">
+        <li>This is a polynomial, which is continuous everywhere, so we can substitute directly.</li>
+        <li>Plug in \(x = 3\): \(\;2(3)^2 - 4(3) + 1\)</li>
+        <li>Simplify: \(\;18 - 12 + 1\)</li>
+        <li>Answer: \(\;\boxed{7}\)</li>
+      </ol>
+    </details>
+
+    <details class="solution">
+      <summary>Example 2 — Factoring a \(\tfrac{0}{0}\) form: \(\lim_{x \to 2}\dfrac{x^2 - 4}{x - 2}\)</summary>
+      <ol class="steps">
+        <li>Try direct substitution: \(\dfrac{2^2 - 4}{2 - 2} = \dfrac{0}{0}\) — indeterminate, so we rewrite.</li>
+        <li>Factor the numerator: \(x^2 - 4 = (x - 2)(x + 2)\).</li>
+        <li>Cancel the common \((x - 2)\): \(\dfrac{(x-2)(x+2)}{x-2} = x + 2\).</li>
+        <li>Now substitute \(x = 2\): \(\;2 + 2\).</li>
+        <li>Answer: \(\;\boxed{4}\)</li>
+      </ol>
+    </details>
+
+    <details class="solution">
+      <summary>Example 3 — Rationalizing: \(\lim_{x \to 0}\dfrac{\sqrt{x+4} - 2}{x}\)</summary>
+      <ol class="steps">
+        <li>Direct substitution gives \(\dfrac{\sqrt{4} - 2}{0} = \dfrac{0}{0}\) — indeterminate.</li>
+        <li>Multiply top and bottom by the conjugate \(\sqrt{x+4} + 2\):</li>
+        <li>$$\dfrac{\sqrt{x+4}-2}{x}\cdot\dfrac{\sqrt{x+4}+2}{\sqrt{x+4}+2} = \dfrac{(x+4) - 4}{x\left(\sqrt{x+4}+2\right)}$$</li>
+        <li>Simplify the numerator to \(x\), then cancel: \(\dfrac{x}{x(\sqrt{x+4}+2)} = \dfrac{1}{\sqrt{x+4}+2}\).</li>
+        <li>Substitute \(x = 0\): \(\dfrac{1}{\sqrt{4}+2} = \dfrac{1}{4}\).</li>
+        <li>Answer: \(\;\boxed{\tfrac{1}{4}}\)</li>
+      </ol>
+    </details>
+
+    <details class="solution">
+      <summary>Example 4 — Checking continuity at a point</summary>
+      <p>Let \(f(x) = \dfrac{x^2 - 1}{x - 1}\) for \(x \neq 1\), and \(f(1) = 3\). Is \(f\) continuous at \(x = 1\)?</p>
+      <ol class="steps">
+        <li><strong>Is \(f(1)\) defined?</strong> Yes, \(f(1) = 3\).</li>
+        <li><strong>Does the limit exist?</strong> Factor: \(\dfrac{(x-1)(x+1)}{x-1} = x + 1\), so \(\lim_{x \to 1} f(x) = 2\).</li>
+        <li><strong>Do they match?</strong> The limit is \(2\) but \(f(1) = 3\), so \(2 \neq 3\).</li>
+        <li>Conclusion: \(f\) is <strong>not continuous</strong> at \(x = 1\). It is a <strong>removable</strong> discontinuity (a hole).</li>
+      </ol>
+    </details>
+
+  </main>
+
+  <footer class="site-footer">
+    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
+  </footer>
+</body>
+</html>
