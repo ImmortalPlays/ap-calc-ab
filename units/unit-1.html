@@ -155,7 +155,7 @@
     <!-- Previous / next unit navigation -->
     <nav class="unit-nav">
       <a class="unit-nav-link" href="../index.html">&larr; Home</a>
-      <span class="unit-nav-link disabled">Unit 2: Differentiation &middot; Coming soon &rarr;</span>
+      <a class="unit-nav-link" href="unit-2.html">Unit 2: Differentiation &rarr;</a>
     </nav>
 
   </main>
@@ -185,14 +185,12 @@
         }
       }
 
-      // Example 2 — removable hole on y = x + 2
       initGraph("graph-hole", function (calc) {
         calc.setMathBounds({ left: -2, right: 6, bottom: -2, top: 8 });
         calc.setExpression({ id: "l", latex: "y=x+2", color: Desmos.Colors.BLUE });
         calc.setExpression({ id: "h", latex: "(2,4)", pointStyle: Desmos.Styles.OPEN, color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE });
       });
 
-      // Example 4 — one-sided limits / jump
       initGraph("graph-jump", function (calc) {
         calc.setMathBounds({ left: -2, right: 4, bottom: -1, top: 5 });
         calc.setExpression({ id: "p1", latex: "y=x^2\\{x<1\\}", color: Desmos.Colors.BLUE });
@@ -201,21 +199,18 @@
         calc.setExpression({ id: "c", latex: "(1,2)", color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE });
       });
 
-      // Example 5 — infinite limit / vertical asymptote
       initGraph("graph-infinite", function (calc) {
         calc.setMathBounds({ left: -3, right: 7, bottom: -6, top: 6 });
         calc.setExpression({ id: "f", latex: "y=1/(x-2)", color: Desmos.Colors.BLUE });
         calc.setExpression({ id: "va", latex: "x=2", color: "#888888", lineStyle: Desmos.Styles.DASHED });
       });
 
-      // Example 6 — limit at infinity / horizontal asymptote
       initGraph("graph-atinfinity", function (calc) {
         calc.setMathBounds({ left: -12, right: 12, bottom: -1, top: 5 });
         calc.setExpression({ id: "f", latex: "y=(3x^2+2)/(x^2+1)", color: Desmos.Colors.BLUE });
         calc.setExpression({ id: "ha", latex: "y=3", color: "#888888", lineStyle: Desmos.Styles.DASHED });
       });
 
-      // Example 7 — continuity 3-part test (removable discontinuity)
       initGraph("graph-continuity", function (calc) {
         calc.setMathBounds({ left: -4, right: 6, bottom: -3, top: 7 });
         calc.setExpression({ id: "l", latex: "y=x+1", color: Desmos.Colors.BLUE });
