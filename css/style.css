@@ -211,3 +211,27 @@ a.unit-card:hover {
 .solution summary { cursor: pointer; font-weight: 600; padding: 0.5rem 0; }
 .solution[open] summary { border-bottom: 1px solid var(--border); margin-bottom: 0.75rem; }
 .steps li { margin-bottom: 0.5rem; }
+
+/* ---- Previous / next unit navigation ---- */
+.unit-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.unit-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--indigo);
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+a.unit-nav-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(67, 56, 202, 0.15); border-color: var(--indigo); }
+.unit-nav-link.disabled { color: var(--muted); background: transparent; border-style: dashed; cursor: default; }
