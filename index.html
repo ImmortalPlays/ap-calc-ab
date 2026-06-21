@@ -7,59 +7,147 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site-header">
+
+  <!-- Sticky navigation bar -->
+  <nav class="navbar">
+    <a class="nav-logo" href="index.html">AP Calc AB</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#units">Units</a>
+      <a href="#exam">Exam</a>
+      <a href="resources/cheat-sheet.html">Cheat Sheet</a>
+      <a href="resources/calculator.html">Calculator</a>
+      <a href="resources/faq.html">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
     <h1>AP Calculus AB</h1>
-    <p class="tagline">Concepts &amp; step-by-step solutions for every unit</p>
+    <p class="tagline">Every unit, every concept, every step &mdash; made simple.</p>
+    <a class="btn-primary" href="units/unit-1.html">&#9654; Start with Unit 1</a>
   </header>
 
   <main class="container">
-    <p class="intro">Pick a unit to study. Each page explains the key concepts and walks through worked problems one step at a time.</p>
 
-    <div class="unit-grid">
-      <a class="unit-card" href="units/unit-1.html">
-        <span class="unit-number">Unit 1</span>
-        <span class="unit-title">Limits &amp; Continuity</span>
-      </a>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 2</span>
-        <span class="unit-title">Differentiation: Definition &amp; Basic Rules</span>
-        <span class="soon">Coming soon</span>
+    <!-- About / the pitch -->
+    <section class="block" id="about">
+      <h2>Stuck on calc? You&rsquo;re in the right place.</h2>
+      <p>AP Calculus AB, broken down unit by unit &mdash; no dense textbook language, no skipped steps. Every concept is explained simply, and every problem is worked out <strong>one line at a time</strong> so you actually see <em>how</em> to get the answer.</p>
+      <p>Free, fast, and built for students &mdash; whether you&rsquo;re cramming the night before or learning it for the first time.</p>
+    </section>
+
+    <!-- How to use -->
+    <section class="block" id="how">
+      <h2>How to use this site</h2>
+      <ol class="how-steps">
+        <li><strong>Pick a unit</strong> from the list below.</li>
+        <li><strong>Read the concepts</strong> &mdash; short explanations of each idea.</li>
+        <li><strong>Open a worked example</strong> and follow the solution step by step.</li>
+      </ol>
+    </section>
+
+    <!-- Exam overview -->
+    <section class="block" id="exam">
+      <h2>The AP Exam at a glance</h2>
+      <p>The exam is about <strong>3 hours 15 minutes</strong> and has two equally weighted sections:</p>
+      <table class="exam-table">
+        <thead>
+          <tr><th>Section</th><th>Questions</th><th>Calculator?</th><th>Weight</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>I &ndash; Multiple Choice</td><td>45 questions</td><td>Part A: no &middot; Part B: yes</td><td>50%</td></tr>
+          <tr><td>II &ndash; Free Response</td><td>6 questions</td><td>Part A: yes &middot; Part B: no</td><td>50%</td></tr>
+        </tbody>
+      </table>
+      <p class="note">The exam is held in <strong>early-to-mid May</strong> &mdash; College Board sets the exact date each year.</p>
+    </section>
+
+    <!-- Units -->
+    <section class="block" id="units">
+      <h2>The 8 units</h2>
+      <p class="intro">The percentage on each card is how much of the exam that unit covers &mdash; spend your time accordingly.</p>
+      <div class="unit-grid">
+        <a class="unit-card" href="units/unit-1.html">
+          <span class="weight">10&ndash;12%</span>
+          <span class="unit-number">Unit 1</span>
+          <span class="unit-title">Limits &amp; Continuity</span>
+        </a>
+        <div class="unit-card disabled">
+          <span class="weight">10&ndash;12%</span>
+          <span class="unit-number">Unit 2</span>
+          <span class="unit-title">Differentiation: Definition &amp; Basic Rules</span>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="unit-card disabled">
+          <span class="weight">9&ndash;13%</span>
+          <span class="unit-number">Unit 3</span>
+          <span class="unit-title">Composite, Implicit &amp; Inverse Differentiation</span>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="unit-card disabled">
+          <span class="weight">10&ndash;15%</span>
+          <span class="unit-number">Unit 4</span>
+          <span class="unit-title">Contextual Applications of Differentiation</span>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="unit-card disabled">
+          <span class="weight">15&ndash;18%</span>
+          <span class="unit-number">Unit 5</span>
+          <span class="unit-title">Analytical Applications of Differentiation</span>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="unit-card disabled">
+          <span class="weight">17&ndash;20%</span>
+          <span class="unit-number">Unit 6</span>
+          <span class="unit-title">Integration &amp; Accumulation of Change</span>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="unit-card disabled">
+          <span class="weight">6&ndash;12%</span>
+          <span class="unit-number">Unit 7</span>
+          <span class="unit-title">Differential Equations</span>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="unit-card disabled">
+          <span class="weight">10&ndash;15%</span>
+          <span class="unit-number">Unit 8</span>
+          <span class="unit-title">Applications of Integration</span>
+          <span class="soon">Coming soon</span>
+        </div>
       </div>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 3</span>
-        <span class="unit-title">Composite, Implicit &amp; Inverse Differentiation</span>
-        <span class="soon">Coming soon</span>
+    </section>
+
+    <!-- Resources quick links -->
+    <section class="block" id="resources">
+      <h2>Resources</h2>
+      <div class="quick-links">
+        <a class="quick-link" href="resources/cheat-sheet.html">
+          <span class="ql-title">Cheat Sheet</span>
+          <span class="ql-desc">All the key formulas in one place</span>
+        </a>
+        <a class="quick-link" href="resources/calculator.html">
+          <span class="ql-title">Calculator Guide</span>
+          <span class="ql-desc">When it&rsquo;s allowed &amp; how to use it</span>
+        </a>
+        <a class="quick-link" href="resources/faq.html">
+          <span class="ql-title">FAQ</span>
+          <span class="ql-desc">Common questions about the exam</span>
+        </a>
       </div>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 4</span>
-        <span class="unit-title">Contextual Applications of Differentiation</span>
-        <span class="soon">Coming soon</span>
-      </div>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 5</span>
-        <span class="unit-title">Analytical Applications of Differentiation</span>
-        <span class="soon">Coming soon</span>
-      </div>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 6</span>
-        <span class="unit-title">Integration &amp; Accumulation of Change</span>
-        <span class="soon">Coming soon</span>
-      </div>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 7</span>
-        <span class="unit-title">Differential Equations</span>
-        <span class="soon">Coming soon</span>
-      </div>
-      <div class="unit-card disabled">
-        <span class="unit-number">Unit 8</span>
-        <span class="unit-title">Applications of Integration</span>
-        <span class="soon">Coming soon</span>
-      </div>
-    </div>
+    </section>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <p>Built for AP Calculus AB students.</p>
+    <p class="footer-contact">
+      Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a>
+      &nbsp;&middot;&nbsp;
+      <a href="#">My Portfolio</a>
+    </p>
+    <p class="footer-credit">Made by David Manson &middot; &copy; 2026</p>
   </footer>
+
 </body>
 </html>

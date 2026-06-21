@@ -1,5 +1,6 @@
 :root {
   --indigo: #4338ca;
+  --indigo-dark: #3730a3;
   --indigo-light: #eef2ff;
   --ink: #1f2333;
   --muted: #6b7280;
@@ -9,6 +10,8 @@
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -17,41 +20,94 @@ body {
   line-height: 1.6;
 }
 
-.site-header {
-  background: var(--indigo);
-  color: #fff;
-  padding: 2rem 1.5rem;
-  text-align: center;
+/* ---- Sticky nav bar ---- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
 }
-
-.site-header h1 { margin: 0; font-size: 2rem; }
-.tagline { margin: 0.5rem 0 0; opacity: 0.9; }
-
-.back-link {
-  display: inline-block;
-  margin-top: 0.75rem;
-  color: #fff;
+.nav-logo { font-weight: 800; color: var(--indigo); text-decoration: none; font-size: 1.05rem; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+.nav-links a {
+  color: var(--ink);
   text-decoration: none;
-  opacity: 0.95;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
 }
-.back-link:hover { text-decoration: underline; }
+.nav-links a:hover { color: var(--indigo); background: var(--indigo-light); }
 
-.container {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+/* ---- Hero ---- */
+.hero {
+  background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo-dark) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 3.5rem 1.5rem;
 }
+.hero h1 { margin: 0; font-size: 2.5rem; }
+.tagline { margin: 0.6rem 0 1.5rem; font-size: 1.1rem; opacity: 0.92; }
 
-.intro { color: var(--muted); margin-bottom: 2rem; }
+.btn-primary {
+  display: inline-block;
+  background: #fff;
+  color: var(--indigo);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 
-/* Landing page unit cards */
+/* ---- Layout ---- */
+.container { max-width: 820px; margin: 0 auto; padding: 1.5rem; }
+
+.block { margin: 2.5rem 0; }
+.block > h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--indigo);
+}
+.intro { color: var(--muted); }
+.note { color: var(--muted); font-size: 0.9rem; }
+.how-steps li { margin-bottom: 0.4rem; }
+
+/* ---- Exam table ---- */
+.exam-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.exam-table th, .exam-table td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.exam-table th { background: var(--indigo-light); color: var(--indigo-dark); }
+.exam-table tr:last-child td { border-bottom: none; }
+
+/* ---- Unit cards ---- */
 .unit-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
 }
-
 .unit-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -63,20 +119,76 @@ body {
   color: var(--ink);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
-
 a.unit-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(67, 56, 202, 0.15);
   border-color: var(--indigo);
 }
-
+.weight {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: var(--indigo-light);
+  color: var(--indigo-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+}
 .unit-number { font-size: 0.8rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.04em; }
-.unit-title { font-weight: 600; }
-
+.unit-title { font-weight: 600; padding-right: 3rem; }
 .unit-card.disabled { opacity: 0.6; }
 .soon { font-size: 0.75rem; color: var(--muted); font-style: italic; }
 
-/* Concept sections */
+/* ---- Resource quick links ---- */
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.1rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.quick-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(67, 56, 202, 0.15); border-color: var(--indigo); }
+.ql-title { font-weight: 700; color: var(--indigo); }
+.ql-desc { font-size: 0.85rem; color: var(--muted); }
+
+/* ---- Footer ---- */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  background: #fff;
+}
+.site-footer a { color: var(--indigo); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.footer-credit { margin-top: 0.4rem; }
+
+/* ================================================== */
+/*  Styles below are used by the unit pages           */
+/* ================================================== */
+.site-header {
+  background: var(--indigo);
+  color: #fff;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.site-header h1 { margin: 0; font-size: 2rem; }
+.back-link { display: inline-block; margin-top: 0.75rem; color: #fff; text-decoration: none; opacity: 0.95; }
+.back-link:hover { text-decoration: underline; }
+
 .concept {
   background: #fff;
   border: 1px solid var(--border);
@@ -87,13 +199,8 @@ a.unit-card:hover {
 }
 .concept h2 { margin-top: 0; font-size: 1.2rem; }
 
-.section-heading {
-  margin: 2.5rem 0 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--indigo);
-}
+.section-heading { margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--indigo); }
 
-/* Step-by-step solutions */
 .solution {
   background: #fff;
   border: 1px solid var(--border);
@@ -101,18 +208,6 @@ a.unit-card:hover {
   margin-bottom: 1rem;
   padding: 0.5rem 1.25rem;
 }
-.solution summary {
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0.5rem 0;
-}
+.solution summary { cursor: pointer; font-weight: 600; padding: 0.5rem 0; }
 .solution[open] summary { border-bottom: 1px solid var(--border); margin-bottom: 0.75rem; }
 .steps li { margin-bottom: 0.5rem; }
-
-.site-footer {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-.site-footer .back-link { color: var(--indigo); }
