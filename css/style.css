@@ -212,6 +212,15 @@ a.unit-card:hover {
 .solution[open] summary { border-bottom: 1px solid var(--border); margin-bottom: 0.75rem; }
 .steps li { margin-bottom: 0.5rem; }
 
+/* Desmos graph box inside an example dropdown */
+.example-graph {
+  width: 100%;
+  height: 380px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 0.75rem 0 1rem;
+}
+
 /* ---- Previous / next unit navigation ---- */
 .unit-nav {
   display: flex;
