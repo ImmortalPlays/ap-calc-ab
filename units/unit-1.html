@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <!-- Desmos: draws the interactive graph -->
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
@@ -99,6 +101,13 @@
       </ol>
     </details>
 
+    <!-- Visual: the removable discontinuity from Example 4 -->
+    <section class="concept" id="viz-continuity">
+      <h2>See it: the discontinuity from Example 4</h2>
+      <p>The curve below is \(f(x) = \dfrac{x^2 - 1}{x - 1}\). It traces the line \(y = x + 1\), but watch \(x = 1\): there’s an <strong>open hole</strong> at \((1, 2)\) where the simplified function would sit, while the problem separately <em>defines</em> \(f(1) = 3\) — the <strong>red dot floating above</strong>. Because the dot doesn’t fall in the hole, the graph “breaks” there. That’s a removable discontinuity. <span class="note">(Drag and zoom to explore.)</span></p>
+      <div id="continuity-graph" style="width:100%; height:420px; border:1px solid #e5e7eb; border-radius:10px; margin-top:1rem;"></div>
+    </section>
+
     <!-- Previous / next unit navigation -->
     <nav class="unit-nav">
       <a class="unit-nav-link" href="../index.html">&larr; Home</a>
@@ -110,5 +119,23 @@
   <footer class="site-footer">
     <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
   </footer>
+
+  <!-- Build the continuity graph once the page (and Desmos) have loaded -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var elt = document.getElementById("continuity-graph");
+      if (elt && window.Desmos) {
+        var calc = Desmos.GraphingCalculator(elt, {
+          expressions: false,
+          settingsMenu: false,
+          lockViewport: false
+        });
+        calc.setMathBounds({ left: -4, right: 6, bottom: -3, top: 7 });
+        calc.setExpression({ id: "line", latex: "y=x+1", color: Desmos.Colors.BLUE });
+        calc.setExpression({ id: "hole", latex: "(1,2)", pointStyle: Desmos.Styles.OPEN, color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE, showLabel: false });
+        calc.setExpression({ id: "defined", latex: "(1,3)", color: Desmos.Colors.RED, dragMode: Desmos.DragModes.NONE, showLabel: true, label: "f(1)=3" });
+      }
+    });
+  </script>
 </body>
 </html>
