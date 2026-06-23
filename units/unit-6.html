@@ -193,6 +193,17 @@
           </ol>
         </details>
 
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x10">Example 10 — Trapezoidal estimate from a table</span></summary>
+          <p>Using the same rate table \(r(0)=2,\ r(1)=5,\ r(2)=7,\ r(3)=8,\ r(4)=10\) (gal/min), estimate \(\displaystyle\int_0^4 r(t)\,dt\) with the trapezoidal rule, \(\Delta t = 1\).</p>
+          <ol class="steps">
+            <li>Trapezoidal rule with equal widths: \(\dfrac{\Delta t}{2}\big[r_0 + 2r_1 + 2r_2 + 2r_3 + r_4\big]\) — endpoints once, interiors twice.</li>
+            <li>Plug in: \(\dfrac{1}{2}\big[2 + 2(5) + 2(7) + 2(8) + 10\big]\).</li>
+            <li>Inside the brackets: \(2 + 10 + 14 + 16 + 10 = 52\).</li>
+            <li>Answer: \(\dfrac{1}{2}(52) = \boxed{26 \text{ gallons}}\). (Compare the left sum's 22 — the trapezoid is usually closer.)</li>
+          </ol>
+        </details>
+
         <nav class="unit-nav">
           <a class="unit-nav-link" href="unit-5.html">← Unit 5: Analytical Apps</a>
           <a class="unit-nav-link next" href="unit-7.html">Unit 7: Differential Equations →</a>

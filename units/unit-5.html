@@ -90,6 +90,18 @@
         </section>
 
         <!-- ===================== EXAMPLES ===================== -->
+        <section class="concept">
+          <h2 id="c9">9. Reading \(f\), \(f'\), and \(f''\) together</h2>
+          <p>A huge share of exam points comes from translating between a function and its derivatives. Keep this dictionary straight:</p>
+          <ul>
+            <li>\(f' > 0 \Rightarrow f\) increasing; &nbsp; \(f' < 0 \Rightarrow f\) decreasing.</li>
+            <li>\(f'' > 0 \Rightarrow f\) concave up; &nbsp; \(f'' < 0 \Rightarrow f\) concave down.</li>
+            <li>A <strong>local extremum of \(f\)</strong> sits where \(f'\) <em>changes sign</em>.</li>
+            <li>An <strong>inflection point of \(f\)</strong> sits where \(f''\) changes sign — i.e. at a <strong>local extremum of \(f'\)</strong>.</li>
+          </ul>
+          <p>So if you're handed the graph of \(f'\): count its sign changes to count \(f\)'s extrema, and its turning points to find \(f\)'s inflection points.</p>
+        </section>
+
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
         <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
@@ -173,6 +185,20 @@
           <div id="graph-mvt" class="example-graph"></div>
         </details>
 
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x8">Example 8 — Reading a graph of \(f'\): suppose \(f'(x) = x^2 - 4\)</span></summary>
+          <p>The graph below is \(f'\) (the <em>derivative</em>), not \(f\). Describe where \(f\) increases, decreases, and has local extrema.</p>
+          <div id="graph-fprime" class="example-graph"></div>
+          <ol class="steps">
+            <li>\(f' = 0\) where \(x^2 - 4 = 0\): at \(x = -2\) and \(x = 2\) (where the curve crosses the axis).</li>
+            <li>\(f' > 0\) for \(x < -2\) and \(x > 2\) (curve above axis) → \(f\) is <strong>increasing</strong> there.</li>
+            <li>\(f' < 0\) for \(-2 < x < 2\) (curve below axis) → \(f\) is <strong>decreasing</strong> there.</li>
+            <li>\(f'\) changes \(+\to-\) at \(x = -2\) → <strong>local max</strong>; \(-\to+\) at \(x = 2\) → <strong>local min</strong>.</li>
+            <li>Answer: \(\;\boxed{\text{local max at } x=-2,\ \text{local min at } x=2}\)</li>
+          </ol>
+          <p class="note">Remember: the zeros of this curve are \(f\)'s critical points, and its own minimum (at \(x = 0\)) is an <em>inflection point</em> of \(f\).</p>
+        </details>
+
         <nav class="unit-nav">
           <a class="unit-nav-link" href="unit-4.html">← Unit 4: Applications</a>
           <a class="unit-nav-link next" href="unit-6.html">Unit 6: Integration →</a>
@@ -215,6 +241,12 @@
           c.setExpression({ id: "sec", latex: "y=2x", color: "#888888", lineStyle: D.Styles.DASHED });
           c.setExpression({ id: "tan", latex: "y=2x-1", color: D.Colors.RED });
           c.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-fprime", function (c) {
+          c.setMathBounds({ left: -4, right: 4, bottom: -5, top: 5 });
+          c.setExpression({ id: "fp", latex: "y=x^2-4", color: D.Colors.GREEN });
+          c.setExpression({ id: "z1", latex: "(-2,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "z2", latex: "(2,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
         });
       });
     });

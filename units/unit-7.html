@@ -64,6 +64,13 @@
         </section>
 
         <!-- ===================== EXAMPLES ===================== -->
+        <section class="concept">
+          <h2 id="c7">7. Newton's Law of Cooling</h2>
+          <p>An object cools (or warms) toward the temperature \(A\) of its surroundings at a rate proportional to the <em>difference</em>:</p>
+          <p>$$\frac{dy}{dt} = k(y - A) \;\Rightarrow\; y = A + Ce^{kt}$$</p>
+          <p>This is the growth/decay model with an <strong>offset</strong>. The temperature levels off at the <strong>equilibrium</strong> \(y = A\) (where \(\frac{dy}{dt} = 0\)); the constant \(C\) comes from the starting temperature.</p>
+        </section>
+
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
         <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
@@ -130,6 +137,18 @@
             <li>After \(10\) years (one half-life): \(100 \cdot \tfrac12 = 50\) mg.</li>
             <li>After \(20\) years (two half-lives): \(50 \cdot \tfrac12 = 25\) mg.</li>
             <li>Answer: \(\;\boxed{25 \text{ mg remain after 20 years}}\).</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — Newton's cooling: coffee in a room</span></summary>
+          <p>A \(200°\) cup of coffee sits in a \(70°\) room, cooling so that \(\dfrac{dy}{dt} = k(y - 70)\). After \(10\) min it's \(150°\). Find the model.</p>
+          <ol class="steps">
+            <li>The solution form is \(y = 70 + Ce^{kt}\) (equilibrium \(70°\)).</li>
+            <li>Initial temp \(y(0) = 200\): \(200 = 70 + C \Rightarrow C = 130\).</li>
+            <li>Use \(y(10) = 150\): \(150 = 70 + 130e^{10k} \Rightarrow e^{10k} = \dfrac{80}{130}\).</li>
+            <li>Solve for \(k\): \(k = \dfrac{1}{10}\ln\!\dfrac{80}{130}\) (negative — it's cooling).</li>
+            <li>Answer: \(\;\boxed{y = 70 + 130\,e^{kt},\ k = \tfrac{1}{10}\ln\tfrac{8}{13}}\); as \(t \to \infty\), \(y \to 70°\).</li>
           </ol>
         </details>
 

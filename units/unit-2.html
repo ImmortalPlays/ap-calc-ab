@@ -72,7 +72,8 @@
             <li>\(\dfrac{d}{dx}\,e^x = e^x\)</li>
             <li>\(\dfrac{d}{dx}\,\ln x = \dfrac{1}{x}\)</li>
             <li>\(\dfrac{d}{dx}\,\sin x = \cos x\), &nbsp; \(\dfrac{d}{dx}\,\cos x = -\sin x\)</li>
-            <li>\(\dfrac{d}{dx}\,\tan x = \sec^2 x\)</li>
+            <li>\(\dfrac{d}{dx}\,\tan x = \sec^2 x\), &nbsp; \(\dfrac{d}{dx}\,\cot x = -\csc^2 x\)</li>
+            <li>\(\dfrac{d}{dx}\,\sec x = \sec x\tan x\), &nbsp; \(\dfrac{d}{dx}\,\csc x = -\csc x\cot x\)</li>
           </ul>
         </section>
 
@@ -96,6 +97,13 @@
         </section>
 
         <!-- ===================== EXAMPLES ===================== -->
+        <section class="concept">
+          <h2 id="c9">9. Spotting a derivative in disguise</h2>
+          <p>The AP exam loves to hide a derivative inside a limit. If you see</p>
+          <p>$$\lim_{x \to a}\frac{f(x) - f(a)}{x - a} \quad\text{or}\quad \lim_{h \to 0}\frac{f(a+h) - f(a)}{h}$$</p>
+          <p>that <em>is</em> the definition of \(f'(a)\). Recognize the pattern, identify \(f\) and \(a\), and just differentiate — no limit work needed.</p>
+        </section>
+
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
         <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
@@ -194,6 +202,16 @@
           </ol>
           <p class="note">Continuous but with a sharp corner at the origin: there's no single tangent slope there.</p>
           <div id="graph-corner" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x10">Example 10 — A limit that's secretly a derivative: \(\lim_{x \to 2}\dfrac{x^5 - 32}{x - 2}\)</span></summary>
+          <ol class="steps">
+            <li>Match the pattern \(\lim_{x\to a}\dfrac{f(x) - f(a)}{x - a}\): here \(f(x) = x^5\) and \(a = 2\) (since \(f(2) = 32\)).</li>
+            <li>So the limit equals \(f'(2)\).</li>
+            <li>\(f'(x) = 5x^4\), so \(f'(2) = 5(2)^4 = 5(16)\).</li>
+            <li>Answer: \(\;\boxed{80}\) — no factoring or L'Hôpital required.</li>
+          </ol>
         </details>
 
         <nav class="unit-nav">

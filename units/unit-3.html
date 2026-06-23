@@ -80,6 +80,17 @@
         </section>
 
         <!-- ===================== EXAMPLES ===================== -->
+        <section class="concept">
+          <h2 id="c8">8. Logarithmic differentiation &amp; other bases</h2>
+          <p>When the variable is in the <strong>exponent</strong> (like \(y = x^x\)) the power rule doesn't apply. Take \(\ln\) of both sides first, then differentiate implicitly:</p>
+          <p>$$\ln y = \ln\big(x^x\big) = x\ln x \;\Rightarrow\; \frac{y'}{y} = \ln x + 1$$</p>
+          <p>For exponentials with a base other than \(e\):</p>
+          <ul>
+            <li>\(\dfrac{d}{dx}\,a^x = a^x \ln a\)</li>
+            <li>\(\dfrac{d}{dx}\,\log_a x = \dfrac{1}{x\ln a}\)</li>
+          </ul>
+        </section>
+
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
         <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
@@ -165,6 +176,27 @@
           </ol>
           <p class="note">Drag to see how each curve is the reflection of the other over the dashed line \(y = x\).</p>
           <div id="graph-inverse" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x9">Example 9 — Logarithmic differentiation: \(y = x^x\)</span></summary>
+          <ol class="steps">
+            <li>Take \(\ln\) of both sides: \(\ln y = x\ln x\).</li>
+            <li>Differentiate implicitly. Left: \(\dfrac{y'}{y}\). Right (product rule): \((1)\ln x + x\cdot\dfrac{1}{x} = \ln x + 1\).</li>
+            <li>So \(\dfrac{y'}{y} = \ln x + 1\).</li>
+            <li>Multiply by \(y = x^x\): \(y' = x^x(\ln x + 1)\).</li>
+            <li>Answer: \(\;\boxed{y' = x^x(\ln x + 1)}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x10">Example 10 — A different base: \(\dfrac{d}{dx}\,5^x\) and \(\dfrac{d}{dx}\,2^{x^2}\)</span></summary>
+          <ol class="steps">
+            <li>Use \(\dfrac{d}{dx}a^x = a^x\ln a\): \(\dfrac{d}{dx}5^x = 5^x\ln 5\).</li>
+            <li>For \(2^{x^2}\), add the chain rule (inside \(= x^2\), derivative \(2x\)).</li>
+            <li>\(\dfrac{d}{dx}2^{x^2} = 2^{x^2}\ln 2 \cdot 2x\).</li>
+            <li>Answer: \(\;\boxed{5^x\ln 5 \quad\text{and}\quad 2x\ln 2 \cdot 2^{x^2}}\)</li>
+          </ol>
         </details>
 
         <nav class="unit-nav">
