@@ -300,6 +300,63 @@
     }, 60);
   }
 
+  // ----- floating graphing-calculator widget ------------------------------
+
+  var DESMOS_SRC = "https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd";
+
+  function buildCalcWidget() {
+    // Floating button
+    var fab = el("button", "calc-fab");
+    fab.type = "button";
+    fab.setAttribute("aria-label", "Open graphing calculator");
+    fab.innerHTML =
+      '<span class="calc-fab-label">Graphing calculator</span>' +
+      '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+      'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M4 4 V20 H20"/><path d="M4 16 C 8 16, 9 7, 13 7 S 18 11, 20 6"/></svg>';
+
+    // Panel
+    var panel = el("div", "calc-panel");
+    panel.innerHTML =
+      '<div class="calc-panel-head">' +
+        '<span class="calc-panel-title">Graphing Calculator</span>' +
+        '<button type="button" class="calc-panel-close" aria-label="Close calculator">✕</button>' +
+      '</div>' +
+      '<div class="calc-panel-body" id="calc-widget-graph">' +
+        '<div class="calc-panel-loading">Loading…</div>' +
+      '</div>';
+
+    document.body.appendChild(panel);
+    document.body.appendChild(fab);
+
+    var calc = null, loading = false;
+
+    function makeCalc() {
+      var graphEl = document.getElementById("calc-widget-graph");
+      graphEl.innerHTML = "";
+      calc = window.Desmos.GraphingCalculator(graphEl, { border: false });
+    }
+
+    function ensureCalc() {
+      if (calc) { calc.resize(); return; }
+      if (window.Desmos) { makeCalc(); return; }
+      if (loading) return;
+      loading = true;
+      var s = document.createElement("script");
+      s.src = DESMOS_SRC;
+      s.onload = function () { if (panel.classList.contains("open")) makeCalc(); };
+      document.head.appendChild(s);
+    }
+
+    function open() { panel.classList.add("open"); fab.classList.add("active"); ensureCalc(); }
+    function close() { panel.classList.remove("open"); fab.classList.remove("active"); }
+
+    fab.addEventListener("click", function () {
+      if (panel.classList.contains("open")) close(); else open();
+    });
+    panel.querySelector(".calc-panel-close").addEventListener("click", close);
+  }
+
   // Give each concept heading on a unit page a stable id (c1, c2, …) so
   // search results can deep-link to a specific concept.
   function tagConcepts() {
@@ -315,6 +372,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     buildSidebar();
     tagConcepts();
+    buildCalcWidget();
     renderMath();
   });
   window.addEventListener("load", openTarget);
