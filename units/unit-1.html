@@ -4,218 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 1: Limits &amp; Continuity — AP Calculus AB</title>
-  <!-- KaTeX: renders the math notation -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-  <!-- Desmos: draws the interactive graphs -->
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>Unit 1: Limits &amp; Continuity</h1>
-    <a class="back-link" href="../index.html">&larr; All units</a>
-  </header>
+<body data-page="unit" data-unit="1" data-base="../" style="--pastel:#f7c9c2;--deep:#cf7d72">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <main class="container">
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← All units</a>
 
-    <section class="concept">
-      <h2>1. What is a limit?</h2>
-      <p>A <strong>limit</strong> describes the value a function <em>approaches</em> as the input gets close to some number. We write:</p>
-      <p>$$\lim_{x \to a} f(x) = L$$</p>
-      <p>This reads: “as \(x\) gets close to \(a\), \(f(x)\) gets close to \(L\).” Notice we care about what happens <em>near</em> \(a\), not necessarily <em>at</em> \(a\).</p>
-    </section>
+        <header class="page-header">
+          <div class="eyebrow"><span>UNIT 1</span><span class="weight-tag">10–12% of the exam</span></div>
+          <h1>Limits &amp; Continuity</h1>
+        </header>
 
-    <section class="concept">
-      <h2>2. One-sided limits</h2>
-      <p>You can approach \(a\) from the left or the right:</p>
-      <ul>
-        <li>Left-hand limit (coming from values below \(a\)): \(\lim_{x \to a^-} f(x)\)</li>
-        <li>Right-hand limit (coming from values above \(a\)): \(\lim_{x \to a^+} f(x)\)</li>
-      </ul>
-      <p>The two-sided limit <strong>exists only if both sides agree</strong>:</p>
-      <p>$$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$</p>
-      <p>If the two sides disagree, the limit <strong>does not exist (DNE)</strong>.</p>
-    </section>
+        <!-- Concepts -->
+        <section class="concept">
+          <h2 id="c1">1. What is a limit?</h2>
+          <p>A <strong>limit</strong> describes the value a function <em>approaches</em> as the input gets close to some number. We write:</p>
+          <p>$$\lim_{x \to a} f(x) = L$$</p>
+          <p>This reads: "as \(x\) gets close to \(a\), \(f(x)\) gets close to \(L\)." We care about what happens <em>near</em> \(a\), not necessarily <em>at</em> \(a\).</p>
+        </section>
 
-    <section class="concept">
-      <h2>3. Evaluating limits</h2>
-      <p>Start by <strong>plugging the number in</strong> (direct substitution). If you get a real number, that’s your answer. If you get the indeterminate form \(\frac{0}{0}\), you must rewrite the function first — usually by <strong>factoring</strong> or <strong>rationalizing</strong>.</p>
-    </section>
+        <section class="concept">
+          <h2 id="c2">2. One-sided limits</h2>
+          <p>You can approach \(a\) from the left or the right:</p>
+          <ul>
+            <li>Left-hand limit (from values below \(a\)): \(\lim_{x \to a^-} f(x)\)</li>
+            <li>Right-hand limit (from values above \(a\)): \(\lim_{x \to a^+} f(x)\)</li>
+          </ul>
+          <p>The two-sided limit <strong>exists only if both sides agree</strong>:</p>
+          <p>$$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$</p>
+          <p>If the two sides disagree, the limit <strong>does not exist (DNE)</strong>.</p>
+        </section>
 
-    <section class="concept">
-      <h2>4. Infinite limits &amp; limits at infinity</h2>
-      <p>Two different “infinity” situations show up:</p>
-      <ul>
-        <li><strong>Infinite limit:</strong> the function blows up near a point (like \(\frac{1}{x-2}\) at \(x = 2\)). The limit is \(\pm\infty\), the two-sided limit DNE, and you get a <strong>vertical asymptote</strong>.</li>
-        <li><strong>Limit at infinity:</strong> \(x\) itself grows without bound. \(\lim_{x \to \pm\infty} f(x)\) describes the <strong>end behavior</strong>, which often levels off at a <strong>horizontal asymptote</strong>.</li>
-      </ul>
-    </section>
+        <section class="concept">
+          <h2 id="c3">3. Evaluating limits</h2>
+          <p>Start by <strong>plugging the number in</strong> (direct substitution). If you get a real number, that's your answer. If you get the indeterminate form \(\frac{0}{0}\), rewrite the function first — usually by <strong>factoring</strong> or <strong>rationalizing</strong>.</p>
+        </section>
 
-    <section class="concept">
-      <h2>5. Continuity</h2>
-      <p>A function is <strong>continuous at \(x = a\)</strong> if all three of these are true:</p>
-      <ol>
-        <li>\(f(a)\) is defined</li>
-        <li>\(\lim_{x \to a} f(x)\) exists</li>
-        <li>\(\lim_{x \to a} f(x) = f(a)\)</li>
-      </ol>
-      <p>If any one fails, there is a discontinuity. The three common types are <strong>removable</strong> (a hole), <strong>jump</strong>, and <strong>infinite</strong> (a vertical asymptote).</p>
-    </section>
+        <section class="concept">
+          <h2 id="c4">4. Infinite limits &amp; limits at infinity</h2>
+          <ul>
+            <li><strong>Infinite limit:</strong> the function blows up near a point (like \(\frac{1}{x-2}\) at \(x = 2\)). The limit is \(\pm\infty\) and you get a <strong>vertical asymptote</strong>.</li>
+            <li><strong>Limit at infinity:</strong> \(x\) itself grows without bound. \(\lim_{x \to \pm\infty} f(x)\) describes the <strong>end behavior</strong>, often a <strong>horizontal asymptote</strong>.</li>
+          </ul>
+        </section>
 
-    <h2 class="section-heading">Step-by-step solutions</h2>
-    <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
+        <section class="concept">
+          <h2 id="c5">5. Continuity</h2>
+          <p>A function is <strong>continuous at \(x = a\)</strong> if all three are true:</p>
+          <ol>
+            <li>\(f(a)\) is defined</li>
+            <li>\(\lim_{x \to a} f(x)\) exists</li>
+            <li>\(\lim_{x \to a} f(x) = f(a)\)</li>
+          </ol>
+          <p>If any one fails, there is a discontinuity. The three common types are <strong>removable</strong> (a hole), <strong>jump</strong>, and <strong>infinite</strong> (a vertical asymptote).</p>
+        </section>
 
-    <details class="solution">
-      <summary>Example 1 — Direct substitution: \(\lim_{x \to 3}\,(2x^2 - 4x + 1)\)</summary>
-      <ol class="steps">
-        <li>This is a polynomial, which is continuous everywhere, so we can substitute directly.</li>
-        <li>Plug in \(x = 3\): \(\;2(3)^2 - 4(3) + 1\)</li>
-        <li>Simplify: \(\;18 - 12 + 1\)</li>
-        <li>Answer: \(\;\boxed{7}\)</li>
-      </ol>
-    </details>
+        <!-- Worked examples -->
+        <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
+        <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
-    <details class="solution">
-      <summary>Example 2 — Factoring a \(\tfrac{0}{0}\) form: \(\lim_{x \to 2}\dfrac{x^2 - 4}{x - 2}\)</summary>
-      <ol class="steps">
-        <li>Try direct substitution: \(\dfrac{2^2 - 4}{2 - 2} = \dfrac{0}{0}\) — indeterminate, so we rewrite.</li>
-        <li>Factor the numerator: \(x^2 - 4 = (x - 2)(x + 2)\).</li>
-        <li>Cancel the common \((x - 2)\): \(\dfrac{(x-2)(x+2)}{x-2} = x + 2\).</li>
-        <li>Now substitute \(x = 2\): \(\;2 + 2\).</li>
-        <li>Answer: \(\;\boxed{4}\)</li>
-      </ol>
-      <p class="note">The graph is the line \(y = x + 2\) with an open hole at \((2, 4)\) — the limit is \(4\) even though the function isn’t defined there.</p>
-      <div id="graph-hole" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x1">Example 1 — Direct substitution: \(\lim_{x \to 3}\,(2x^2 - 4x + 1)\)</span></summary>
+          <ol class="steps">
+            <li>This is a polynomial, continuous everywhere, so substitute directly.</li>
+            <li>Plug in \(x = 3\): \(\;2(3)^2 - 4(3) + 1\)</li>
+            <li>Simplify: \(\;18 - 12 + 1\)</li>
+            <li>Answer: \(\;\boxed{7}\)</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 3 — Rationalizing: \(\lim_{x \to 0}\dfrac{\sqrt{x+4} - 2}{x}\)</summary>
-      <ol class="steps">
-        <li>Direct substitution gives \(\dfrac{\sqrt{4} - 2}{0} = \dfrac{0}{0}\) — indeterminate.</li>
-        <li>Multiply top and bottom by the conjugate \(\sqrt{x+4} + 2\):</li>
-        <li>$$\dfrac{\sqrt{x+4}-2}{x}\cdot\dfrac{\sqrt{x+4}+2}{\sqrt{x+4}+2} = \dfrac{(x+4) - 4}{x\left(\sqrt{x+4}+2\right)}$$</li>
-        <li>Simplify the numerator to \(x\), then cancel: \(\dfrac{x}{x(\sqrt{x+4}+2)} = \dfrac{1}{\sqrt{x+4}+2}\).</li>
-        <li>Substitute \(x = 0\): \(\dfrac{1}{\sqrt{4}+2} = \dfrac{1}{4}\).</li>
-        <li>Answer: \(\;\boxed{\tfrac{1}{4}}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Factoring a \(\tfrac{0}{0}\) form: \(\lim_{x \to 2}\dfrac{x^2 - 4}{x - 2}\)</span></summary>
+          <ol class="steps">
+            <li>Direct substitution: \(\dfrac{2^2 - 4}{2 - 2} = \dfrac{0}{0}\) — indeterminate, so rewrite.</li>
+            <li>Factor the numerator: \(x^2 - 4 = (x - 2)(x + 2)\).</li>
+            <li>Cancel the common \((x - 2)\): \(\dfrac{(x-2)(x+2)}{x-2} = x + 2\).</li>
+            <li>Substitute \(x = 2\): \(\;2 + 2\).</li>
+            <li>Answer: \(\;\boxed{4}\)</li>
+          </ol>
+          <p class="note">The graph is the line \(y = x + 2\) with an open hole at \((2, 4)\) — the limit is \(4\) even though the function isn't defined there.</p>
+          <div id="graph-hole" class="example-graph"></div>
+        </details>
 
-    <details class="solution">
-      <summary>Example 4 — One-sided limits &amp; a jump: \(f(x)=\begin{cases}x^2 &amp; x<1\\ x+1 &amp; x\ge 1\end{cases}\)</summary>
-      <ol class="steps">
-        <li><strong>Approach from the left</strong> (use the \(x^2\) piece): \(\lim_{x \to 1^-} f(x) = 1^2 = 1\).</li>
-        <li><strong>Approach from the right</strong> (use the \(x+1\) piece): \(\lim_{x \to 1^+} f(x) = 1 + 1 = 2\).</li>
-        <li>The two sides disagree: \(1 \neq 2\).</li>
-        <li>Conclusion: \(\lim_{x \to 1} f(x)\) <strong>does not exist</strong> — a <strong>jump</strong> discontinuity.</li>
-      </ol>
-      <p class="note">Notice the open circle at \((1, 1)\) where the left piece stops, and the filled dot at \((1, 2)\) where the right piece starts. The graph literally jumps.</p>
-      <div id="graph-jump" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Rationalizing: \(\lim_{x \to 0}\dfrac{\sqrt{x+4} - 2}{x}\)</span></summary>
+          <ol class="steps">
+            <li>Direct substitution gives \(\dfrac{\sqrt{4} - 2}{0} = \dfrac{0}{0}\) — indeterminate.</li>
+            <li>Multiply top and bottom by the conjugate \(\sqrt{x+4} + 2\):</li>
+            <li>$$\dfrac{\sqrt{x+4}-2}{x}\cdot\dfrac{\sqrt{x+4}+2}{\sqrt{x+4}+2} = \dfrac{(x+4) - 4}{x\left(\sqrt{x+4}+2\right)}$$</li>
+            <li>Simplify and cancel: \(\dfrac{x}{x(\sqrt{x+4}+2)} = \dfrac{1}{\sqrt{x+4}+2}\).</li>
+            <li>Substitute \(x = 0\): \(\dfrac{1}{\sqrt{4}+2} = \dfrac{1}{4}\).</li>
+            <li>Answer: \(\;\boxed{\tfrac{1}{4}}\)</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 5 — Infinite limit (approaching from both sides): \(\lim_{x \to 2}\dfrac{1}{x-2}\)</summary>
-      <ol class="steps">
-        <li>Substituting gives \(\dfrac{1}{0}\) — undefined, so check each side separately.</li>
-        <li><strong>From the left</strong> (\(x\) slightly less than 2): the bottom is a tiny <em>negative</em> number, so \(\lim_{x \to 2^-}\dfrac{1}{x-2} = -\infty\).</li>
-        <li><strong>From the right</strong> (\(x\) slightly more than 2): the bottom is a tiny <em>positive</em> number, so \(\lim_{x \to 2^+}\dfrac{1}{x-2} = +\infty\).</li>
-        <li>The sides head to opposite infinities, so the two-sided limit <strong>does not exist</strong>. There is a <strong>vertical asymptote</strong> at \(x = 2\).</li>
-      </ol>
-      <p class="note">Watch the curve dive to \(-\infty\) just left of the dashed line and rocket to \(+\infty\) just right of it.</p>
-      <div id="graph-infinite" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — One-sided limits &amp; a jump: \(f(x)=\begin{cases}x^2 &amp; x&lt;1\\ x+1 &amp; x\ge 1\end{cases}\)</span></summary>
+          <ol class="steps">
+            <li><strong>From the left</strong> (use \(x^2\)): \(\lim_{x \to 1^-} f(x) = 1^2 = 1\).</li>
+            <li><strong>From the right</strong> (use \(x+1\)): \(\lim_{x \to 1^+} f(x) = 1 + 1 = 2\).</li>
+            <li>The two sides disagree: \(1 \neq 2\).</li>
+            <li>Conclusion: \(\lim_{x \to 1} f(x)\) <strong>does not exist</strong> — a <strong>jump</strong> discontinuity.</li>
+          </ol>
+          <p class="note">Open circle at \((1, 1)\) where the left piece stops; filled dot at \((1, 2)\) where the right piece starts. The graph literally jumps.</p>
+          <div id="graph-jump" class="example-graph"></div>
+        </details>
 
-    <details class="solution">
-      <summary>Example 6 — Limit at infinity: \(\lim_{x \to \infty}\dfrac{3x^2 + 2}{x^2 + 1}\)</summary>
-      <ol class="steps">
-        <li>For a rational function, compare the highest powers — here both are \(x^2\).</li>
-        <li>Divide every term by \(x^2\): \(\dfrac{3 + 2/x^2}{1 + 1/x^2}\).</li>
-        <li>As \(x \to \infty\), the \(2/x^2\) and \(1/x^2\) terms shrink to \(0\): \(\dfrac{3 + 0}{1 + 0}\).</li>
-        <li>Answer: \(\;\boxed{3}\). The line \(y = 3\) is a <strong>horizontal asymptote</strong>.</li>
-      </ol>
-      <p class="note">Zoom out: the curve flattens toward the dashed line \(y = 3\) in both directions.</p>
-      <div id="graph-atinfinity" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — Infinite limit: \(\lim_{x \to 2}\dfrac{1}{x-2}\)</span></summary>
+          <ol class="steps">
+            <li>Substituting gives \(\dfrac{1}{0}\) — undefined, so check each side.</li>
+            <li><strong>From the left</strong> (\(x\) just below 2): bottom is a tiny <em>negative</em>, so \(\lim_{x \to 2^-}\dfrac{1}{x-2} = -\infty\).</li>
+            <li><strong>From the right</strong> (\(x\) just above 2): bottom is a tiny <em>positive</em>, so \(\lim_{x \to 2^+}\dfrac{1}{x-2} = +\infty\).</li>
+            <li>Opposite infinities, so the two-sided limit <strong>does not exist</strong>. <strong>Vertical asymptote</strong> at \(x = 2\).</li>
+          </ol>
+          <p class="note">Watch the curve dive to \(-\infty\) just left of the dashed line and rocket to \(+\infty\) just right of it.</p>
+          <div id="graph-infinite" class="example-graph"></div>
+        </details>
 
-    <details class="solution">
-      <summary>Example 7 — Checking continuity at a point</summary>
-      <p>Let \(f(x) = \dfrac{x^2 - 1}{x - 1}\) for \(x \neq 1\), and \(f(1) = 3\). Is \(f\) continuous at \(x = 1\)?</p>
-      <ol class="steps">
-        <li><strong>Is \(f(1)\) defined?</strong> Yes, \(f(1) = 3\).</li>
-        <li><strong>Does the limit exist?</strong> Factor: \(\dfrac{(x-1)(x+1)}{x-1} = x + 1\), so \(\lim_{x \to 1} f(x) = 2\).</li>
-        <li><strong>Do they match?</strong> The limit is \(2\) but \(f(1) = 3\), so \(2 \neq 3\).</li>
-        <li>Conclusion: \(f\) is <strong>not continuous</strong> at \(x = 1\). It is a <strong>removable</strong> discontinuity (a hole).</li>
-      </ol>
-      <p class="note">The open hole sits at \((1, 2)\) where the curve naturally goes; the red dot is the separately-defined \(f(1) = 3\) floating above it.</p>
-      <div id="graph-continuity" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — Limit at infinity: \(\lim_{x \to \infty}\dfrac{3x^2 + 2}{x^2 + 1}\)</span></summary>
+          <ol class="steps">
+            <li>For a rational function, compare the highest powers — here both are \(x^2\).</li>
+            <li>Divide every term by \(x^2\): \(\dfrac{3 + 2/x^2}{1 + 1/x^2}\).</li>
+            <li>As \(x \to \infty\), \(2/x^2\) and \(1/x^2\) shrink to \(0\): \(\dfrac{3 + 0}{1 + 0}\).</li>
+            <li>Answer: \(\;\boxed{3}\). The line \(y = 3\) is a <strong>horizontal asymptote</strong>.</li>
+          </ol>
+          <p class="note">Zoom out: the curve flattens toward the dashed line \(y = 3\) in both directions.</p>
+          <div id="graph-atinfinity" class="example-graph"></div>
+        </details>
 
-    <!-- Previous / next unit navigation -->
-    <nav class="unit-nav">
-      <a class="unit-nav-link" href="../index.html">&larr; Home</a>
-      <a class="unit-nav-link" href="unit-2.html">Unit 2: Differentiation &rarr;</a>
-    </nav>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — Checking continuity at a point</span></summary>
+          <p>Let \(f(x) = \dfrac{x^2 - 1}{x - 1}\) for \(x \neq 1\), and \(f(1) = 3\). Is \(f\) continuous at \(x = 1\)?</p>
+          <ol class="steps">
+            <li><strong>Is \(f(1)\) defined?</strong> Yes, \(f(1) = 3\).</li>
+            <li><strong>Does the limit exist?</strong> Factor: \(\dfrac{(x-1)(x+1)}{x-1} = x + 1\), so \(\lim_{x \to 1} f(x) = 2\).</li>
+            <li><strong>Do they match?</strong> The limit is \(2\) but \(f(1) = 3\), so \(2 \neq 3\).</li>
+            <li>Conclusion: <strong>not continuous</strong> at \(x = 1\) — a <strong>removable</strong> discontinuity (a hole).</li>
+          </ol>
+          <p class="note">The open hole sits at \((1, 2)\) where the curve naturally goes; the red dot is the separately-defined \(f(1) = 3\) floating above it.</p>
+          <div id="graph-continuity" class="example-graph"></div>
+        </details>
 
-  </main>
+        <nav class="unit-nav">
+          <a class="unit-nav-link" href="../index.html">← Home</a>
+          <a class="unit-nav-link next" href="unit-2.html">Unit 2: Differentiation →</a>
+        </nav>
 
-  <footer class="site-footer">
-    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
-  </footer>
+        <footer class="site-footer">
+          <p><a class="back-link" href="../index.html">← Back to all units</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
 
-  <!-- Build each example graph. They live inside collapsed <details>, so we
-       resize the calculator the first time its dropdown is opened. -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      if (!window.Desmos) return;
-
-      function initGraph(divId, build) {
-        var elt = document.getElementById(divId);
-        if (!elt) return;
-        var calc = Desmos.GraphingCalculator(elt, {
-          expressions: false,
-          settingsMenu: false,
-          lockViewport: false
-        });
-        build(calc);
-        var det = elt.closest("details");
-        if (det) {
-          det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-        }
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0;
+        var iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
       }
-
-      initGraph("graph-hole", function (calc) {
-        calc.setMathBounds({ left: -2, right: 6, bottom: -2, top: 8 });
-        calc.setExpression({ id: "l", latex: "y=x+2", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "h", latex: "(2,4)", pointStyle: Desmos.Styles.OPEN, color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE });
-      });
-
-      initGraph("graph-jump", function (calc) {
-        calc.setMathBounds({ left: -2, right: 4, bottom: -1, top: 5 });
-        calc.setExpression({ id: "p1", latex: "y=x^2\\{x<1\\}", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "p2", latex: "y=x+1\\{x>1\\}", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "o", latex: "(1,1)", pointStyle: Desmos.Styles.OPEN, color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE });
-        calc.setExpression({ id: "c", latex: "(1,2)", color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE });
-      });
-
-      initGraph("graph-infinite", function (calc) {
-        calc.setMathBounds({ left: -3, right: 7, bottom: -6, top: 6 });
-        calc.setExpression({ id: "f", latex: "y=1/(x-2)", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "va", latex: "x=2", color: "#888888", lineStyle: Desmos.Styles.DASHED });
-      });
-
-      initGraph("graph-atinfinity", function (calc) {
-        calc.setMathBounds({ left: -12, right: 12, bottom: -1, top: 5 });
-        calc.setExpression({ id: "f", latex: "y=(3x^2+2)/(x^2+1)", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "ha", latex: "y=3", color: "#888888", lineStyle: Desmos.Styles.DASHED });
-      });
-
-      initGraph("graph-continuity", function (calc) {
-        calc.setMathBounds({ left: -4, right: 6, bottom: -3, top: 7 });
-        calc.setExpression({ id: "l", latex: "y=x+1", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "hole", latex: "(1,2)", pointStyle: Desmos.Styles.OPEN, color: Desmos.Colors.BLUE, dragMode: Desmos.DragModes.NONE });
-        calc.setExpression({ id: "def", latex: "(1,3)", color: Desmos.Colors.RED, dragMode: Desmos.DragModes.NONE, showLabel: true, label: "f(1)=3" });
+      whenDesmos(function () {
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return;
+          elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-hole", function (c) {
+          c.setMathBounds({ left: -2, right: 6, bottom: -2, top: 8 });
+          c.setExpression({ id: "l", latex: "y=x+2", color: D.Colors.BLUE });
+          c.setExpression({ id: "h", latex: "(2,4)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-jump", function (c) {
+          c.setMathBounds({ left: -2, right: 4, bottom: -1, top: 5 });
+          c.setExpression({ id: "p1", latex: "y=x^2\\{x<1\\}", color: D.Colors.BLUE });
+          c.setExpression({ id: "p2", latex: "y=x+1\\{x>1\\}", color: D.Colors.BLUE });
+          c.setExpression({ id: "o", latex: "(1,1)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "cc", latex: "(1,2)", color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-infinite", function (c) {
+          c.setMathBounds({ left: -3, right: 7, bottom: -6, top: 6 });
+          c.setExpression({ id: "f", latex: "y=1/(x-2)", color: D.Colors.BLUE });
+          c.setExpression({ id: "va", latex: "x=2", color: "#888888", lineStyle: D.Styles.DASHED });
+        });
+        initGraph("graph-atinfinity", function (c) {
+          c.setMathBounds({ left: -12, right: 12, bottom: -1, top: 5 });
+          c.setExpression({ id: "f", latex: "y=(3x^2+2)/(x^2+1)", color: D.Colors.BLUE });
+          c.setExpression({ id: "ha", latex: "y=3", color: "#888888", lineStyle: D.Styles.DASHED });
+        });
+        initGraph("graph-continuity", function (c) {
+          c.setMathBounds({ left: -4, right: 6, bottom: -3, top: 7 });
+          c.setExpression({ id: "l", latex: "y=x+1", color: D.Colors.BLUE });
+          c.setExpression({ id: "hole", latex: "(1,2)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "def", latex: "(1,3)", color: D.Colors.RED, dragMode: D.DragModes.NONE, showLabel: true, label: "f(1)=3" });
+        });
       });
     });
   </script>

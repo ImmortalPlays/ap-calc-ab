@@ -4,88 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 4: Contextual Applications of Differentiation — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>Unit 4: Contextual Applications of Differentiation</h1>
-    <a class="back-link" href="../index.html">&larr; All units</a>
-  </header>
+<body data-page="unit" data-unit="4" data-base="../" style="--pastel:#cfe3b0;--deep:#7c9c4e">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <main class="container">
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← All units</a>
 
-    <section class="concept">
-      <h2>1. Motion along a line</h2>
-      <p>If \(s(t)\) is position, then velocity and acceleration are its derivatives:</p>
-      <p>$$v(t) = s'(t), \qquad a(t) = v'(t) = s''(t)$$</p>
-      <p><strong>Speed</strong> is \(|v(t)|\). The object is <strong>at rest</strong> when \(v(t) = 0\), and <strong>speeding up</strong> when \(v\) and \(a\) have the same sign.</p>
-    </section>
+        <header class="page-header">
+          <div class="eyebrow"><span>UNIT 4</span><span class="weight-tag">10–15% of the exam</span></div>
+          <h1>Contextual Applications of Differentiation</h1>
+        </header>
 
-    <section class="concept">
-      <h2>2. Related rates</h2>
-      <p>When several quantities change together over time, differentiate the equation relating them <strong>with respect to \(t\)</strong>, then plug in the known rates. Steps: write the relationship, differentiate implicitly in \(t\), substitute, solve for the unknown rate.</p>
-    </section>
+        <section class="concept">
+          <h2>1. Motion along a line</h2>
+          <p>If \(s(t)\) is position, then velocity and acceleration are its derivatives:</p>
+          <p>$$v(t) = s'(t), \qquad a(t) = v'(t) = s''(t)$$</p>
+          <p><strong>Speed</strong> is \(|v(t)|\). The object is <strong>at rest</strong> when \(v(t) = 0\), and <strong>speeding up</strong> when \(v\) and \(a\) have the same sign.</p>
+        </section>
 
-    <section class="concept">
-      <h2>3. L’Hôpital’s Rule</h2>
-      <p>If a limit gives the indeterminate form \(\dfrac{0}{0}\) or \(\dfrac{\infty}{\infty}\), you may differentiate top and bottom <em>separately</em>:</p>
-      <p>$$\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}$$</p>
-    </section>
+        <section class="concept">
+          <h2>2. Related rates</h2>
+          <p>When several quantities change together over time, differentiate the equation relating them <strong>with respect to \(t\)</strong>, then plug in the known rates. Steps: write the relationship, differentiate implicitly in \(t\), substitute, solve for the unknown rate.</p>
+        </section>
 
-    <section class="concept">
-      <h2>4. Linear approximation</h2>
-      <p>Near \(x = a\), the tangent line is a good stand-in for the curve:</p>
-      <p>$$L(x) = f(a) + f'(a)(x - a)$$</p>
-    </section>
+        <section class="concept">
+          <h2>3. L'Hôpital's Rule</h2>
+          <p>If a limit gives the indeterminate form \(\dfrac{0}{0}\) or \(\dfrac{\infty}{\infty}\), you may differentiate top and bottom <em>separately</em>:</p>
+          <p>$$\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}$$</p>
+        </section>
 
-    <h2 class="section-heading">Step-by-step solutions</h2>
-    <p class="intro">Click any example to expand the full solution.</p>
+        <section class="concept">
+          <h2>4. Linear approximation</h2>
+          <p>Near \(x = a\), the tangent line is a good stand-in for the curve:</p>
+          <p>$$L(x) = f(a) + f'(a)(x - a)$$</p>
+        </section>
 
-    <details class="solution">
-      <summary>Example 1 — Motion: \(s(t) = t^3 - 6t^2 + 9t\)</summary>
-      <ol class="steps">
-        <li>Velocity: \(v(t) = s'(t) = 3t^2 - 12t + 9\).</li>
-        <li>Acceleration: \(a(t) = v'(t) = 6t - 12\).</li>
-        <li>At rest when \(v(t) = 0\): \(3t^2 - 12t + 9 = 3(t-1)(t-3) = 0\).</li>
-        <li>Answer: the object is at rest at \(\;\boxed{t = 1 \text{ and } t = 3}\).</li>
-      </ol>
-    </details>
+        <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
+        <p class="intro">Click any example to expand the full solution.</p>
 
-    <details class="solution">
-      <summary>Example 2 — Related rates: an inflating spherical balloon</summary>
-      <p>Air is pumped in at \(\dfrac{dV}{dt} = 100\ \text{cm}^3/\text{s}\). How fast is the radius growing when \(r = 5\) cm?</p>
-      <ol class="steps">
-        <li>Relationship: \(V = \dfrac{4}{3}\pi r^3\).</li>
-        <li>Differentiate with respect to \(t\): \(\dfrac{dV}{dt} = 4\pi r^2 \dfrac{dr}{dt}\).</li>
-        <li>Substitute \(\dfrac{dV}{dt} = 100\) and \(r = 5\): \(100 = 4\pi(25)\dfrac{dr}{dt}\).</li>
-        <li>Solve: \(\dfrac{dr}{dt} = \dfrac{100}{100\pi}\).</li>
-        <li>Answer: \(\;\boxed{\dfrac{dr}{dt} = \dfrac{1}{\pi}\ \text{cm/s}}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 1 — Motion: \(s(t) = t^3 - 6t^2 + 9t\)</span></summary>
+          <ol class="steps">
+            <li>Velocity: \(v(t) = s'(t) = 3t^2 - 12t + 9\).</li>
+            <li>Acceleration: \(a(t) = v'(t) = 6t - 12\).</li>
+            <li>At rest when \(v(t) = 0\): \(3t^2 - 12t + 9 = 3(t-1)(t-3) = 0\).</li>
+            <li>Answer: the object is at rest at \(\;\boxed{t = 1 \text{ and } t = 3}\).</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 3 — L’Hôpital’s Rule: \(\lim_{x \to 0}\dfrac{\sin x}{x}\)</summary>
-      <ol class="steps">
-        <li>Direct substitution gives \(\dfrac{\sin 0}{0} = \dfrac{0}{0}\) — indeterminate, so L’Hôpital applies.</li>
-        <li>Differentiate top and bottom separately: \(\dfrac{(\sin x)'}{(x)'} = \dfrac{\cos x}{1}\).</li>
-        <li>Now substitute \(x = 0\): \(\dfrac{\cos 0}{1} = \dfrac{1}{1}\).</li>
-        <li>Answer: \(\;\boxed{1}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 2 — Related rates: an inflating spherical balloon</span></summary>
+          <p>Air is pumped in at \(\dfrac{dV}{dt} = 100\ \text{cm}^3/\text{s}\). How fast is the radius growing when \(r = 5\) cm?</p>
+          <ol class="steps">
+            <li>Relationship: \(V = \dfrac{4}{3}\pi r^3\).</li>
+            <li>Differentiate with respect to \(t\): \(\dfrac{dV}{dt} = 4\pi r^2 \dfrac{dr}{dt}\).</li>
+            <li>Substitute \(\dfrac{dV}{dt} = 100\) and \(r = 5\): \(100 = 4\pi(25)\dfrac{dr}{dt}\).</li>
+            <li>Solve: \(\dfrac{dr}{dt} = \dfrac{100}{100\pi}\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{dr}{dt} = \dfrac{1}{\pi}\ \text{cm/s}}\)</li>
+          </ol>
+        </details>
 
-    <nav class="unit-nav">
-      <a class="unit-nav-link" href="unit-3.html">&larr; Unit 3: Chain &amp; Implicit</a>
-      <a class="unit-nav-link" href="unit-5.html">Unit 5: Analytical Apps &rarr;</a>
-    </nav>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 3 — L'Hôpital's Rule: \(\lim_{x \to 0}\dfrac{\sin x}{x}\)</span></summary>
+          <ol class="steps">
+            <li>Direct substitution gives \(\dfrac{\sin 0}{0} = \dfrac{0}{0}\) — indeterminate, so L'Hôpital applies.</li>
+            <li>Differentiate top and bottom separately: \(\dfrac{(\sin x)'}{(x)'} = \dfrac{\cos x}{1}\).</li>
+            <li>Now substitute \(x = 0\): \(\dfrac{\cos 0}{1} = \dfrac{1}{1}\).</li>
+            <li>Answer: \(\;\boxed{1}\)</li>
+          </ol>
+        </details>
 
-  </main>
+        <nav class="unit-nav">
+          <a class="unit-nav-link" href="unit-3.html">← Unit 3: Chain &amp; Implicit</a>
+          <a class="unit-nav-link next" href="unit-5.html">Unit 5: Analytical Apps →</a>
+        </nav>
 
-  <footer class="site-footer">
-    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
-  </footer>
+        <footer class="site-footer">
+          <p><a class="back-link" href="../index.html">← Back to all units</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

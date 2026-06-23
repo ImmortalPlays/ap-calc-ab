@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 2: Differentiation — Definition &amp; Basic Rules — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -11,131 +14,139 @@
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>Unit 2: Differentiation — Definition &amp; Basic Rules</h1>
-    <a class="back-link" href="../index.html">&larr; All units</a>
-  </header>
+<body data-page="unit" data-unit="2" data-base="../" style="--pastel:#f8d9b8;--deep:#cf9450">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <main class="container">
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← All units</a>
 
-    <section class="concept">
-      <h2>1. What is a derivative?</h2>
-      <p>The <strong>derivative</strong> \(f'(x)\) measures the <strong>instantaneous rate of change</strong> of \(f\) — the slope of the line tangent to the curve at a point. It is defined as a limit:</p>
-      <p>$$f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h}$$</p>
-      <p>That fraction is the slope between two nearby points; letting \(h \to 0\) slides them together into a single tangent point.</p>
-    </section>
+        <header class="page-header">
+          <div class="eyebrow"><span>UNIT 2</span><span class="weight-tag">10–12% of the exam</span></div>
+          <h1>Differentiation: Definition &amp; Basic Rules</h1>
+        </header>
 
-    <section class="concept">
-      <h2>2. The power rule and friends</h2>
-      <p>You rarely use the limit definition in practice — these shortcuts do the work:</p>
-      <ul>
-        <li><strong>Power rule:</strong> \(\dfrac{d}{dx}\,x^n = n\,x^{n-1}\)</li>
-        <li><strong>Constant:</strong> \(\dfrac{d}{dx}\,c = 0\)</li>
-        <li><strong>Constant multiple:</strong> \(\dfrac{d}{dx}\,[c\,f(x)] = c\,f'(x)\)</li>
-        <li><strong>Sum / difference:</strong> differentiate term by term</li>
-      </ul>
-    </section>
+        <section class="concept">
+          <h2>1. What is a derivative?</h2>
+          <p>The <strong>derivative</strong> \(f'(x)\) measures the <strong>instantaneous rate of change</strong> of \(f\) — the slope of the line tangent to the curve at a point. It is defined as a limit:</p>
+          <p>$$f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h}$$</p>
+          <p>That fraction is the slope between two nearby points; letting \(h \to 0\) slides them together into a single tangent point.</p>
+        </section>
 
-    <section class="concept">
-      <h2>3. Derivatives worth memorizing</h2>
-      <ul>
-        <li>\(\dfrac{d}{dx}\,e^x = e^x\)</li>
-        <li>\(\dfrac{d}{dx}\,\ln x = \dfrac{1}{x}\)</li>
-        <li>\(\dfrac{d}{dx}\,\sin x = \cos x\)</li>
-        <li>\(\dfrac{d}{dx}\,\cos x = -\sin x\)</li>
-      </ul>
-    </section>
+        <section class="concept">
+          <h2>2. The power rule and friends</h2>
+          <p>You rarely use the limit definition in practice — these shortcuts do the work:</p>
+          <ul>
+            <li><strong>Power rule:</strong> \(\dfrac{d}{dx}\,x^n = n\,x^{n-1}\)</li>
+            <li><strong>Constant:</strong> \(\dfrac{d}{dx}\,c = 0\)</li>
+            <li><strong>Constant multiple:</strong> \(\dfrac{d}{dx}\,[c\,f(x)] = c\,f'(x)\)</li>
+            <li><strong>Sum / difference:</strong> differentiate term by term</li>
+          </ul>
+        </section>
 
-    <section class="concept">
-      <h2>4. Product &amp; quotient rules</h2>
-      <p>When functions are multiplied or divided, you can’t just differentiate each piece:</p>
-      <p>$$\textbf{Product: }\;(fg)' = f'g + fg'$$</p>
-      <p>$$\textbf{Quotient: }\;\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$</p>
-    </section>
+        <section class="concept">
+          <h2>3. Derivatives worth memorizing</h2>
+          <ul>
+            <li>\(\dfrac{d}{dx}\,e^x = e^x\)</li>
+            <li>\(\dfrac{d}{dx}\,\ln x = \dfrac{1}{x}\)</li>
+            <li>\(\dfrac{d}{dx}\,\sin x = \cos x\)</li>
+            <li>\(\dfrac{d}{dx}\,\cos x = -\sin x\)</li>
+          </ul>
+        </section>
 
-    <h2 class="section-heading">Step-by-step solutions</h2>
-    <p class="intro">Click any example to expand the full solution.</p>
+        <section class="concept">
+          <h2>4. Product &amp; quotient rules</h2>
+          <p>When functions are multiplied or divided, you can't just differentiate each piece:</p>
+          <p>$$\textbf{Product: }\;(fg)' = f'g + fg'$$</p>
+          <p>$$\textbf{Quotient: }\;\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$</p>
+        </section>
 
-    <details class="solution">
-      <summary>Example 1 — Derivative from the limit definition: \(f(x) = x^2\)</summary>
-      <ol class="steps">
-        <li>Set up the definition: \(f'(x) = \lim_{h \to 0}\dfrac{(x+h)^2 - x^2}{h}\).</li>
-        <li>Expand the top: \((x+h)^2 - x^2 = x^2 + 2xh + h^2 - x^2 = 2xh + h^2\).</li>
-        <li>Divide by \(h\): \(\dfrac{2xh + h^2}{h} = 2x + h\).</li>
-        <li>Let \(h \to 0\): \(2x + 0\).</li>
-        <li>Answer: \(\;\boxed{f'(x) = 2x}\) — which matches the power rule.</li>
-      </ol>
-    </details>
+        <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
+        <p class="intro">Click any example to expand the full solution.</p>
 
-    <details class="solution">
-      <summary>Example 2 — Power rule: \(\dfrac{d}{dx}\,(3x^4 - 5x^2 + 7)\)</summary>
-      <ol class="steps">
-        <li>Differentiate term by term.</li>
-        <li>\(3x^4 \to 3 \cdot 4x^3 = 12x^3\).</li>
-        <li>\(-5x^2 \to -5 \cdot 2x = -10x\).</li>
-        <li>\(7 \to 0\) (constant).</li>
-        <li>Answer: \(\;\boxed{12x^3 - 10x}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 1 — Derivative from the limit definition: \(f(x) = x^2\)</span></summary>
+          <ol class="steps">
+            <li>Set up the definition: \(f'(x) = \lim_{h \to 0}\dfrac{(x+h)^2 - x^2}{h}\).</li>
+            <li>Expand the top: \((x+h)^2 - x^2 = x^2 + 2xh + h^2 - x^2 = 2xh + h^2\).</li>
+            <li>Divide by \(h\): \(\dfrac{2xh + h^2}{h} = 2x + h\).</li>
+            <li>Let \(h \to 0\): \(2x + 0\).</li>
+            <li>Answer: \(\;\boxed{f'(x) = 2x}\) — which matches the power rule.</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 3 — Product rule: \(\dfrac{d}{dx}\,(x^2 \sin x)\)</summary>
-      <ol class="steps">
-        <li>Let \(f = x^2\) and \(g = \sin x\), so \(f' = 2x\) and \(g' = \cos x\).</li>
-        <li>Apply \((fg)' = f'g + fg'\): \((2x)(\sin x) + (x^2)(\cos x)\).</li>
-        <li>Answer: \(\;\boxed{2x\sin x + x^2\cos x}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 2 — Power rule: \(\dfrac{d}{dx}\,(3x^4 - 5x^2 + 7)\)</span></summary>
+          <ol class="steps">
+            <li>Differentiate term by term.</li>
+            <li>\(3x^4 \to 3 \cdot 4x^3 = 12x^3\).</li>
+            <li>\(-5x^2 \to -5 \cdot 2x = -10x\).</li>
+            <li>\(7 \to 0\) (constant).</li>
+            <li>Answer: \(\;\boxed{12x^3 - 10x}\)</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 4 — Quotient rule: \(\dfrac{d}{dx}\,\dfrac{x^2}{x+1}\)</summary>
-      <ol class="steps">
-        <li>Let \(f = x^2\) (\(f' = 2x\)) and \(g = x+1\) (\(g' = 1\)).</li>
-        <li>Apply \(\dfrac{f'g - fg'}{g^2}\): \(\dfrac{(2x)(x+1) - (x^2)(1)}{(x+1)^2}\).</li>
-        <li>Expand the top: \(2x^2 + 2x - x^2 = x^2 + 2x\).</li>
-        <li>Answer: \(\;\boxed{\dfrac{x^2 + 2x}{(x+1)^2}}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 3 — Product rule: \(\dfrac{d}{dx}\,(x^2 \sin x)\)</span></summary>
+          <ol class="steps">
+            <li>Let \(f = x^2\) and \(g = \sin x\), so \(f' = 2x\) and \(g' = \cos x\).</li>
+            <li>Apply \((fg)' = f'g + fg'\): \((2x)(\sin x) + (x^2)(\cos x)\).</li>
+            <li>Answer: \(\;\boxed{2x\sin x + x^2\cos x}\)</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 5 — The derivative as a slope (visual): tangent to \(f(x) = x^2\) at \(x = 1\)</summary>
-      <ol class="steps">
-        <li>\(f'(x) = 2x\), so the slope at \(x = 1\) is \(f'(1) = 2\).</li>
-        <li>The point on the curve is \((1, f(1)) = (1, 1)\).</li>
-        <li>Tangent line: \(y - 1 = 2(x - 1)\), i.e. \(y = 2x - 1\).</li>
-      </ol>
-      <p class="note">The tangent line just grazes the parabola at \((1, 1)\) with slope 2 — that’s exactly what the derivative measures.</p>
-      <div id="graph-tangent" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 4 — Quotient rule: \(\dfrac{d}{dx}\,\dfrac{x^2}{x+1}\)</span></summary>
+          <ol class="steps">
+            <li>Let \(f = x^2\) (\(f' = 2x\)) and \(g = x+1\) (\(g' = 1\)).</li>
+            <li>Apply \(\dfrac{f'g - fg'}{g^2}\): \(\dfrac{(2x)(x+1) - (x^2)(1)}{(x+1)^2}\).</li>
+            <li>Expand the top: \(2x^2 + 2x - x^2 = x^2 + 2x\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{x^2 + 2x}{(x+1)^2}}\)</li>
+          </ol>
+        </details>
 
-    <nav class="unit-nav">
-      <a class="unit-nav-link" href="unit-1.html">&larr; Unit 1: Limits</a>
-      <a class="unit-nav-link" href="unit-3.html">Unit 3: Chain &amp; Implicit &rarr;</a>
-    </nav>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 5 — The derivative as a slope (visual): tangent to \(f(x) = x^2\) at \(x = 1\)</span></summary>
+          <ol class="steps">
+            <li>\(f'(x) = 2x\), so the slope at \(x = 1\) is \(f'(1) = 2\).</li>
+            <li>The point on the curve is \((1, f(1)) = (1, 1)\).</li>
+            <li>Tangent line: \(y - 1 = 2(x - 1)\), i.e. \(y = 2x - 1\).</li>
+          </ol>
+          <p class="note">The tangent line just grazes the parabola at \((1, 1)\) with slope 2 — that's exactly what the derivative measures.</p>
+          <div id="graph-tangent" class="example-graph"></div>
+        </details>
 
-  </main>
+        <nav class="unit-nav">
+          <a class="unit-nav-link" href="unit-1.html">← Unit 1: Limits</a>
+          <a class="unit-nav-link next" href="unit-3.html">Unit 3: Chain &amp; Implicit →</a>
+        </nav>
 
-  <footer class="site-footer">
-    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
-  </footer>
+        <footer class="site-footer">
+          <p><a class="back-link" href="../index.html">← Back to all units</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      if (!window.Desmos) return;
-      function initGraph(divId, build) {
-        var elt = document.getElementById(divId);
-        if (!elt) return;
-        var calc = Desmos.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        build(calc);
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0, iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
+      }
+      whenDesmos(function () {
+        var D = window.Desmos, elt = document.getElementById("graph-tangent");
+        if (!elt || elt._ds) return; elt._ds = true;
+        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+        calc.setMathBounds({ left: -3, right: 4, bottom: -2, top: 6 });
+        calc.setExpression({ id: "f", latex: "y=x^2", color: D.Colors.BLUE });
+        calc.setExpression({ id: "t", latex: "y=2x-1", color: D.Colors.RED });
+        calc.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
         var det = elt.closest("details");
         if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-      }
-      initGraph("graph-tangent", function (calc) {
-        calc.setMathBounds({ left: -3, right: 4, bottom: -2, top: 6 });
-        calc.setExpression({ id: "f", latex: "y=x^2", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "t", latex: "y=2x-1", color: Desmos.Colors.RED });
-        calc.setExpression({ id: "p", latex: "(1,1)", color: Desmos.Colors.RED, dragMode: Desmos.DragModes.NONE });
       });
     });
   </script>

@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 5: Analytical Applications of Differentiation — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -11,107 +14,115 @@
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>Unit 5: Analytical Applications of Differentiation</h1>
-    <a class="back-link" href="../index.html">&larr; All units</a>
-  </header>
+<body data-page="unit" data-unit="5" data-base="../" style="--pastel:#bbe3d0;--deep:#4c9e78">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <main class="container">
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← All units</a>
 
-    <section class="concept">
-      <h2>1. Increasing, decreasing &amp; critical points</h2>
-      <p><strong>Critical points</strong> are where \(f'(x) = 0\) or is undefined. Between them, the sign of \(f'\) tells you the direction:</p>
-      <ul>
-        <li>\(f'(x) > 0\) → \(f\) is <strong>increasing</strong></li>
-        <li>\(f'(x) < 0\) → \(f\) is <strong>decreasing</strong></li>
-      </ul>
-    </section>
+        <header class="page-header">
+          <div class="eyebrow"><span>UNIT 5</span><span class="weight-tag">15–18% of the exam</span></div>
+          <h1>Analytical Applications of Differentiation</h1>
+        </header>
 
-    <section class="concept">
-      <h2>2. First derivative test</h2>
-      <p>At a critical point, if \(f'\) switches from \(+\) to \(-\), it’s a <strong>local maximum</strong>; from \(-\) to \(+\), a <strong>local minimum</strong>.</p>
-    </section>
+        <section class="concept">
+          <h2>1. Increasing, decreasing &amp; critical points</h2>
+          <p><strong>Critical points</strong> are where \(f'(x) = 0\) or is undefined. Between them, the sign of \(f'\) tells you the direction:</p>
+          <ul>
+            <li>\(f'(x) > 0\) → \(f\) is <strong>increasing</strong></li>
+            <li>\(f'(x) < 0\) → \(f\) is <strong>decreasing</strong></li>
+          </ul>
+        </section>
 
-    <section class="concept">
-      <h2>3. Concavity &amp; the second derivative</h2>
-      <ul>
-        <li>\(f''(x) > 0\) → <strong>concave up</strong> (cup shape)</li>
-        <li>\(f''(x) < 0\) → <strong>concave down</strong> (cap shape)</li>
-      </ul>
-      <p>An <strong>inflection point</strong> is where concavity changes sign.</p>
-    </section>
+        <section class="concept">
+          <h2>2. First derivative test</h2>
+          <p>At a critical point, if \(f'\) switches from \(+\) to \(-\), it's a <strong>local maximum</strong>; from \(-\) to \(+\), a <strong>local minimum</strong>.</p>
+        </section>
 
-    <section class="concept">
-      <h2>4. Mean Value Theorem</h2>
-      <p>If \(f\) is continuous on \([a, b]\) and differentiable on \((a, b)\), then there is some \(c\) where the instantaneous rate equals the average rate:</p>
-      <p>$$f'(c) = \frac{f(b) - f(a)}{b - a}$$</p>
-    </section>
+        <section class="concept">
+          <h2>3. Concavity &amp; the second derivative</h2>
+          <ul>
+            <li>\(f''(x) > 0\) → <strong>concave up</strong> (cup shape)</li>
+            <li>\(f''(x) < 0\) → <strong>concave down</strong> (cap shape)</li>
+          </ul>
+          <p>An <strong>inflection point</strong> is where concavity changes sign.</p>
+        </section>
 
-    <h2 class="section-heading">Step-by-step solutions</h2>
-    <p class="intro">Click any example to expand the full solution.</p>
+        <section class="concept">
+          <h2>4. Mean Value Theorem</h2>
+          <p>If \(f\) is continuous on \([a, b]\) and differentiable on \((a, b)\), then there is some \(c\) where the instantaneous rate equals the average rate:</p>
+          <p>$$f'(c) = \frac{f(b) - f(a)}{b - a}$$</p>
+        </section>
 
-    <details class="solution">
-      <summary>Example 1 — Find local extrema of \(f(x) = x^3 - 3x\)</summary>
-      <ol class="steps">
-        <li>\(f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1)\).</li>
-        <li>Critical points where \(f' = 0\): \(x = -1\) and \(x = 1\).</li>
-        <li>Sign of \(f'\): positive for \(x < -1\), negative between, positive for \(x > 1\).</li>
-        <li>So \(f'\) goes \(+ \to -\) at \(x = -1\) (local max) and \(- \to +\) at \(x = 1\) (local min).</li>
-        <li>Answer: \(\;\boxed{\text{local max } (-1, 2),\ \text{local min } (1, -2)}\)</li>
-      </ol>
-      <p class="note">The crest on the left is the local max; the trough on the right is the local min.</p>
-      <div id="graph-extrema" class="example-graph"></div>
-    </details>
+        <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
+        <p class="intro">Click any example to expand the full solution.</p>
 
-    <details class="solution">
-      <summary>Example 2 — Concavity &amp; inflection of \(f(x) = x^3 - 3x\)</summary>
-      <ol class="steps">
-        <li>\(f''(x) = 6x\).</li>
-        <li>\(f'' < 0\) for \(x < 0\) (concave down); \(f'' > 0\) for \(x > 0\) (concave up).</li>
-        <li>Concavity changes at \(x = 0\).</li>
-        <li>Answer: \(\;\boxed{\text{inflection point at } (0, 0)}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 1 — Find local extrema of \(f(x) = x^3 - 3x\)</span></summary>
+          <ol class="steps">
+            <li>\(f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1)\).</li>
+            <li>Critical points where \(f' = 0\): \(x = -1\) and \(x = 1\).</li>
+            <li>Sign of \(f'\): positive for \(x < -1\), negative between, positive for \(x > 1\).</li>
+            <li>So \(f'\) goes \(+ \to -\) at \(x = -1\) (local max) and \(- \to +\) at \(x = 1\) (local min).</li>
+            <li>Answer: \(\;\boxed{\text{local max } (-1, 2),\ \text{local min } (1, -2)}\)</li>
+          </ol>
+          <p class="note">The crest on the left is the local max; the trough on the right is the local min.</p>
+          <div id="graph-extrema" class="example-graph"></div>
+        </details>
 
-    <details class="solution">
-      <summary>Example 3 — Optimization: largest rectangle with perimeter 20</summary>
-      <ol class="steps">
-        <li>Let width \(= x\). Perimeter \(20\) means the height is \(10 - x\).</li>
-        <li>Area: \(A(x) = x(10 - x) = 10x - x^2\).</li>
-        <li>Maximize: \(A'(x) = 10 - 2x = 0 \Rightarrow x = 5\).</li>
-        <li>Then height \(= 10 - 5 = 5\), so the rectangle is a \(5 \times 5\) square.</li>
-        <li>Answer: \(\;\boxed{\text{max area } = 25}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 2 — Concavity &amp; inflection of \(f(x) = x^3 - 3x\)</span></summary>
+          <ol class="steps">
+            <li>\(f''(x) = 6x\).</li>
+            <li>\(f'' < 0\) for \(x < 0\) (concave down); \(f'' > 0\) for \(x > 0\) (concave up).</li>
+            <li>Concavity changes at \(x = 0\).</li>
+            <li>Answer: \(\;\boxed{\text{inflection point at } (0, 0)}\)</li>
+          </ol>
+        </details>
 
-    <nav class="unit-nav">
-      <a class="unit-nav-link" href="unit-4.html">&larr; Unit 4: Applications</a>
-      <a class="unit-nav-link" href="unit-6.html">Unit 6: Integration &rarr;</a>
-    </nav>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 3 — Optimization: largest rectangle with perimeter 20</span></summary>
+          <ol class="steps">
+            <li>Let width \(= x\). Perimeter \(20\) means the height is \(10 - x\).</li>
+            <li>Area: \(A(x) = x(10 - x) = 10x - x^2\).</li>
+            <li>Maximize: \(A'(x) = 10 - 2x = 0 \Rightarrow x = 5\).</li>
+            <li>Then height \(= 10 - 5 = 5\), so the rectangle is a \(5 \times 5\) square.</li>
+            <li>Answer: \(\;\boxed{\text{max area } = 25}\)</li>
+          </ol>
+        </details>
 
-  </main>
+        <nav class="unit-nav">
+          <a class="unit-nav-link" href="unit-4.html">← Unit 4: Applications</a>
+          <a class="unit-nav-link next" href="unit-6.html">Unit 6: Integration →</a>
+        </nav>
 
-  <footer class="site-footer">
-    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
-  </footer>
+        <footer class="site-footer">
+          <p><a class="back-link" href="../index.html">← Back to all units</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      if (!window.Desmos) return;
-      function initGraph(divId, build) {
-        var elt = document.getElementById(divId);
-        if (!elt) return;
-        var calc = Desmos.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        build(calc);
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0, iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
+      }
+      whenDesmos(function () {
+        var D = window.Desmos, elt = document.getElementById("graph-extrema");
+        if (!elt || elt._ds) return; elt._ds = true;
+        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+        calc.setMathBounds({ left: -3, right: 3, bottom: -4, top: 4 });
+        calc.setExpression({ id: "f", latex: "y=x^3-3x", color: D.Colors.BLUE });
+        calc.setExpression({ id: "mx", latex: "(-1,2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        calc.setExpression({ id: "mn", latex: "(1,-2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
         var det = elt.closest("details");
         if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-      }
-      initGraph("graph-extrema", function (calc) {
-        calc.setMathBounds({ left: -3, right: 3, bottom: -4, top: 4 });
-        calc.setExpression({ id: "f", latex: "y=x^3-3x", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "mx", latex: "(-1,2)", color: Desmos.Colors.RED, dragMode: Desmos.DragModes.NONE });
-        calc.setExpression({ id: "mn", latex: "(1,-2)", color: Desmos.Colors.RED, dragMode: Desmos.DragModes.NONE });
       });
     });
   </script>

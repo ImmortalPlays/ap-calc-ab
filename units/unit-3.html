@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 3: Composite, Implicit &amp; Inverse Differentiation — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -11,99 +14,107 @@
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>Unit 3: Composite, Implicit &amp; Inverse Differentiation</h1>
-    <a class="back-link" href="../index.html">&larr; All units</a>
-  </header>
+<body data-page="unit" data-unit="3" data-base="../" style="--pastel:#f5e6a6;--deep:#bb9a34">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <main class="container">
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← All units</a>
 
-    <section class="concept">
-      <h2>1. The chain rule</h2>
-      <p>For a <strong>composite</strong> function \(f(g(x))\) — a function inside a function — differentiate the outside, then multiply by the derivative of the inside:</p>
-      <p>$$\frac{d}{dx}\,f(g(x)) = f'(g(x)) \cdot g'(x)$$</p>
-      <p>Slogan: <em>“derivative of the outside (leave the inside alone), times the derivative of the inside.”</em></p>
-    </section>
+        <header class="page-header">
+          <div class="eyebrow"><span>UNIT 3</span><span class="weight-tag">9–13% of the exam</span></div>
+          <h1>Composite, Implicit &amp; Inverse Differentiation</h1>
+        </header>
 
-    <section class="concept">
-      <h2>2. Implicit differentiation</h2>
-      <p>When \(y\) isn’t solved for (like \(x^2 + y^2 = 25\)), differentiate <strong>both sides with respect to \(x\)</strong>, treating \(y\) as a function of \(x\). Every time you differentiate a \(y\), tack on \(\dfrac{dy}{dx}\) (the chain rule at work). Then solve for \(\dfrac{dy}{dx}\).</p>
-    </section>
+        <section class="concept">
+          <h2>1. The chain rule</h2>
+          <p>For a <strong>composite</strong> function \(f(g(x))\) — a function inside a function — differentiate the outside, then multiply by the derivative of the inside:</p>
+          <p>$$\frac{d}{dx}\,f(g(x)) = f'(g(x)) \cdot g'(x)$$</p>
+          <p>Slogan: <em>"derivative of the outside (leave the inside alone), times the derivative of the inside."</em></p>
+        </section>
 
-    <section class="concept">
-      <h2>3. Inverse &amp; inverse-trig derivatives</h2>
-      <p>The derivative of an inverse function is the reciprocal of the original’s derivative:</p>
-      <p>$$\big(f^{-1}\big)'(x) = \frac{1}{f'\!\big(f^{-1}(x)\big)}$$</p>
-      <p>Two to memorize:</p>
-      <ul>
-        <li>\(\dfrac{d}{dx}\,\arcsin x = \dfrac{1}{\sqrt{1 - x^2}}\)</li>
-        <li>\(\dfrac{d}{dx}\,\arctan x = \dfrac{1}{1 + x^2}\)</li>
-      </ul>
-    </section>
+        <section class="concept">
+          <h2>2. Implicit differentiation</h2>
+          <p>When \(y\) isn't solved for (like \(x^2 + y^2 = 25\)), differentiate <strong>both sides with respect to \(x\)</strong>, treating \(y\) as a function of \(x\). Every time you differentiate a \(y\), tack on \(\dfrac{dy}{dx}\) (the chain rule at work). Then solve for \(\dfrac{dy}{dx}\).</p>
+        </section>
 
-    <h2 class="section-heading">Step-by-step solutions</h2>
-    <p class="intro">Click any example to expand the full solution.</p>
+        <section class="concept">
+          <h2>3. Inverse &amp; inverse-trig derivatives</h2>
+          <p>The derivative of an inverse function is the reciprocal of the original's derivative:</p>
+          <p>$$\big(f^{-1}\big)'(x) = \frac{1}{f'\!\big(f^{-1}(x)\big)}$$</p>
+          <p>Two to memorize:</p>
+          <ul>
+            <li>\(\dfrac{d}{dx}\,\arcsin x = \dfrac{1}{\sqrt{1 - x^2}}\)</li>
+            <li>\(\dfrac{d}{dx}\,\arctan x = \dfrac{1}{1 + x^2}\)</li>
+          </ul>
+        </section>
 
-    <details class="solution">
-      <summary>Example 1 — Chain rule: \(\dfrac{d}{dx}\,(3x^2 + 1)^5\)</summary>
-      <ol class="steps">
-        <li>Outside function: something\(^5\); inside: \(3x^2 + 1\).</li>
-        <li>Derivative of the outside (leave inside alone): \(5(3x^2 + 1)^4\).</li>
-        <li>Times the derivative of the inside \((3x^2 + 1)' = 6x\).</li>
-        <li>Answer: \(\;\boxed{30x(3x^2 + 1)^4}\)</li>
-      </ol>
-    </details>
+        <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
+        <p class="intro">Click any example to expand the full solution.</p>
 
-    <details class="solution">
-      <summary>Example 2 — Implicit differentiation: \(x^2 + y^2 = 25\)</summary>
-      <ol class="steps">
-        <li>Differentiate both sides with respect to \(x\): \(\dfrac{d}{dx}(x^2) + \dfrac{d}{dx}(y^2) = \dfrac{d}{dx}(25)\).</li>
-        <li>This gives \(2x + 2y\dfrac{dy}{dx} = 0\) (note the \(\dfrac{dy}{dx}\) on the \(y\) term).</li>
-        <li>Solve: \(2y\dfrac{dy}{dx} = -2x\).</li>
-        <li>Answer: \(\;\boxed{\dfrac{dy}{dx} = -\dfrac{x}{y}}\)</li>
-      </ol>
-      <p class="note">This is the circle of radius 5. At the point \((3, 4)\) the slope is \(-\tfrac{3}{4}\) — the tangent line shown.</p>
-      <div id="graph-implicit" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 1 — Chain rule: \(\dfrac{d}{dx}\,(3x^2 + 1)^5\)</span></summary>
+          <ol class="steps">
+            <li>Outside function: something\(^5\); inside: \(3x^2 + 1\).</li>
+            <li>Derivative of the outside (leave inside alone): \(5(3x^2 + 1)^4\).</li>
+            <li>Times the derivative of the inside \((3x^2 + 1)' = 6x\).</li>
+            <li>Answer: \(\;\boxed{30x(3x^2 + 1)^4}\)</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 3 — Inverse trig + chain rule: \(\dfrac{d}{dx}\,\arctan(x^2)\)</summary>
-      <ol class="steps">
-        <li>Outside: \(\arctan(\text{inside})\), whose derivative is \(\dfrac{1}{1 + (\text{inside})^2}\).</li>
-        <li>With inside \(= x^2\): \(\dfrac{1}{1 + (x^2)^2} = \dfrac{1}{1 + x^4}\).</li>
-        <li>Times the derivative of the inside \((x^2)' = 2x\).</li>
-        <li>Answer: \(\;\boxed{\dfrac{2x}{1 + x^4}}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 2 — Implicit differentiation: \(x^2 + y^2 = 25\)</span></summary>
+          <ol class="steps">
+            <li>Differentiate both sides with respect to \(x\): \(\dfrac{d}{dx}(x^2) + \dfrac{d}{dx}(y^2) = \dfrac{d}{dx}(25)\).</li>
+            <li>This gives \(2x + 2y\dfrac{dy}{dx} = 0\) (note the \(\dfrac{dy}{dx}\) on the \(y\) term).</li>
+            <li>Solve: \(2y\dfrac{dy}{dx} = -2x\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{dy}{dx} = -\dfrac{x}{y}}\)</li>
+          </ol>
+          <p class="note">This is the circle of radius 5. At the point \((3, 4)\) the slope is \(-\tfrac{3}{4}\) — the tangent line shown.</p>
+          <div id="graph-implicit" class="example-graph"></div>
+        </details>
 
-    <nav class="unit-nav">
-      <a class="unit-nav-link" href="unit-2.html">&larr; Unit 2: Differentiation</a>
-      <a class="unit-nav-link" href="unit-4.html">Unit 4: Applications &rarr;</a>
-    </nav>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 3 — Inverse trig + chain rule: \(\dfrac{d}{dx}\,\arctan(x^2)\)</span></summary>
+          <ol class="steps">
+            <li>Outside: \(\arctan(\text{inside})\), whose derivative is \(\dfrac{1}{1 + (\text{inside})^2}\).</li>
+            <li>With inside \(= x^2\): \(\dfrac{1}{1 + (x^2)^2} = \dfrac{1}{1 + x^4}\).</li>
+            <li>Times the derivative of the inside \((x^2)' = 2x\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{2x}{1 + x^4}}\)</li>
+          </ol>
+        </details>
 
-  </main>
+        <nav class="unit-nav">
+          <a class="unit-nav-link" href="unit-2.html">← Unit 2: Differentiation</a>
+          <a class="unit-nav-link next" href="unit-4.html">Unit 4: Applications →</a>
+        </nav>
 
-  <footer class="site-footer">
-    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
-  </footer>
+        <footer class="site-footer">
+          <p><a class="back-link" href="../index.html">← Back to all units</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      if (!window.Desmos) return;
-      function initGraph(divId, build) {
-        var elt = document.getElementById(divId);
-        if (!elt) return;
-        var calc = Desmos.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        build(calc);
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0, iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
+      }
+      whenDesmos(function () {
+        var D = window.Desmos, elt = document.getElementById("graph-implicit");
+        if (!elt || elt._ds) return; elt._ds = true;
+        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+        calc.setMathBounds({ left: -8, right: 8, bottom: -7, top: 7 });
+        calc.setExpression({ id: "c", latex: "x^2+y^2=25", color: D.Colors.BLUE });
+        calc.setExpression({ id: "t", latex: "y-4=-0.75(x-3)", color: D.Colors.RED });
+        calc.setExpression({ id: "p", latex: "(3,4)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
         var det = elt.closest("details");
         if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-      }
-      initGraph("graph-implicit", function (calc) {
-        calc.setMathBounds({ left: -8, right: 8, bottom: -7, top: 7 });
-        calc.setExpression({ id: "c", latex: "x^2+y^2=25", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "t", latex: "y-4=-0.75(x-3)", color: Desmos.Colors.RED });
-        calc.setExpression({ id: "p", latex: "(3,4)", color: Desmos.Colors.RED, dragMode: Desmos.DragModes.NONE });
       });
     });
   </script>

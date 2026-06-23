@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit 6: Integration &amp; Accumulation of Change — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -11,103 +14,111 @@
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <header class="site-header">
-    <h1>Unit 6: Integration &amp; Accumulation of Change</h1>
-    <a class="back-link" href="../index.html">&larr; All units</a>
-  </header>
+<body data-page="unit" data-unit="6" data-base="../" style="--pastel:#bcdcec;--deep:#4e8db8">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <main class="container">
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← All units</a>
 
-    <section class="concept">
-      <h2>1. Antiderivatives &amp; the indefinite integral</h2>
-      <p>Integration undoes differentiation. The <strong>power rule for integrals</strong>:</p>
-      <p>$$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)$$</p>
-      <p>The \(+C\) matters — any constant disappears when you differentiate, so we add it back.</p>
-    </section>
+        <header class="page-header">
+          <div class="eyebrow"><span>UNIT 6</span><span class="weight-tag">17–20% of the exam</span></div>
+          <h1>Integration &amp; Accumulation of Change</h1>
+        </header>
 
-    <section class="concept">
-      <h2>2. The definite integral as area</h2>
-      <p>\(\displaystyle\int_a^b f(x)\,dx\) is the <strong>signed area</strong> between the curve and the \(x\)-axis from \(a\) to \(b\). It’s the limit of <strong>Riemann sums</strong> — rectangles whose widths shrink to zero.</p>
-    </section>
+        <section class="concept">
+          <h2>1. Antiderivatives &amp; the indefinite integral</h2>
+          <p>Integration undoes differentiation. The <strong>power rule for integrals</strong>:</p>
+          <p>$$\int x^n\,dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1)$$</p>
+          <p>The \(+C\) matters — any constant disappears when you differentiate, so we add it back.</p>
+        </section>
 
-    <section class="concept">
-      <h2>3. Fundamental Theorem of Calculus</h2>
-      <p>It links derivatives and integrals:</p>
-      <p>$$\textbf{Part 1: }\;\frac{d}{dx}\int_a^x f(t)\,dt = f(x)$$</p>
-      <p>$$\textbf{Part 2: }\;\int_a^b f(x)\,dx = F(b) - F(a)$$</p>
-      <p>where \(F\) is any antiderivative of \(f\).</p>
-    </section>
+        <section class="concept">
+          <h2>2. The definite integral as area</h2>
+          <p>\(\displaystyle\int_a^b f(x)\,dx\) is the <strong>signed area</strong> between the curve and the \(x\)-axis from \(a\) to \(b\). It's the limit of <strong>Riemann sums</strong> — rectangles whose widths shrink to zero.</p>
+        </section>
 
-    <section class="concept">
-      <h2>4. \(u\)-substitution</h2>
-      <p>The reverse of the chain rule. Pick an inside function \(u\), compute \(du\), and rewrite the whole integral in terms of \(u\).</p>
-    </section>
+        <section class="concept">
+          <h2>3. Fundamental Theorem of Calculus</h2>
+          <p>It links derivatives and integrals:</p>
+          <p>$$\textbf{Part 1: }\;\frac{d}{dx}\int_a^x f(t)\,dt = f(x)$$</p>
+          <p>$$\textbf{Part 2: }\;\int_a^b f(x)\,dx = F(b) - F(a)$$</p>
+          <p>where \(F\) is any antiderivative of \(f\).</p>
+        </section>
 
-    <h2 class="section-heading">Step-by-step solutions</h2>
-    <p class="intro">Click any example to expand the full solution.</p>
+        <section class="concept">
+          <h2>4. \(u\)-substitution</h2>
+          <p>The reverse of the chain rule. Pick an inside function \(u\), compute \(du\), and rewrite the whole integral in terms of \(u\).</p>
+        </section>
 
-    <details class="solution">
-      <summary>Example 1 — Indefinite integral: \(\displaystyle\int (3x^2 + 2x)\,dx\)</summary>
-      <ol class="steps">
-        <li>Integrate term by term using the power rule.</li>
-        <li>\(\int 3x^2\,dx = 3 \cdot \dfrac{x^3}{3} = x^3\).</li>
-        <li>\(\int 2x\,dx = 2 \cdot \dfrac{x^2}{2} = x^2\).</li>
-        <li>Add the constant of integration.</li>
-        <li>Answer: \(\;\boxed{x^3 + x^2 + C}\)</li>
-      </ol>
-    </details>
+        <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
+        <p class="intro">Click any example to expand the full solution.</p>
 
-    <details class="solution">
-      <summary>Example 2 — Definite integral via FTC: \(\displaystyle\int_0^2 3x^2\,dx\)</summary>
-      <ol class="steps">
-        <li>Find an antiderivative: \(F(x) = x^3\).</li>
-        <li>Apply Part 2: \(F(2) - F(0)\).</li>
-        <li>\(= 2^3 - 0^3 = 8 - 0\).</li>
-        <li>Answer: \(\;\boxed{8}\) — the area under \(y = 3x^2\) from 0 to 2.</li>
-      </ol>
-      <p class="note">The shaded-looking region under \(y = 3x^2\) between the lines \(x = 0\) and \(x = 2\) has area 8.</p>
-      <div id="graph-area" class="example-graph"></div>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 1 — Indefinite integral: \(\displaystyle\int (3x^2 + 2x)\,dx\)</span></summary>
+          <ol class="steps">
+            <li>Integrate term by term using the power rule.</li>
+            <li>\(\int 3x^2\,dx = 3 \cdot \dfrac{x^3}{3} = x^3\).</li>
+            <li>\(\int 2x\,dx = 2 \cdot \dfrac{x^2}{2} = x^2\).</li>
+            <li>Add the constant of integration.</li>
+            <li>Answer: \(\;\boxed{x^3 + x^2 + C}\)</li>
+          </ol>
+        </details>
 
-    <details class="solution">
-      <summary>Example 3 — \(u\)-substitution: \(\displaystyle\int 2x\,(x^2 + 1)^3\,dx\)</summary>
-      <ol class="steps">
-        <li>Let \(u = x^2 + 1\). Then \(du = 2x\,dx\) — which is exactly the rest of the integrand.</li>
-        <li>Rewrite: \(\int u^3\,du\).</li>
-        <li>Integrate: \(\dfrac{u^4}{4} + C\).</li>
-        <li>Substitute back \(u = x^2 + 1\).</li>
-        <li>Answer: \(\;\boxed{\dfrac{(x^2 + 1)^4}{4} + C}\)</li>
-      </ol>
-    </details>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 2 — Definite integral via FTC: \(\displaystyle\int_0^2 3x^2\,dx\)</span></summary>
+          <ol class="steps">
+            <li>Find an antiderivative: \(F(x) = x^3\).</li>
+            <li>Apply Part 2: \(F(2) - F(0)\).</li>
+            <li>\(= 2^3 - 0^3 = 8 - 0\).</li>
+            <li>Answer: \(\;\boxed{8}\) — the area under \(y = 3x^2\) from 0 to 2.</li>
+          </ol>
+          <p class="note">The shaded-looking region under \(y = 3x^2\) between the lines \(x = 0\) and \(x = 2\) has area 8.</p>
+          <div id="graph-area" class="example-graph"></div>
+        </details>
 
-    <nav class="unit-nav">
-      <a class="unit-nav-link" href="unit-5.html">&larr; Unit 5: Analytical Apps</a>
-      <a class="unit-nav-link" href="unit-7.html">Unit 7: Differential Equations &rarr;</a>
-    </nav>
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>Example 3 — \(u\)-substitution: \(\displaystyle\int 2x\,(x^2 + 1)^3\,dx\)</span></summary>
+          <ol class="steps">
+            <li>Let \(u = x^2 + 1\). Then \(du = 2x\,dx\) — which is exactly the rest of the integrand.</li>
+            <li>Rewrite: \(\int u^3\,du\).</li>
+            <li>Integrate: \(\dfrac{u^4}{4} + C\).</li>
+            <li>Substitute back \(u = x^2 + 1\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{(x^2 + 1)^4}{4} + C}\)</li>
+          </ol>
+        </details>
 
-  </main>
+        <nav class="unit-nav">
+          <a class="unit-nav-link" href="unit-5.html">← Unit 5: Analytical Apps</a>
+          <a class="unit-nav-link next" href="unit-7.html">Unit 7: Differential Equations →</a>
+        </nav>
 
-  <footer class="site-footer">
-    <p><a class="back-link" href="../index.html">&larr; Back to all units</a></p>
-  </footer>
+        <footer class="site-footer">
+          <p><a class="back-link" href="../index.html">← Back to all units</a></p>
+        </footer>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      if (!window.Desmos) return;
-      function initGraph(divId, build) {
-        var elt = document.getElementById(divId);
-        if (!elt) return;
-        var calc = Desmos.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        build(calc);
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0, iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
+      }
+      whenDesmos(function () {
+        var D = window.Desmos, elt = document.getElementById("graph-area");
+        if (!elt || elt._ds) return; elt._ds = true;
+        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+        calc.setMathBounds({ left: -1, right: 4, bottom: -2, top: 14 });
+        calc.setExpression({ id: "f", latex: "y=3x^2", color: D.Colors.BLUE });
+        calc.setExpression({ id: "a", latex: "x=0", color: "#888888", lineStyle: D.Styles.DASHED });
+        calc.setExpression({ id: "b", latex: "x=2", color: "#888888", lineStyle: D.Styles.DASHED });
         var det = elt.closest("details");
         if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-      }
-      initGraph("graph-area", function (calc) {
-        calc.setMathBounds({ left: -1, right: 4, bottom: -2, top: 14 });
-        calc.setExpression({ id: "f", latex: "y=3x^2", color: Desmos.Colors.BLUE });
-        calc.setExpression({ id: "a", latex: "x=0", color: "#888888", lineStyle: Desmos.Styles.DASHED });
-        calc.setExpression({ id: "b", latex: "x=2", color: "#888888", lineStyle: Desmos.Styles.DASHED });
       });
     });
   </script>

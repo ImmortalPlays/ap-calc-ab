@@ -4,143 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AP Calculus AB — Study Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
 </head>
-<body>
+<body data-page="home" data-base="">
+  <div class="layout">
+    <aside id="sidebar"></aside>
 
-  <!-- Sticky navigation bar -->
-  <nav class="navbar">
-    <a class="nav-logo" href="index.html">AP Calc AB</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#units">Units</a>
-      <a href="#exam">Exam</a>
-      <a href="resources/cheat-sheet.html">Cheat Sheet</a>
-      <a href="resources/calculator.html">Calculator</a>
-      <a href="resources/faq.html">FAQ</a>
+    <div class="main">
+      <div class="container">
+
+        <!-- Hero -->
+        <header class="hero">
+          <div class="hero-texture"></div>
+          <div class="hero-inner">
+            <span class="pill">Free · Built for students</span>
+            <h1>AP Calculus AB</h1>
+            <p class="tagline">Every unit, every concept, every step — <span class="hl">made simple.</span></p>
+            <a class="btn-cta" href="units/unit-1.html"><span class="play">▶</span> Start with Unit 1</a>
+          </div>
+        </header>
+
+        <!-- About -->
+        <h2 class="section-heading"><span class="chip" style="background:#f3c97a"></span>Stuck on calc? You're in the right place.</h2>
+        <p class="prose">AP Calculus AB, broken down unit by unit — no dense textbook language, no skipped steps. Every concept is explained simply, and every problem is worked out <strong>one line at a time</strong> so you actually see <em>how</em> to get the answer.</p>
+        <p class="prose last">Free, fast, and made for students — whether you're cramming the night before or learning it for the first time.</p>
+
+        <!-- How to use -->
+        <h2 class="section-heading"><span class="chip" style="background:#bbe3d0"></span>How to use this site</h2>
+        <div class="how-grid">
+          <div class="how-card">
+            <div class="badge" style="background:#fbe0db;color:#cf7d72">1</div>
+            <h3>Pick a unit</h3>
+            <p>Choose any unit from the sidebar on the left.</p>
+          </div>
+          <div class="how-card">
+            <div class="badge" style="background:#cfe3b0;color:#7c9c4e">2</div>
+            <h3>Read the concepts</h3>
+            <p>Short, plain-English explanations of each idea.</p>
+          </div>
+          <div class="how-card">
+            <div class="badge" style="background:#c6cdf0;color:#6a73c4">3</div>
+            <h3>Follow an example</h3>
+            <p>Open a worked solution and follow it step by step.</p>
+          </div>
+        </div>
+
+        <!-- Exam at a glance -->
+        <h2 class="section-heading"><span class="chip" style="background:#bcdcec"></span>The exam at a glance</h2>
+        <div class="exam-grid">
+          <div class="exam-card top-sky">
+            <div class="eyebrow" style="color:#4e8db8">SECTION I</div>
+            <h3>Multiple Choice</h3>
+            <div class="line">45 questions · 50% of score</div>
+            <div class="line sub">Part A: no calculator · Part B: calculator</div>
+          </div>
+          <div class="exam-card top-peri">
+            <div class="eyebrow" style="color:#6a73c4">SECTION II</div>
+            <h3>Free Response</h3>
+            <div class="line">6 questions · 50% of score</div>
+            <div class="line sub">Part A: calculator · Part B: no calculator</div>
+          </div>
+        </div>
+        <p class="note-line">The whole exam runs about <strong>3 hours 15 minutes</strong> and is held in early-to-mid May.</p>
+
+        <!-- The 8 units -->
+        <h2 class="section-heading tight"><span class="chip" style="background:#e2c9ec"></span>The 8 units</h2>
+        <p class="intro">The percentage is how much of the exam each unit covers — spend your time accordingly.</p>
+        <div class="unit-grid">
+          <a class="unit-card" href="units/unit-1.html" style="--pastel:#f7c9c2;--deep:#cf7d72">
+            <span class="weight-pill">10–12%</span><span class="eyebrow">UNIT 1</span>
+            <span class="title">Limits &amp; Continuity</span>
+          </a>
+          <a class="unit-card" href="units/unit-2.html" style="--pastel:#f8d9b8;--deep:#cf9450">
+            <span class="weight-pill">10–12%</span><span class="eyebrow">UNIT 2</span>
+            <span class="title">Differentiation: Definition &amp; Basic Rules</span>
+          </a>
+          <a class="unit-card" href="units/unit-3.html" style="--pastel:#f5e6a6;--deep:#bb9a34">
+            <span class="weight-pill">9–13%</span><span class="eyebrow">UNIT 3</span>
+            <span class="title">Composite, Implicit &amp; Inverse Differentiation</span>
+          </a>
+          <a class="unit-card" href="units/unit-4.html" style="--pastel:#cfe3b0;--deep:#7c9c4e">
+            <span class="weight-pill">10–15%</span><span class="eyebrow">UNIT 4</span>
+            <span class="title">Contextual Applications of Differentiation</span>
+          </a>
+          <a class="unit-card" href="units/unit-5.html" style="--pastel:#bbe3d0;--deep:#4c9e78">
+            <span class="weight-pill">15–18%</span><span class="eyebrow">UNIT 5</span>
+            <span class="title">Analytical Applications of Differentiation</span>
+          </a>
+          <a class="unit-card" href="units/unit-6.html" style="--pastel:#bcdcec;--deep:#4e8db8">
+            <span class="weight-pill">17–20%</span><span class="eyebrow">UNIT 6</span>
+            <span class="title">Integration &amp; Accumulation of Change</span>
+          </a>
+          <a class="unit-card" href="units/unit-7.html" style="--pastel:#c6cdf0;--deep:#6a73c4">
+            <span class="weight-pill">6–12%</span><span class="eyebrow">UNIT 7</span>
+            <span class="title">Differential Equations</span>
+          </a>
+          <a class="unit-card" href="units/unit-8.html" style="--pastel:#e2c9ec;--deep:#9d6cbb">
+            <span class="weight-pill">10–15%</span><span class="eyebrow">UNIT 8</span>
+            <span class="title">Applications of Integration</span>
+          </a>
+        </div>
+
+        <!-- Resources -->
+        <h2 class="section-heading"><span class="chip" style="background:#f7c9c2"></span>Resources</h2>
+        <div class="resource-grid">
+          <a class="res-card" href="resources/cheat-sheet.html">
+            <span class="title" style="color:#c99a3a">Cheat Sheet</span>
+            <span class="desc">All the key formulas in one place.</span>
+          </a>
+          <a class="res-card" href="resources/calculator.html">
+            <span class="title" style="color:#7c9c4e">Calculator Guide</span>
+            <span class="desc">When it's allowed &amp; how to use it.</span>
+          </a>
+          <a class="res-card" href="resources/faq.html">
+            <span class="title" style="color:#6a73c4">FAQ</span>
+            <span class="desc">Common questions about the exam.</span>
+          </a>
+        </div>
+
+        <footer class="site-footer">
+          <p class="footer-contact">
+            Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a>
+            &nbsp;·&nbsp;
+            <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a>
+          </p>
+          <p class="footer-credit">Made by David Manson · © 2026</p>
+        </footer>
+
+      </div>
     </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero" id="top">
-    <h1>AP Calculus AB</h1>
-    <p class="tagline">Every unit, every concept, every step &mdash; made simple.</p>
-    <a class="btn-primary" href="units/unit-1.html">&#9654; Start with Unit 1</a>
-  </header>
-
-  <main class="container">
-
-    <!-- About / the pitch -->
-    <section class="block" id="about">
-      <h2>Stuck on calc? You&rsquo;re in the right place.</h2>
-      <p>AP Calculus AB, broken down unit by unit &mdash; no dense textbook language, no skipped steps. Every concept is explained simply, and every problem is worked out <strong>one line at a time</strong> so you actually see <em>how</em> to get the answer.</p>
-      <p>Free, fast, and built for students &mdash; whether you&rsquo;re cramming the night before or learning it for the first time.</p>
-    </section>
-
-    <!-- How to use -->
-    <section class="block" id="how">
-      <h2>How to use this site</h2>
-      <ol class="how-steps">
-        <li><strong>Pick a unit</strong> from the list below.</li>
-        <li><strong>Read the concepts</strong> &mdash; short explanations of each idea.</li>
-        <li><strong>Open a worked example</strong> and follow the solution step by step.</li>
-      </ol>
-    </section>
-
-    <!-- Exam overview -->
-    <section class="block" id="exam">
-      <h2>The AP Exam at a glance</h2>
-      <p>The exam is about <strong>3 hours 15 minutes</strong> and has two equally weighted sections:</p>
-      <table class="exam-table">
-        <thead>
-          <tr><th>Section</th><th>Questions</th><th>Calculator?</th><th>Weight</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>I &ndash; Multiple Choice</td><td>45 questions</td><td>Part A: no &middot; Part B: yes</td><td>50%</td></tr>
-          <tr><td>II &ndash; Free Response</td><td>6 questions</td><td>Part A: yes &middot; Part B: no</td><td>50%</td></tr>
-        </tbody>
-      </table>
-      <p class="note">The exam is held in <strong>early-to-mid May</strong> &mdash; College Board sets the exact date each year.</p>
-    </section>
-
-    <!-- Units -->
-    <section class="block" id="units">
-      <h2>The 8 units</h2>
-      <p class="intro">The percentage on each card is how much of the exam that unit covers &mdash; spend your time accordingly.</p>
-      <div class="unit-grid">
-        <a class="unit-card" href="units/unit-1.html">
-          <span class="weight">10&ndash;12%</span>
-          <span class="unit-number">Unit 1</span>
-          <span class="unit-title">Limits &amp; Continuity</span>
-        </a>
-        <a class="unit-card" href="units/unit-2.html">
-          <span class="weight">10&ndash;12%</span>
-          <span class="unit-number">Unit 2</span>
-          <span class="unit-title">Differentiation: Definition &amp; Basic Rules</span>
-        </a>
-        <a class="unit-card" href="units/unit-3.html">
-          <span class="weight">9&ndash;13%</span>
-          <span class="unit-number">Unit 3</span>
-          <span class="unit-title">Composite, Implicit &amp; Inverse Differentiation</span>
-        </a>
-        <a class="unit-card" href="units/unit-4.html">
-          <span class="weight">10&ndash;15%</span>
-          <span class="unit-number">Unit 4</span>
-          <span class="unit-title">Contextual Applications of Differentiation</span>
-        </a>
-        <a class="unit-card" href="units/unit-5.html">
-          <span class="weight">15&ndash;18%</span>
-          <span class="unit-number">Unit 5</span>
-          <span class="unit-title">Analytical Applications of Differentiation</span>
-        </a>
-        <a class="unit-card" href="units/unit-6.html">
-          <span class="weight">17&ndash;20%</span>
-          <span class="unit-number">Unit 6</span>
-          <span class="unit-title">Integration &amp; Accumulation of Change</span>
-        </a>
-        <a class="unit-card" href="units/unit-7.html">
-          <span class="weight">6&ndash;12%</span>
-          <span class="unit-number">Unit 7</span>
-          <span class="unit-title">Differential Equations</span>
-        </a>
-        <a class="unit-card" href="units/unit-8.html">
-          <span class="weight">10&ndash;15%</span>
-          <span class="unit-number">Unit 8</span>
-          <span class="unit-title">Applications of Integration</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Resources quick links -->
-    <section class="block" id="resources">
-      <h2>Resources</h2>
-      <div class="quick-links">
-        <a class="quick-link" href="resources/cheat-sheet.html">
-          <span class="ql-title">Cheat Sheet</span>
-          <span class="ql-desc">All the key formulas in one place</span>
-        </a>
-        <a class="quick-link" href="resources/calculator.html">
-          <span class="ql-title">Calculator Guide</span>
-          <span class="ql-desc">When it&rsquo;s allowed &amp; how to use it</span>
-        </a>
-        <a class="quick-link" href="resources/faq.html">
-          <span class="ql-title">FAQ</span>
-          <span class="ql-desc">Common questions about the exam</span>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p class="footer-contact">
-      Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a>
-      &nbsp;&middot;&nbsp;
-      <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a>
-    </p>
-    <p class="footer-credit">Made by David Manson &middot; &copy; 2026</p>
-  </footer>
-
+  </div>
 </body>
 </html>

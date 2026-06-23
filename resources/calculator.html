@@ -4,33 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator Guide — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <nav class="navbar">
-    <a class="nav-logo" href="../index.html">AP Calc AB</a>
-    <div class="nav-links">
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#units">Units</a>
-      <a href="../index.html#exam">Exam</a>
-      <a href="cheat-sheet.html">Cheat Sheet</a>
-      <a href="calculator.html">Calculator</a>
-      <a href="faq.html">FAQ</a>
+<body data-page="calc" data-base="../" style="--deep:#5f7d36">
+  <div class="layout">
+    <aside id="sidebar"></aside>
+
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← Home</a>
+
+        <header class="page-header" style="background:#cfe3b0">
+          <div class="eyebrow" style="color:#5f7d36">RESOURCE</div>
+          <h1>Calculator Guide</h1>
+        </header>
+        <p class="page-intro">On the exam you switch between calculator and no-calculator sections. Here's exactly when it's allowed — and how to use it without losing points.</p>
+
+        <h2 class="section-heading sub"><span class="chip" style="background:#cfe3b0"></span>When can you use it?</h2>
+        <div class="must-grid">
+          <div class="when-card top-sage">
+            <div class="eyebrow" style="color:#7c9c4e">CALCULATOR ALLOWED</div>
+            <ul>
+              <li>Multiple Choice — <strong>Part B</strong></li>
+              <li>Free Response — <strong>Part A</strong></li>
+            </ul>
+          </div>
+          <div class="when-card top-tan">
+            <div class="eyebrow" style="color:#a99169">NO CALCULATOR</div>
+            <ul>
+              <li>Multiple Choice — <strong>Part A</strong></li>
+              <li>Free Response — <strong>Part B</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <h2 class="section-heading sub tight"><span class="chip" style="background:#bcdcec"></span>The 4 things it must do</h2>
+        <p class="intro">On calculator sections you're expected to do these four things — no intermediate work required.</p>
+        <div class="must-grid">
+          <div class="must-card">
+            <span class="badge" style="background:#fbe0db;color:#cf7d72">1</span>
+            <div><h3>Graph a function</h3><p>Plot in any viewing window you choose.</p></div>
+          </div>
+          <div class="must-card">
+            <span class="badge" style="background:#cfe3b0;color:#7c9c4e">2</span>
+            <div><h3>Solve equations</h3><p>Find zeros / where two graphs intersect.</p></div>
+          </div>
+          <div class="must-card">
+            <span class="badge" style="background:#bcdcec;color:#4e8db8">3</span>
+            <div><h3>Derivative at a point</h3><p>Evaluate \(f'(a)\) numerically.</p></div>
+          </div>
+          <div class="must-card">
+            <span class="badge" style="background:#c6cdf0;color:#6a73c4">4</span>
+            <div><h3>Definite integral</h3><p>Evaluate \(\int_a^b f(x)\,dx\) numerically.</p></div>
+          </div>
+        </div>
+
+        <h2 class="section-heading sub"><span class="chip" style="background:#bbe3d0"></span>Smart habits</h2>
+        <section class="concept left-sage">
+          <ul class="bullet-list">
+            <li>Keep <strong>full decimals</strong> in the calculator and round only the <strong>final</strong> answer — to 3 decimal places.</li>
+            <li>Always <strong>write the setup first</strong> (the integral, equation or derivative). Graders score the setup, not just the number.</li>
+            <li>Stay in <strong>radian mode</strong> unless a problem clearly uses degrees.</li>
+            <li>Label what you typed so your work reads clearly: e.g. "\(\int_0^4 v(t)\,dt = 12.5\)".</li>
+          </ul>
+        </section>
+
+        <h2 class="section-heading sub"><span class="chip" style="background:#f7c9c2"></span>Common mistakes</h2>
+        <section class="concept left-coral">
+          <ul class="bullet-list">
+            <li>Being in <strong>degree mode</strong> for a trig problem — answers come out wrong with no warning.</li>
+            <li><strong>Rounding too early</strong> and carrying the rounded number forward.</li>
+            <li>Writing only the final number on a free-response question with <strong>no setup</strong> shown.</li>
+          </ul>
+        </section>
+
+        <footer class="site-footer">
+          <p class="footer-contact">Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a> &nbsp;·&nbsp; <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a></p>
+          <p class="footer-credit">Made by David Manson · © 2026</p>
+        </footer>
+      </div>
     </div>
-  </nav>
-  <header class="site-header">
-    <h1>Calculator Guide</h1>
-    <a class="back-link" href="../index.html">&larr; Home</a>
-  </header>
-  <main class="container">
-    <section class="concept">
-      <h2>Coming soon</h2>
-      <p>A guide to when the calculator is allowed and the common steps for your graphing calculator will live here.</p>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <p class="footer-contact">Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a></p>
-    <p class="footer-credit">Made by David Manson &middot; &copy; 2026</p>
-  </footer>
+  </div>
 </body>
 </html>

@@ -4,33 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cheat Sheet — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/main.js"></script>
 </head>
-<body>
-  <nav class="navbar">
-    <a class="nav-logo" href="../index.html">AP Calc AB</a>
-    <div class="nav-links">
-      <a href="../index.html#about">About</a>
-      <a href="../index.html#units">Units</a>
-      <a href="../index.html#exam">Exam</a>
-      <a href="cheat-sheet.html">Cheat Sheet</a>
-      <a href="calculator.html">Calculator</a>
-      <a href="faq.html">FAQ</a>
+<body data-page="cheat" data-base="../" style="--deep:#bb8f2e">
+  <div class="layout">
+    <aside id="sidebar"></aside>
+
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← Home</a>
+
+        <header class="page-header" style="background:#f7e7c4">
+          <div class="eyebrow" style="color:#bb8f2e">QUICK REFERENCE</div>
+          <h1>Cheat Sheet</h1>
+        </header>
+        <p class="page-intro">The formulas you'll reach for most — limits, derivatives, integrals and the big theorems, all on one page.</p>
+
+        <div class="ref-grid">
+
+          <div class="formula-card" style="--accent:#f7c9c2;--accent-deep:#cf7d72">
+            <h2>Limits</h2>
+            <div class="formula-list">
+              <div>\(\displaystyle\lim_{x\to 0}\frac{\sin x}{x} = 1\)</div>
+              <div>\(\displaystyle\lim_{x\to 0}\frac{1-\cos x}{x} = 0\)</div>
+              <div>Indeterminate forms to fix: \(\frac{0}{0},\ \frac{\infty}{\infty}\)</div>
+              <div>Continuous at \(a\) if \(\displaystyle\lim_{x\to a} f(x) = f(a)\)</div>
+            </div>
+          </div>
+
+          <div class="formula-card" style="--accent:#cfe3b0;--accent-deep:#7c9c4e">
+            <h2>Derivative rules</h2>
+            <div class="formula-list">
+              <div>Power: \(\dfrac{d}{dx}\left[x^n\right] = n x^{n-1}\)</div>
+              <div>Product: \((fg)' = f'g + fg'\)</div>
+              <div>Quotient: \(\left(\dfrac{f}{g}\right)' = \dfrac{f'g - fg'}{g^2}\)</div>
+              <div>Chain: \(\dfrac{d}{dx} f(g(x)) = f'(g(x))\,g'(x)\)</div>
+            </div>
+          </div>
+
+          <div class="formula-card" style="--accent:#bcdcec;--accent-deep:#4e8db8">
+            <h2>Common derivatives</h2>
+            <div class="formula-list">
+              <div>\(\dfrac{d}{dx}\sin x = \cos x,\quad \dfrac{d}{dx}\cos x = -\sin x\)</div>
+              <div>\(\dfrac{d}{dx}\tan x = \sec^2 x\)</div>
+              <div>\(\dfrac{d}{dx} e^x = e^x,\quad \dfrac{d}{dx}\ln x = \dfrac{1}{x}\)</div>
+              <div>\(\dfrac{d}{dx}\arctan x = \dfrac{1}{1+x^2}\)</div>
+            </div>
+          </div>
+
+          <div class="formula-card" style="--accent:#c6cdf0;--accent-deep:#6a73c4">
+            <h2>Integral rules</h2>
+            <div class="formula-list">
+              <div>\(\displaystyle\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + C\quad(n\neq -1)\)</div>
+              <div>\(\displaystyle\int \dfrac{1}{x}\,dx = \ln|x| + C\)</div>
+              <div>\(\displaystyle\int e^x\,dx = e^x + C\)</div>
+              <div>\(\displaystyle\int \cos x\,dx = \sin x + C\)</div>
+            </div>
+          </div>
+
+          <div class="formula-card" style="--accent:#e2c9ec;--accent-deep:#9d6cbb">
+            <h2>The big theorems</h2>
+            <div class="formula-list">
+              <div><strong>FTC Part 1:</strong> \(\dfrac{d}{dx}\displaystyle\int_a^x f(t)\,dt = f(x)\)</div>
+              <div><strong>FTC Part 2:</strong> \(\displaystyle\int_a^b f(x)\,dx = F(b) - F(a)\)</div>
+              <div><strong>MVT:</strong> some \(c\) with \(f'(c) = \dfrac{f(b)-f(a)}{b-a}\)</div>
+            </div>
+          </div>
+
+          <div class="formula-card" style="--accent:#f7d9b8;--accent-deep:#cf9450">
+            <h2>Good to memorize</h2>
+            <div class="formula-list">
+              <div>Avg rate of change \(= \dfrac{f(b)-f(a)}{b-a}\)</div>
+              <div>Avg value \(= \dfrac{1}{b-a}\displaystyle\int_a^b f(x)\,dx\)</div>
+              <div>Position → velocity → acceleration by differentiating</div>
+              <div>\(\displaystyle\int_a^b f(x)\,dx\) = signed area under the curve</div>
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="site-footer">
+          <p class="footer-contact">Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a> &nbsp;·&nbsp; <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a></p>
+          <p class="footer-credit">Made by David Manson · © 2026</p>
+        </footer>
+      </div>
     </div>
-  </nav>
-  <header class="site-header">
-    <h1>Cheat Sheet</h1>
-    <a class="back-link" href="../index.html">&larr; Home</a>
-  </header>
-  <main class="container">
-    <section class="concept">
-      <h2>Coming soon</h2>
-      <p>A one-page reference of all the key formulas — limits, derivatives, and integrals — will live here.</p>
-    </section>
-  </main>
-  <footer class="site-footer">
-    <p class="footer-contact">Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a> &nbsp;&middot;&nbsp; <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a></p>
-    <p class="footer-credit">Made by David Manson &middot; &copy; 2026</p>
-  </footer>
+  </div>
 </body>
 </html>
