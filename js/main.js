@@ -29,64 +29,91 @@
 
   // ----- search index ------------------------------------------------------
 
+  // Every unit's concepts and worked examples, in page order. The concept
+  // index (c1, c2, …) is assigned to each unit page's ".concept h2" at load,
+  // and example <span> ids (x1, x2, …) already live in the markup — so these
+  // entries jump straight to the exact lesson via a #hash link.
+  var CONTENT = {
+    1: {
+      concepts: ["What is a limit?", "Estimating limits from tables & graphs", "One-sided limits & when a limit fails to exist", "The limit laws", "Evaluating limits algebraically", "Special trig limits & the Squeeze Theorem", "Infinite limits & limits at infinity", "Continuity at a point", "The Intermediate Value Theorem"],
+      examples: ["Direct substitution", "Estimating a limit from a table", "Factoring a 0/0 form", "Rationalizing a limit", "A complex fraction limit", "One-sided limits & a jump", "A limit that DNE (|x|/x)", "Squeeze Theorem", "The sin x / x limit", "Infinite limit", "Limit at infinity (rational)", "Limit at infinity with a root", "Checking continuity at a point", "Make a piecewise function continuous", "Intermediate Value Theorem"]
+    },
+    2: {
+      concepts: ["What is a derivative?", "Notation & the derivative as a function", "Differentiability vs. continuity", "The power rule & combinations", "Derivatives worth memorizing", "The product rule", "The quotient rule", "Higher-order derivatives", "Spotting a derivative in disguise"],
+      examples: ["Derivative from the limit definition (x²)", "Limit definition with a fraction (1/x)", "Power rule", "Rewrite roots & fractions first", "Product rule", "Quotient rule", "Deriving d/dx tan x", "Tangent line", "Where a derivative fails to exist (|x|)", "A limit that's secretly a derivative"]
+    },
+    3: {
+      concepts: ["The chain rule", "Chain rule with the common functions", "Nested chain rule", "Implicit differentiation", "Tangent lines on implicit curves", "Derivatives of inverse functions", "Inverse-trig derivatives", "Logarithmic differentiation & other bases"],
+      examples: ["Chain rule (3x²+1)⁵", "Chain rule with trig & exponentials", "Nested chain rule", "Implicit differentiation (x²+y²=25)", "Implicit with a product term", "Inverse trig + chain rule", "Derivative of an inverse at a point", "Inverses as reflections", "Logarithmic differentiation (xˣ)", "A different base (5ˣ)"]
+    },
+    4: {
+      concepts: ["Motion along a line", "Speeding up vs. slowing down", "Rates of change in context", "Related rates", "L'Hôpital's Rule", "Linear approximation", "Geometry formulas for related rates"],
+      examples: ["Motion (s = t³−6t²+9t)", "Speeding up or slowing down?", "Related rates: inflating balloon", "Related rates: sliding ladder", "L'Hôpital (0/0)", "L'Hôpital (∞/∞)", "Linear approximation of √4.1", "Related rates: draining cone"]
+    },
+    5: {
+      concepts: ["Increasing, decreasing & critical points", "First derivative test", "Concavity & the second derivative", "Inflection points", "Second derivative test", "Absolute extrema on a closed interval", "The Mean Value Theorem", "Curve sketching", "Reading f, f', f'' together"],
+      examples: ["Local extrema of x³−3x", "Concavity & inflection", "Second derivative test", "Absolute extrema on [0,3]", "Optimization: rectangle, perimeter 20", "Optimization: fencing against a wall", "Mean Value Theorem", "Reading a graph of f'"]
+    },
+    6: {
+      concepts: ["Antiderivatives & the indefinite integral", "Basic antiderivative rules", "Riemann sums", "The definite integral as signed area", "FTC Part 1 (accumulation)", "FTC Part 2 (evaluation)", "u-substitution", "Average value of a function"],
+      examples: ["Indefinite integral", "Antiderivatives with trig & eˣ", "Left Riemann sum from a table", "Definite integral via FTC", "Signed area", "FTC Part 1 with the chain rule", "u-substitution (indefinite)", "u-substitution (definite)", "Average value", "Trapezoidal estimate from a table"]
+    },
+    7: {
+      concepts: ["What is a differential equation?", "Slope fields", "Separable equations", "Initial value problems", "Exponential growth & decay", "Half-life & doubling", "Newton's Law of Cooling"],
+      examples: ["Verify a solution", "Separable equation (dy/dx = xy)", "Initial value problem", "Exponential growth", "Exponential decay", "Half-life", "Newton's cooling"]
+    },
+    8: {
+      concepts: ["Area under a curve", "Area between two curves (in x)", "Area integrating in y", "Volume by disks", "Volume by washers", "Volume by known cross-sections", "Average value", "Motion: displacement vs. distance"],
+      examples: ["Area between y=x and y=x²", "Area needing intersection points", "Average value", "Volume by disks", "Volume by washers", "Known cross-sections (squares)", "Displacement vs. total distance", "Cross-sections: equilateral triangles", "Integrating in y"]
+    }
+  };
+
   function buildIndex() {
     var idx = [];
+
+    // Units, with all their concepts and worked examples.
     UNITS.forEach(function (u) {
       idx.push({
         label: "Unit " + u.n + ": " + u.title, tag: "Unit · " + u.weight,
         dot: u.pastel, href: unitUrl(u.n), kw: u.title.toLowerCase()
       });
+      var c = CONTENT[u.n];
+      if (!c) return;
+      c.concepts.forEach(function (title, i) {
+        idx.push({
+          label: title, tag: "Unit " + u.n + " · Concept", dot: u.pastel,
+          href: unitUrl(u.n) + "#c" + (i + 1), kw: title.toLowerCase()
+        });
+      });
+      c.examples.forEach(function (title, i) {
+        idx.push({
+          label: title, tag: "Unit " + u.n + " · Example", dot: u.pastel,
+          href: unitUrl(u.n) + "#x" + (i + 1), kw: "example " + title.toLowerCase()
+        });
+      });
     });
-    var u1 = UNITS[0].pastel;
-    [
-      ["c1", "What is a limit?", "limit definition approaches"],
-      ["c2", "Estimating limits from tables & graphs", "estimate table graph numeric"],
-      ["c3", "One-sided limits & when a limit fails to exist", "one-sided left right dne does not exist jump"],
-      ["c4", "The limit laws", "limit laws sum product quotient algebra"],
-      ["c5", "Evaluating limits algebraically", "evaluate substitution factor rationalize indeterminate complex fraction"],
-      ["c6", "Special trig limits & the Squeeze Theorem", "sin x over x squeeze sandwich theorem trig"],
-      ["c7", "Infinite limits & limits at infinity", "infinity asymptote vertical horizontal end behavior"],
-      ["c8", "Continuity at a point", "continuity continuous discontinuity removable jump hole"],
-      ["c9", "The Intermediate Value Theorem", "ivt intermediate value theorem root exists"]
-    ].forEach(function (c) {
-      idx.push({ label: c[1], tag: "Unit 1 · Concept", dot: u1, href: unitUrl(1) + "#" + c[0], kw: c[2] });
+
+    // Cheat sheet — one entry per unit section + exam structure.
+    UNITS.forEach(function (u) {
+      idx.push({
+        label: "Cheat Sheet — Unit " + u.n + " formulas", tag: "Cheat Sheet",
+        dot: "#f3c97a", href: url("resources/cheat-sheet.html") + "#u" + u.n,
+        kw: "cheat sheet formulas reference " + u.title.toLowerCase()
+      });
     });
+    idx.push({ label: "Cheat Sheet — exam structure", tag: "Cheat Sheet", dot: "#f3c97a", href: url("resources/cheat-sheet.html") + "#exam", kw: "exam structure sections multiple choice free response timing" });
+
+    // Calculator guide.
     [
-      ["x1", "Direct substitution", "substitution polynomial direct"],
-      ["x2", "Estimating a limit from a table", "table estimate numeric"],
-      ["x3", "Factoring a 0/0 form", "factor factoring zero over zero indeterminate"],
-      ["x4", "Rationalizing a limit", "rationalize conjugate square root"],
-      ["x5", "A complex fraction limit", "complex fraction common denominator"],
-      ["x6", "One-sided limits & a jump", "jump piecewise one-sided discontinuity"],
-      ["x7", "A limit that DNE (|x|/x)", "absolute value dne does not exist"],
-      ["x8", "Squeeze Theorem", "squeeze sandwich oscillate cosine"],
-      ["x9", "The sin x / x limit", "sin x over x trig special limit"],
-      ["x10", "Infinite limit", "infinite vertical asymptote"],
-      ["x11", "Limit at infinity (rational)", "infinity end behavior horizontal asymptote rational"],
-      ["x12", "Limit at infinity with a root", "infinity square root horizontal asymptote"],
-      ["x13", "Checking continuity at a point", "continuity removable hole"],
-      ["x14", "Make a piecewise function continuous", "piecewise continuous solve constant"],
-      ["x15", "Intermediate Value Theorem", "ivt root exists sign change"]
-    ].forEach(function (e) {
-      idx.push({ label: "Example: " + e[1], tag: "Unit 1 · Worked example", dot: u1, href: unitUrl(1) + "#" + e[0], kw: e[2] });
-    });
-    [
-      ["Limits", "limit squeeze indeterminate continuity"],
-      ["Derivative rules", "derivative power rule product rule quotient rule chain rule"],
-      ["Common derivatives", "sin cos tan e^x ln natural log arctan trig"],
-      ["Integral rules", "integral antiderivative integration accumulation"],
-      ["The big theorems", "ftc fundamental theorem mvt mean value"],
-      ["Good to memorize", "average value rate of change position velocity"]
-    ].forEach(function (c) {
-      idx.push({ label: c[0], tag: "Cheat Sheet", dot: "#f3c97a", href: url("resources/cheat-sheet.html"), kw: c[1] });
-    });
-    [
-      ["Calculator policy", "calculator allowed sections when graphing policy no calculator"],
-      ["What your calculator must do", "graph zeros solve derivative integral numerical calculator"],
-      ["Calculator: smart habits & mistakes", "rounding radian mode setup decimals calculator tips"]
+      ["When can you use a calculator?", "calculator allowed sections policy no calculator parts"],
+      ["TI-84: know your keys", "ti-84 keys y= window zoom graph calc math menu"],
+      ["TI-84: graphing a function", "graph function ti-84 window zoom trace radian mode"],
+      ["TI-84: zeros, intersect, dy/dx, integrals", "zero intersect derivative dy dx definite integral fnint nderiv"]
     ].forEach(function (c) {
       idx.push({ label: c[0], tag: "Calculator Guide", dot: "#cfe3b0", href: url("resources/calculator.html"), kw: c[1] });
     });
+
+    // FAQ.
     [
       ["FAQ: What score do I need?", "score passing 3 4 5 credit college qualified"],
       ["FAQ: How is the exam scored?", "scoring composite multiple choice free response"],
@@ -97,10 +124,12 @@
     ].forEach(function (c) {
       idx.push({ label: c[0], tag: "FAQ", dot: "#c6cdf0", href: url("resources/faq.html"), kw: c[1] });
     });
+
+    // Practice.
     idx.push({ label: "Official College Board practice", tag: "Practice", dot: "#f7c9c2", href: url("resources/practice.html"), kw: "college board official released free response frq exam practice apclassroom" });
     UNITS.forEach(function (u) {
       idx.push({
-        label: "Practice — Unit " + u.n + ": " + u.title, tag: "Practice",
+        label: "Practice — Unit " + u.n, tag: "Practice",
         dot: u.pastel, href: url("resources/practice.html") + "#u" + u.n,
         kw: "practice problems questions exam " + u.title.toLowerCase()
       });
@@ -271,10 +300,21 @@
     }, 60);
   }
 
+  // Give each concept heading on a unit page a stable id (c1, c2, …) so
+  // search results can deep-link to a specific concept.
+  function tagConcepts() {
+    if (PAGE !== "unit") return;
+    var heads = document.querySelectorAll(".concept h2");
+    for (var i = 0; i < heads.length; i++) {
+      if (!heads[i].id) heads[i].id = "c" + (i + 1);
+    }
+  }
+
   // ----- boot --------------------------------------------------------------
 
   document.addEventListener("DOMContentLoaded", function () {
     buildSidebar();
+    tagConcepts();
     renderMath();
   });
   window.addEventListener("load", openTarget);
