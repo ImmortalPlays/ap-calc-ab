@@ -26,30 +26,59 @@
           <div class="eyebrow"><span>UNIT 7</span><span class="weight-tag">6–12% of the exam</span></div>
           <h1>Differential Equations</h1>
         </header>
+        <p class="page-intro">A differential equation describes how something <em>changes</em>; solving it recovers the function itself. On the AB exam this means slope fields, separable equations, and the exponential growth/decay model.</p>
 
+        <!-- ===================== CONCEPTS ===================== -->
         <section class="concept">
-          <h2>1. What is a differential equation?</h2>
-          <p>A <strong>differential equation</strong> is an equation involving a derivative, like \(\dfrac{dy}{dx} = xy\). A <strong>solution</strong> is a function \(y\) that makes it true. A <strong>slope field</strong> sketches the slope \(\dfrac{dy}{dx}\) at many points so you can see the shape of solutions.</p>
+          <h2 id="c1">1. What is a differential equation?</h2>
+          <p>A <strong>differential equation</strong> involves a derivative, like \(\dfrac{dy}{dx} = xy\). A <strong>solution</strong> is a function \(y\) that makes it true. You can <strong>verify</strong> a proposed solution by differentiating it and checking that both sides match.</p>
         </section>
 
         <section class="concept">
-          <h2>2. Separable equations</h2>
+          <h2 id="c2">2. Slope fields</h2>
+          <p>A <strong>slope field</strong> draws a tiny line segment at each point with slope \(\dfrac{dy}{dx}\). It lets you <em>see</em> the family of solution curves without solving anything: a particular solution flows through the field following the segments, like a stream following arrows.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c3">3. Separable equations</h2>
           <p>If you can get all the \(y\)'s on one side and all the \(x\)'s on the other, <strong>integrate both sides</strong>:</p>
           <p>$$\frac{dy}{dx} = g(x)h(y) \;\Rightarrow\; \int \frac{1}{h(y)}\,dy = \int g(x)\,dx$$</p>
+          <p>Don't forget a single \(+C\) — and add it <em>before</em> solving for \(y\).</p>
         </section>
 
         <section class="concept">
-          <h2>3. Exponential growth &amp; decay</h2>
-          <p>The classic model: a quantity whose rate of change is proportional to itself.</p>
-          <p>$$\frac{dy}{dt} = ky \;\Rightarrow\; y = y_0\,e^{kt}$$</p>
-          <p>\(k > 0\) is growth; \(k < 0\) is decay; \(y_0\) is the starting amount.</p>
+          <h2 id="c4">4. Initial value problems</h2>
+          <p>An <strong>initial condition</strong> like \(y(0) = 100\) pins down the constant \(C\), turning the whole family of solutions into one <strong>particular solution</strong>. Solve generally first, then use the condition to find \(C\).</p>
         </section>
 
+        <section class="concept">
+          <h2 id="c5">5. Exponential growth &amp; decay</h2>
+          <p>The classic model: a quantity whose rate of change is proportional to itself.</p>
+          <p>$$\frac{dy}{dt} = ky \;\Rightarrow\; y = y_0\,e^{kt}$$</p>
+          <p>\(k > 0\) is growth; \(k < 0\) is decay; \(y_0\) is the starting amount. Recognize this form instantly — you can write the answer without re-deriving it.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c6">6. Half-life &amp; doubling</h2>
+          <p>For decay, the <strong>half-life</strong> is the time to drop to half. Since each half-life multiplies by \(\tfrac12\), the amount after \(n\) half-lives is \(y_0\left(\tfrac12\right)^n\). The same idea (with \(\times 2\)) gives <strong>doubling time</strong> for growth.</p>
+        </section>
+
+        <!-- ===================== EXAMPLES ===================== -->
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
-        <p class="intro">Click any example to expand the full solution.</p>
+        <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 1 — Separable equation: \(\dfrac{dy}{dx} = xy\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x1">Example 1 — Verify a solution: does \(y = e^{2x}\) solve \(y' = 2y\)?</span></summary>
+          <ol class="steps">
+            <li>Differentiate the candidate: \(y' = \dfrac{d}{dx}e^{2x} = 2e^{2x}\).</li>
+            <li>Compute the right side: \(2y = 2e^{2x}\).</li>
+            <li>Both sides equal \(2e^{2x}\).</li>
+            <li>Answer: \(\;\boxed{\text{yes, } y = e^{2x} \text{ is a solution}}\).</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Separable equation: \(\dfrac{dy}{dx} = xy\)</span></summary>
           <ol class="steps">
             <li>Separate variables: \(\dfrac{1}{y}\,dy = x\,dx\).</li>
             <li>Integrate both sides: \(\int \dfrac{1}{y}\,dy = \int x\,dx\).</li>
@@ -60,7 +89,18 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 2 — Exponential growth: \(\dfrac{dy}{dt} = 0.5y,\ y(0) = 100\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Initial value problem: \(\dfrac{dy}{dx} = \dfrac{x}{y},\ y(0) = 3\)</span></summary>
+          <ol class="steps">
+            <li>Separate: \(y\,dy = x\,dx\).</li>
+            <li>Integrate: \(\dfrac{y^2}{2} = \dfrac{x^2}{2} + C\), so \(y^2 = x^2 + C_1\).</li>
+            <li>Apply \(y(0) = 3\): \(3^2 = 0 + C_1 \Rightarrow C_1 = 9\).</li>
+            <li>So \(y^2 = x^2 + 9\); take the positive root (since \(y(0) = 3 > 0\)).</li>
+            <li>Answer: \(\;\boxed{y = \sqrt{x^2 + 9}}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — Exponential growth: \(\dfrac{dy}{dt} = 0.5y,\ y(0) = 100\)</span></summary>
           <ol class="steps">
             <li>This is the growth model with \(k = 0.5\), so \(y = y_0 e^{0.5t}\).</li>
             <li>Use the initial condition \(y(0) = 100\): \(100 = y_0 e^0 = y_0\).</li>
@@ -69,6 +109,28 @@
           </ol>
           <p class="note">The solution curve starts at \(100\) and grows faster and faster — the signature of exponential growth.</p>
           <div id="graph-growth" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — Exponential decay: \(\dfrac{dy}{dt} = -0.5y,\ y(0) = 100\)</span></summary>
+          <ol class="steps">
+            <li>Same model, now with \(k = -0.5\): \(y = y_0 e^{-0.5t}\).</li>
+            <li>Initial condition \(y(0) = 100\) gives \(y_0 = 100\).</li>
+            <li>Answer: \(\;\boxed{y = 100\,e^{-0.5t}}\)</li>
+            <li>The quantity decays toward \(0\) but never quite reaches it.</li>
+          </ol>
+          <p class="note">Mirror image of growth: it starts at \(100\) and eases down toward the \(t\)-axis.</p>
+          <div id="graph-decay" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — Half-life: a sample starts at 100 mg with a 10-year half-life</span></summary>
+          <ol class="steps">
+            <li>Each half-life multiplies the amount by \(\tfrac12\): \(y = 100\left(\tfrac12\right)^{t/10}\).</li>
+            <li>After \(10\) years (one half-life): \(100 \cdot \tfrac12 = 50\) mg.</li>
+            <li>After \(20\) years (two half-lives): \(50 \cdot \tfrac12 = 25\) mg.</li>
+            <li>Answer: \(\;\boxed{25 \text{ mg remain after 20 years}}\).</li>
+          </ol>
         </details>
 
         <nav class="unit-nav">
@@ -92,14 +154,25 @@
         }, 200);
       }
       whenDesmos(function () {
-        var D = window.Desmos, elt = document.getElementById("graph-growth");
-        if (!elt || elt._ds) return; elt._ds = true;
-        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        calc.setMathBounds({ left: -1, right: 8, bottom: -50, top: 1200 });
-        calc.setExpression({ id: "f", latex: "y=100e^{0.5x}", color: D.Colors.BLUE });
-        calc.setExpression({ id: "p", latex: "(0,100)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        var det = elt.closest("details");
-        if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return; elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-growth", function (c) {
+          c.setMathBounds({ left: -1, right: 8, bottom: -50, top: 1200 });
+          c.setExpression({ id: "f", latex: "y=100e^{0.5x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "p", latex: "(0,100)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-decay", function (c) {
+          c.setMathBounds({ left: -1, right: 10, bottom: -10, top: 120 });
+          c.setExpression({ id: "f", latex: "y=100e^{-0.5x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "p", latex: "(0,100)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
       });
     });
   </script>

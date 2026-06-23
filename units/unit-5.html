@@ -26,10 +26,12 @@
           <div class="eyebrow"><span>UNIT 5</span><span class="weight-tag">15–18% of the exam</span></div>
           <h1>Analytical Applications of Differentiation</h1>
         </header>
+        <p class="page-intro">This is the biggest unit on the exam. Derivatives tell you the <em>shape</em> of a graph — where it rises, falls, curves, peaks, and bottoms out — which powers optimization and the major theorems.</p>
 
+        <!-- ===================== CONCEPTS ===================== -->
         <section class="concept">
-          <h2>1. Increasing, decreasing &amp; critical points</h2>
-          <p><strong>Critical points</strong> are where \(f'(x) = 0\) or is undefined. Between them, the sign of \(f'\) tells you the direction:</p>
+          <h2 id="c1">1. Increasing, decreasing &amp; critical points</h2>
+          <p><strong>Critical points</strong> are where \(f'(x) = 0\) or is undefined — the only places a graph can change direction. Between them, the sign of \(f'\) tells the direction:</p>
           <ul>
             <li>\(f'(x) > 0\) → \(f\) is <strong>increasing</strong></li>
             <li>\(f'(x) < 0\) → \(f\) is <strong>decreasing</strong></li>
@@ -37,32 +39,64 @@
         </section>
 
         <section class="concept">
-          <h2>2. First derivative test</h2>
-          <p>At a critical point, if \(f'\) switches from \(+\) to \(-\), it's a <strong>local maximum</strong>; from \(-\) to \(+\), a <strong>local minimum</strong>.</p>
-        </section>
-
-        <section class="concept">
-          <h2>3. Concavity &amp; the second derivative</h2>
+          <h2 id="c2">2. First derivative test</h2>
+          <p>At a critical point, look at how \(f'\) <em>changes sign</em>:</p>
           <ul>
-            <li>\(f''(x) > 0\) → <strong>concave up</strong> (cup shape)</li>
-            <li>\(f''(x) < 0\) → <strong>concave down</strong> (cap shape)</li>
+            <li>\(+ \to -\): a <strong>local maximum</strong>.</li>
+            <li>\(- \to +\): a <strong>local minimum</strong>.</li>
+            <li>No sign change: neither (just a flat spot).</li>
           </ul>
-          <p>An <strong>inflection point</strong> is where concavity changes sign.</p>
         </section>
 
         <section class="concept">
-          <h2>4. Mean Value Theorem</h2>
+          <h2 id="c3">3. Concavity &amp; the second derivative</h2>
+          <ul>
+            <li>\(f''(x) > 0\) → <strong>concave up</strong> (cup shape ∪)</li>
+            <li>\(f''(x) < 0\) → <strong>concave down</strong> (cap shape ∩)</li>
+          </ul>
+          <p>Concavity is about whether the slope is itself increasing or decreasing.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c4">4. Inflection points</h2>
+          <p>An <strong>inflection point</strong> is where concavity <em>changes sign</em> — \(f''\) goes from \(+\) to \(-\) or vice versa. Candidates are where \(f''(x) = 0\) or is undefined, but you must confirm the sign actually flips.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c5">5. Second derivative test</h2>
+          <p>A shortcut for classifying a critical point \(c\) (where \(f'(c) = 0\)):</p>
+          <ul>
+            <li>\(f''(c) > 0\) → concave up → <strong>local min</strong>.</li>
+            <li>\(f''(c) < 0\) → concave down → <strong>local max</strong>.</li>
+            <li>\(f''(c) = 0\) → inconclusive; fall back on the first derivative test.</li>
+          </ul>
+        </section>
+
+        <section class="concept">
+          <h2 id="c6">6. Absolute extrema on a closed interval</h2>
+          <p>To find the <strong>global</strong> max/min of a continuous \(f\) on \([a, b]\), use the <strong>Candidates Test</strong>: evaluate \(f\) at every critical point inside the interval <em>and</em> at both endpoints, then pick the largest and smallest \(y\)-values.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c7">7. The Mean Value Theorem</h2>
           <p>If \(f\) is continuous on \([a, b]\) and differentiable on \((a, b)\), then there is some \(c\) where the instantaneous rate equals the average rate:</p>
           <p>$$f'(c) = \frac{f(b) - f(a)}{b - a}$$</p>
+          <p>Geometrically: somewhere the tangent line is <strong>parallel to the secant</strong> through the endpoints. (Rolle's Theorem is the special case where \(f(a) = f(b)\), forcing \(f'(c) = 0\).)</p>
         </section>
 
+        <section class="concept">
+          <h2 id="c8">8. Putting it together: curve sketching</h2>
+          <p>A full analysis combines everything: use \(f'\) for increasing/decreasing and local extrema, and \(f''\) for concavity and inflection points. Together they pin down the exact shape of the graph.</p>
+        </section>
+
+        <!-- ===================== EXAMPLES ===================== -->
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
-        <p class="intro">Click any example to expand the full solution.</p>
+        <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 1 — Find local extrema of \(f(x) = x^3 - 3x\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x1">Example 1 — Local extrema of \(f(x) = x^3 - 3x\)</span></summary>
           <ol class="steps">
-            <li>\(f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1)\).</li>
+            <li>\(f'(x) = 3x^2 - 3 = 3(x-1)(x+1)\).</li>
             <li>Critical points where \(f' = 0\): \(x = -1\) and \(x = 1\).</li>
             <li>Sign of \(f'\): positive for \(x < -1\), negative between, positive for \(x > 1\).</li>
             <li>So \(f'\) goes \(+ \to -\) at \(x = -1\) (local max) and \(- \to +\) at \(x = 1\) (local min).</li>
@@ -73,17 +107,38 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 2 — Concavity &amp; inflection of \(f(x) = x^3 - 3x\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Concavity &amp; inflection of \(f(x) = x^3 - 3x\)</span></summary>
           <ol class="steps">
             <li>\(f''(x) = 6x\).</li>
             <li>\(f'' < 0\) for \(x < 0\) (concave down); \(f'' > 0\) for \(x > 0\) (concave up).</li>
-            <li>Concavity changes at \(x = 0\).</li>
+            <li>Concavity changes at \(x = 0\), and \(f(0) = 0\).</li>
             <li>Answer: \(\;\boxed{\text{inflection point at } (0, 0)}\)</li>
           </ol>
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 3 — Optimization: largest rectangle with perimeter 20</span></summary>
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Second derivative test (same \(f\))</span></summary>
+          <ol class="steps">
+            <li>Critical points: \(x = -1\) and \(x = 1\); and \(f''(x) = 6x\).</li>
+            <li>At \(x = -1\): \(f''(-1) = -6 < 0\) → concave down → <strong>local max</strong>.</li>
+            <li>At \(x = 1\): \(f''(1) = 6 > 0\) → concave up → <strong>local min</strong>.</li>
+            <li>Answer: \(\;\boxed{\text{max at } x=-1,\ \text{min at } x=1}\) — matches the first derivative test.</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — Absolute extrema of \(f(x) = x^3 - 3x\) on \([0, 3]\)</span></summary>
+          <ol class="steps">
+            <li>Critical points in \([0,3]\): only \(x = 1\) (since \(x = -1\) is outside).</li>
+            <li>Evaluate the candidates — critical point and endpoints:</li>
+            <li>\(f(0) = 0\), &nbsp; \(f(1) = -2\), &nbsp; \(f(3) = 27 - 9 = 18\).</li>
+            <li>Biggest is \(18\), smallest is \(-2\).</li>
+            <li>Answer: \(\;\boxed{\text{abs max } 18 \text{ at } x=3,\ \text{abs min } -2 \text{ at } x=1}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — Optimization: largest rectangle with perimeter 20</span></summary>
           <ol class="steps">
             <li>Let width \(= x\). Perimeter \(20\) means the height is \(10 - x\).</li>
             <li>Area: \(A(x) = x(10 - x) = 10x - x^2\).</li>
@@ -91,6 +146,31 @@
             <li>Then height \(= 10 - 5 = 5\), so the rectangle is a \(5 \times 5\) square.</li>
             <li>Answer: \(\;\boxed{\text{max area } = 25}\)</li>
           </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — Optimization with a constraint: fencing against a wall</span></summary>
+          <p>You have \(100\) ft of fence to make a rectangular pen against a long wall (the wall is the fourth side, so it needs no fence). Maximize the area.</p>
+          <ol class="steps">
+            <li>Let the two sides perpendicular to the wall be \(y\) and the side parallel be \(x\). Fence used: \(x + 2y = 100\).</li>
+            <li>Solve the constraint: \(x = 100 - 2y\).</li>
+            <li>Area: \(A(y) = xy = (100 - 2y)y = 100y - 2y^2\).</li>
+            <li>Maximize: \(A'(y) = 100 - 4y = 0 \Rightarrow y = 25\), so \(x = 50\).</li>
+            <li>Answer: \(\;\boxed{\text{max area } = 50 \times 25 = 1250\ \text{ft}^2}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — Mean Value Theorem: \(f(x) = x^2\) on \([0, 2]\)</span></summary>
+          <ol class="steps">
+            <li>\(f\) is continuous and differentiable, so MVT applies.</li>
+            <li>Average rate (secant slope): \(\dfrac{f(2) - f(0)}{2 - 0} = \dfrac{4 - 0}{2} = 2\).</li>
+            <li>Set the instantaneous rate equal: \(f'(c) = 2c = 2\).</li>
+            <li>Solve: \(c = 1\) (and it's inside \((0, 2)\), as required).</li>
+            <li>Answer: \(\;\boxed{c = 1}\) — the tangent there is parallel to the secant.</li>
+          </ol>
+          <p class="note">The dashed secant through \((0,0)\) and \((2,4)\) has slope 2; the tangent at \((1,1)\) has the same slope.</p>
+          <div id="graph-mvt" class="example-graph"></div>
         </details>
 
         <nav class="unit-nav">
@@ -114,15 +194,28 @@
         }, 200);
       }
       whenDesmos(function () {
-        var D = window.Desmos, elt = document.getElementById("graph-extrema");
-        if (!elt || elt._ds) return; elt._ds = true;
-        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        calc.setMathBounds({ left: -3, right: 3, bottom: -4, top: 4 });
-        calc.setExpression({ id: "f", latex: "y=x^3-3x", color: D.Colors.BLUE });
-        calc.setExpression({ id: "mx", latex: "(-1,2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        calc.setExpression({ id: "mn", latex: "(1,-2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        var det = elt.closest("details");
-        if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return; elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-extrema", function (c) {
+          c.setMathBounds({ left: -3, right: 3, bottom: -4, top: 4 });
+          c.setExpression({ id: "f", latex: "y=x^3-3x", color: D.Colors.BLUE });
+          c.setExpression({ id: "mx", latex: "(-1,2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "mn", latex: "(1,-2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-mvt", function (c) {
+          c.setMathBounds({ left: -0.5, right: 2.5, bottom: -1.5, top: 4.5 });
+          c.setExpression({ id: "f", latex: "y=x^2", color: D.Colors.BLUE });
+          c.setExpression({ id: "sec", latex: "y=2x", color: "#888888", lineStyle: D.Styles.DASHED });
+          c.setExpression({ id: "tan", latex: "y=2x-1", color: D.Colors.RED });
+          c.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
       });
     });
   </script>

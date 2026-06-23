@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
   <script defer src="../js/main.js"></script>
 </head>
@@ -25,46 +26,84 @@
           <div class="eyebrow"><span>UNIT 4</span><span class="weight-tag">10–15% of the exam</span></div>
           <h1>Contextual Applications of Differentiation</h1>
         </header>
+        <p class="page-intro">This unit is where derivatives meet the real world: motion, related rates, and approximation. The key skill is reading a word problem and knowing which derivative tool it's asking for.</p>
 
+        <!-- ===================== CONCEPTS ===================== -->
         <section class="concept">
-          <h2>1. Motion along a line</h2>
+          <h2 id="c1">1. Motion along a line</h2>
           <p>If \(s(t)\) is position, then velocity and acceleration are its derivatives:</p>
           <p>$$v(t) = s'(t), \qquad a(t) = v'(t) = s''(t)$$</p>
-          <p><strong>Speed</strong> is \(|v(t)|\). The object is <strong>at rest</strong> when \(v(t) = 0\), and <strong>speeding up</strong> when \(v\) and \(a\) have the same sign.</p>
+          <p><strong>Speed</strong> is \(|v(t)|\). The object is <strong>at rest</strong> when \(v(t) = 0\), moving <strong>right/up</strong> when \(v > 0\) and <strong>left/down</strong> when \(v < 0\).</p>
         </section>
 
         <section class="concept">
-          <h2>2. Related rates</h2>
-          <p>When several quantities change together over time, differentiate the equation relating them <strong>with respect to \(t\)</strong>, then plug in the known rates. Steps: write the relationship, differentiate implicitly in \(t\), substitute, solve for the unknown rate.</p>
+          <h2 id="c2">2. Speeding up vs. slowing down</h2>
+          <p>This trips everyone up. Compare the <strong>signs</strong> of velocity and acceleration:</p>
+          <ul>
+            <li>Same sign (both \(+\) or both \(-\)) → <strong>speeding up</strong>.</li>
+            <li>Opposite signs → <strong>slowing down</strong>.</li>
+          </ul>
+          <p>It's not about whether \(a\) is positive — it's about whether \(v\) and \(a\) agree.</p>
         </section>
 
         <section class="concept">
-          <h2>3. L'Hôpital's Rule</h2>
+          <h2 id="c3">3. Rates of change in context</h2>
+          <p>A derivative is a rate, and on the AP exam <strong>units and meaning matter</strong>. If \(V(t)\) is volume in liters and \(t\) is in minutes, then \(V'(5) = 3\) means "the volume is increasing at \(3\) liters per minute when \(t = 5\)." Always state a number, a unit, and a time.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c4">4. Related rates</h2>
+          <p>When several quantities change together over time, differentiate the equation relating them <strong>with respect to \(t\)</strong>, then plug in the known rates. The recipe:</p>
+          <ol>
+            <li>Write an equation relating the quantities.</li>
+            <li>Differentiate <strong>both sides with respect to \(t\)</strong> (chain rule — every variable gets a \(\frac{d}{dt}\)).</li>
+            <li>Substitute the known values and rates.</li>
+            <li>Solve for the unknown rate.</li>
+          </ol>
+        </section>
+
+        <section class="concept">
+          <h2 id="c5">5. L'Hôpital's Rule</h2>
           <p>If a limit gives the indeterminate form \(\dfrac{0}{0}\) or \(\dfrac{\infty}{\infty}\), you may differentiate top and bottom <em>separately</em>:</p>
           <p>$$\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}$$</p>
+          <p>Only for those two indeterminate forms — check the form first.</p>
         </section>
 
         <section class="concept">
-          <h2>4. Linear approximation</h2>
+          <h2 id="c6">6. Linear approximation</h2>
           <p>Near \(x = a\), the tangent line is a good stand-in for the curve:</p>
           <p>$$L(x) = f(a) + f'(a)(x - a)$$</p>
+          <p>It's how you estimate awkward values (like \(\sqrt{4.1}\)) by hand using a nearby nice point.</p>
         </section>
 
+        <!-- ===================== EXAMPLES ===================== -->
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
-        <p class="intro">Click any example to expand the full solution.</p>
+        <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 1 — Motion: \(s(t) = t^3 - 6t^2 + 9t\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x1">Example 1 — Motion: \(s(t) = t^3 - 6t^2 + 9t\)</span></summary>
           <ol class="steps">
             <li>Velocity: \(v(t) = s'(t) = 3t^2 - 12t + 9\).</li>
             <li>Acceleration: \(a(t) = v'(t) = 6t - 12\).</li>
             <li>At rest when \(v(t) = 0\): \(3t^2 - 12t + 9 = 3(t-1)(t-3) = 0\).</li>
             <li>Answer: the object is at rest at \(\;\boxed{t = 1 \text{ and } t = 3}\).</li>
           </ol>
+          <p class="note">The position graph levels off (slope 0) exactly at \(t = 1\) and \(t = 3\) — its local max and local min.</p>
+          <div id="graph-motion" class="example-graph"></div>
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 2 — Related rates: an inflating spherical balloon</span></summary>
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Speeding up or slowing down? (same \(s(t)\))</span></summary>
+          <ol class="steps">
+            <li>Recall \(v(t) = 3t^2 - 12t + 9\) and \(a(t) = 6t - 12\) (so \(a = 0\) at \(t = 2\)).</li>
+            <li>At \(t = 1.5\): \(v = 3(2.25) - 18 + 9 = -2.25\) (\(-\)) and \(a = 9 - 12 = -3\) (\(-\)). Same sign → <strong>speeding up</strong>.</li>
+            <li>At \(t = 2.5\): \(v = 3(6.25) - 30 + 9 = -2.25\) (\(-\)) and \(a = 15 - 12 = 3\) (\(+\)). Opposite signs → <strong>slowing down</strong>.</li>
+            <li>Answer: \(\;\boxed{\text{speeding up at } t=1.5,\ \text{slowing down at } t=2.5}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Related rates: an inflating spherical balloon</span></summary>
           <p>Air is pumped in at \(\dfrac{dV}{dt} = 100\ \text{cm}^3/\text{s}\). How fast is the radius growing when \(r = 5\) cm?</p>
           <ol class="steps">
             <li>Relationship: \(V = \dfrac{4}{3}\pi r^3\).</li>
@@ -76,13 +115,48 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 3 — L'Hôpital's Rule: \(\lim_{x \to 0}\dfrac{\sin x}{x}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — Related rates: a sliding ladder</span></summary>
+          <p>A 10-ft ladder leans on a wall. The base slides away at \(\dfrac{dx}{dt} = 1\) ft/s. How fast is the top sliding down when the base is \(6\) ft from the wall?</p>
+          <ol class="steps">
+            <li>Pythagoras relates base \(x\) and height \(y\): \(x^2 + y^2 = 100\).</li>
+            <li>When \(x = 6\): \(y = \sqrt{100 - 36} = 8\).</li>
+            <li>Differentiate in \(t\): \(2x\dfrac{dx}{dt} + 2y\dfrac{dy}{dt} = 0\).</li>
+            <li>Substitute: \(2(6)(1) + 2(8)\dfrac{dy}{dt} = 0 \Rightarrow 12 + 16\dfrac{dy}{dt} = 0\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{dy}{dt} = -\dfrac{3}{4}\ \text{ft/s}}\) (negative = sliding down).</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — L'Hôpital (form \(\tfrac{0}{0}\)): \(\lim_{x \to 0}\dfrac{\sin x}{x}\)</span></summary>
           <ol class="steps">
             <li>Direct substitution gives \(\dfrac{\sin 0}{0} = \dfrac{0}{0}\) — indeterminate, so L'Hôpital applies.</li>
             <li>Differentiate top and bottom separately: \(\dfrac{(\sin x)'}{(x)'} = \dfrac{\cos x}{1}\).</li>
             <li>Now substitute \(x = 0\): \(\dfrac{\cos 0}{1} = \dfrac{1}{1}\).</li>
             <li>Answer: \(\;\boxed{1}\)</li>
           </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — L'Hôpital (form \(\tfrac{\infty}{\infty}\)): \(\lim_{x \to \infty}\dfrac{\ln x}{x}\)</span></summary>
+          <ol class="steps">
+            <li>As \(x \to \infty\), top and bottom both \(\to \infty\): form \(\dfrac{\infty}{\infty}\).</li>
+            <li>Differentiate separately: \(\dfrac{(\ln x)'}{(x)'} = \dfrac{1/x}{1} = \dfrac{1}{x}\).</li>
+            <li>As \(x \to \infty\), \(\dfrac{1}{x} \to 0\).</li>
+            <li>Answer: \(\;\boxed{0}\) — \(x\) grows much faster than \(\ln x\).</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — Linear approximation: estimate \(\sqrt{4.1}\)</span></summary>
+          <ol class="steps">
+            <li>Use \(f(x) = \sqrt{x}\) at the nearby nice point \(a = 4\), where \(f(4) = 2\).</li>
+            <li>\(f'(x) = \dfrac{1}{2\sqrt{x}}\), so \(f'(4) = \dfrac{1}{4}\).</li>
+            <li>Tangent line: \(L(x) = 2 + \tfrac{1}{4}(x - 4)\).</li>
+            <li>Plug in \(x = 4.1\): \(L(4.1) = 2 + \tfrac{1}{4}(0.1) = 2.025\).</li>
+            <li>Answer: \(\;\boxed{\sqrt{4.1} \approx 2.025}\) (true value \(2.0248\dots\) — very close).</li>
+          </ol>
+          <p class="note">Near \(x = 4\) the tangent line hugs the curve, so reading the line gives an excellent estimate.</p>
+          <div id="graph-linapprox" class="example-graph"></div>
         </details>
 
         <nav class="unit-nav">
@@ -96,5 +170,39 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0, iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
+      }
+      whenDesmos(function () {
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return; elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-motion", function (c) {
+          c.setMathBounds({ left: -0.5, right: 4.5, bottom: -2, top: 6 });
+          c.setExpression({ id: "s", latex: "y=x^3-6x^2+9x", color: D.Colors.BLUE });
+          c.setExpression({ id: "p1", latex: "(1,4)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "p2", latex: "(3,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-linapprox", function (c) {
+          c.setMathBounds({ left: 0, right: 9, bottom: -0.5, top: 3.5 });
+          c.setExpression({ id: "f", latex: "y=\\sqrt{x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "t", latex: "y=2+0.25(x-4)", color: D.Colors.RED });
+          c.setExpression({ id: "p", latex: "(4,2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+      });
+    });
+  </script>
 </body>
 </html>

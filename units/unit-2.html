@@ -26,47 +26,81 @@
           <div class="eyebrow"><span>UNIT 2</span><span class="weight-tag">10–12% of the exam</span></div>
           <h1>Differentiation: Definition &amp; Basic Rules</h1>
         </header>
+        <p class="page-intro">The derivative is the rate of change — the slope of a curve at a single instant. This unit builds it from the limit definition, then hands you the shortcut rules (power, product, quotient) you'll use for the rest of the course.</p>
 
+        <!-- ===================== CONCEPTS ===================== -->
         <section class="concept">
-          <h2>1. What is a derivative?</h2>
-          <p>The <strong>derivative</strong> \(f'(x)\) measures the <strong>instantaneous rate of change</strong> of \(f\) — the slope of the line tangent to the curve at a point. It is defined as a limit:</p>
+          <h2 id="c1">1. What is a derivative?</h2>
+          <p>The <strong>derivative</strong> \(f'(x)\) measures the <strong>instantaneous rate of change</strong> of \(f\) — the slope of the line tangent to the curve at a point. It's defined as a limit of slopes of secant lines:</p>
           <p>$$f'(x) = \lim_{h \to 0}\frac{f(x+h) - f(x)}{h}$$</p>
-          <p>That fraction is the slope between two nearby points; letting \(h \to 0\) slides them together into a single tangent point.</p>
+          <p>The fraction is the slope between two nearby points; letting \(h \to 0\) slides them together into a single tangent point. (An equivalent form fixes the point \(a\): \(f'(a) = \lim_{x\to a}\frac{f(x)-f(a)}{x-a}\).)</p>
         </section>
 
         <section class="concept">
-          <h2>2. The power rule and friends</h2>
+          <h2 id="c2">2. Notation &amp; the derivative as a function</h2>
+          <p>The same idea has several notations — get comfortable with all of them:</p>
+          <p>$$f'(x) \;=\; \frac{dy}{dx} \;=\; \frac{d}{dx}\big[f(x)\big] \;=\; y'$$</p>
+          <p>The derivative is itself a <strong>function</strong>: plug in any \(x\) and it returns the slope there. Evaluating it at one point, like \(f'(2)\), gives a single number — the slope at \(x = 2\).</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c3">3. Differentiability vs. continuity</h2>
+          <p>If \(f\) is <strong>differentiable</strong> at a point, it must be <strong>continuous</strong> there. The reverse is <em>not</em> true — a function can be continuous but have no derivative where the graph has a:</p>
+          <ul>
+            <li><strong>corner</strong> or <strong>cusp</strong> (like \(|x|\) at \(0\) — the slope jumps),</li>
+            <li><strong>vertical tangent</strong> (slope is infinite),</li>
+            <li>or a <strong>discontinuity</strong> (no slope at a break).</li>
+          </ul>
+          <p>Slogan: <em>differentiable ⟹ continuous, but continuous ⟹̸ differentiable.</em></p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c4">4. The power rule &amp; combinations</h2>
           <p>You rarely use the limit definition in practice — these shortcuts do the work:</p>
           <ul>
-            <li><strong>Power rule:</strong> \(\dfrac{d}{dx}\,x^n = n\,x^{n-1}\)</li>
+            <li><strong>Power rule:</strong> \(\dfrac{d}{dx}\,x^n = n\,x^{n-1}\) (works for any real \(n\) — negatives and fractions too)</li>
             <li><strong>Constant:</strong> \(\dfrac{d}{dx}\,c = 0\)</li>
             <li><strong>Constant multiple:</strong> \(\dfrac{d}{dx}\,[c\,f(x)] = c\,f'(x)\)</li>
             <li><strong>Sum / difference:</strong> differentiate term by term</li>
           </ul>
+          <p>The trick most students miss: rewrite roots and fractions as powers first — \(\sqrt{x} = x^{1/2}\), \(\dfrac{1}{x^2} = x^{-2}\) — <em>then</em> apply the power rule.</p>
         </section>
 
         <section class="concept">
-          <h2>3. Derivatives worth memorizing</h2>
+          <h2 id="c5">5. Derivatives worth memorizing</h2>
           <ul>
             <li>\(\dfrac{d}{dx}\,e^x = e^x\)</li>
             <li>\(\dfrac{d}{dx}\,\ln x = \dfrac{1}{x}\)</li>
-            <li>\(\dfrac{d}{dx}\,\sin x = \cos x\)</li>
-            <li>\(\dfrac{d}{dx}\,\cos x = -\sin x\)</li>
+            <li>\(\dfrac{d}{dx}\,\sin x = \cos x\), &nbsp; \(\dfrac{d}{dx}\,\cos x = -\sin x\)</li>
+            <li>\(\dfrac{d}{dx}\,\tan x = \sec^2 x\)</li>
           </ul>
         </section>
 
         <section class="concept">
-          <h2>4. Product &amp; quotient rules</h2>
-          <p>When functions are multiplied or divided, you can't just differentiate each piece:</p>
-          <p>$$\textbf{Product: }\;(fg)' = f'g + fg'$$</p>
-          <p>$$\textbf{Quotient: }\;\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$</p>
+          <h2 id="c6">6. The product rule</h2>
+          <p>When two functions are multiplied, you can't just multiply their derivatives:</p>
+          <p>$$(fg)' = f'g + fg'$$</p>
+          <p>"Derivative of the first times the second, plus the first times the derivative of the second."</p>
         </section>
 
+        <section class="concept">
+          <h2 id="c7">7. The quotient rule</h2>
+          <p>For a fraction of two functions:</p>
+          <p>$$\left(\frac{f}{g}\right)' = \frac{f'g - fg'}{g^2}$$</p>
+          <p>Order matters because of the subtraction — memorize "low d-high minus high d-low, over low squared."</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c8">8. Higher-order derivatives</h2>
+          <p>Differentiate again and you get the <strong>second derivative</strong> \(f''(x)\) (the rate of change of the slope — curvature), then \(f'''(x)\), and so on. In motion problems, position → velocity → acceleration is just differentiating twice.</p>
+        </section>
+
+        <!-- ===================== EXAMPLES ===================== -->
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
-        <p class="intro">Click any example to expand the full solution.</p>
+        <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 1 — Derivative from the limit definition: \(f(x) = x^2\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x1">Example 1 — Derivative from the limit definition: \(f(x) = x^2\)</span></summary>
           <ol class="steps">
             <li>Set up the definition: \(f'(x) = \lim_{h \to 0}\dfrac{(x+h)^2 - x^2}{h}\).</li>
             <li>Expand the top: \((x+h)^2 - x^2 = x^2 + 2xh + h^2 - x^2 = 2xh + h^2\).</li>
@@ -77,7 +111,18 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 2 — Power rule: \(\dfrac{d}{dx}\,(3x^4 - 5x^2 + 7)\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Limit definition with a fraction: \(f(x) = \dfrac{1}{x}\)</span></summary>
+          <ol class="steps">
+            <li>Definition: \(f'(x) = \lim_{h \to 0}\dfrac{\frac{1}{x+h} - \frac{1}{x}}{h}\).</li>
+            <li>Combine the top over \(x(x+h)\): \(\dfrac{x - (x+h)}{x(x+h)} = \dfrac{-h}{x(x+h)}\).</li>
+            <li>Divide by \(h\): \(\dfrac{-h}{x(x+h)}\cdot\dfrac{1}{h} = \dfrac{-1}{x(x+h)}\).</li>
+            <li>Let \(h \to 0\): \(\dfrac{-1}{x \cdot x}\).</li>
+            <li>Answer: \(\;\boxed{f'(x) = -\dfrac{1}{x^2}}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Power rule: \(\dfrac{d}{dx}\,(3x^4 - 5x^2 + 7)\)</span></summary>
           <ol class="steps">
             <li>Differentiate term by term.</li>
             <li>\(3x^4 \to 3 \cdot 4x^3 = 12x^3\).</li>
@@ -88,7 +133,17 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 3 — Product rule: \(\dfrac{d}{dx}\,(x^2 \sin x)\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — Rewrite first: \(\dfrac{d}{dx}\left(\sqrt{x} + \dfrac{1}{x^2}\right)\)</span></summary>
+          <ol class="steps">
+            <li>Rewrite as powers: \(\sqrt{x} = x^{1/2}\) and \(\dfrac{1}{x^2} = x^{-2}\).</li>
+            <li>Power rule on each: \(\tfrac{1}{2}x^{-1/2}\) and \(-2x^{-3}\).</li>
+            <li>Rewrite back in radical/fraction form.</li>
+            <li>Answer: \(\;\boxed{\dfrac{1}{2\sqrt{x}} - \dfrac{2}{x^3}}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — Product rule: \(\dfrac{d}{dx}\,(x^2 \sin x)\)</span></summary>
           <ol class="steps">
             <li>Let \(f = x^2\) and \(g = \sin x\), so \(f' = 2x\) and \(g' = \cos x\).</li>
             <li>Apply \((fg)' = f'g + fg'\): \((2x)(\sin x) + (x^2)(\cos x)\).</li>
@@ -97,7 +152,7 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 4 — Quotient rule: \(\dfrac{d}{dx}\,\dfrac{x^2}{x+1}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — Quotient rule: \(\dfrac{d}{dx}\,\dfrac{x^2}{x+1}\)</span></summary>
           <ol class="steps">
             <li>Let \(f = x^2\) (\(f' = 2x\)) and \(g = x+1\) (\(g' = 1\)).</li>
             <li>Apply \(\dfrac{f'g - fg'}{g^2}\): \(\dfrac{(2x)(x+1) - (x^2)(1)}{(x+1)^2}\).</li>
@@ -107,14 +162,38 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 5 — The derivative as a slope (visual): tangent to \(f(x) = x^2\) at \(x = 1\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — Deriving \(\tfrac{d}{dx}\tan x\) with the quotient rule</span></summary>
+          <ol class="steps">
+            <li>Write \(\tan x = \dfrac{\sin x}{\cos x}\), so \(f = \sin x,\ g = \cos x\).</li>
+            <li>Quotient rule: \(\dfrac{(\cos x)(\cos x) - (\sin x)(-\sin x)}{\cos^2 x}\).</li>
+            <li>Top becomes \(\cos^2 x + \sin^2 x = 1\).</li>
+            <li>So the result is \(\dfrac{1}{\cos^2 x}\).</li>
+            <li>Answer: \(\;\boxed{\sec^2 x}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x8">Example 8 — Tangent line: \(f(x) = x^2\) at \(x = 1\)</span></summary>
           <ol class="steps">
             <li>\(f'(x) = 2x\), so the slope at \(x = 1\) is \(f'(1) = 2\).</li>
             <li>The point on the curve is \((1, f(1)) = (1, 1)\).</li>
-            <li>Tangent line: \(y - 1 = 2(x - 1)\), i.e. \(y = 2x - 1\).</li>
+            <li>Point-slope form: \(y - 1 = 2(x - 1)\).</li>
+            <li>Answer: \(\;\boxed{y = 2x - 1}\)</li>
           </ol>
           <p class="note">The tangent line just grazes the parabola at \((1, 1)\) with slope 2 — that's exactly what the derivative measures.</p>
           <div id="graph-tangent" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x9">Example 9 — Where a derivative fails to exist: \(f(x) = |x|\)</span></summary>
+          <ol class="steps">
+            <li>\(f(x) = |x|\) is continuous everywhere, including \(x = 0\).</li>
+            <li>But just left of \(0\) the slope is \(-1\); just right of \(0\) the slope is \(+1\).</li>
+            <li>The slopes don't match, so the limit defining \(f'(0)\) does not exist.</li>
+            <li>Conclusion: \(f\) is \(\;\boxed{\text{not differentiable at } x = 0}\) — a corner.</li>
+          </ol>
+          <p class="note">Continuous but with a sharp corner at the origin: there's no single tangent slope there.</p>
+          <div id="graph-corner" class="example-graph"></div>
         </details>
 
         <nav class="unit-nav">
@@ -138,15 +217,26 @@
         }, 200);
       }
       whenDesmos(function () {
-        var D = window.Desmos, elt = document.getElementById("graph-tangent");
-        if (!elt || elt._ds) return; elt._ds = true;
-        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        calc.setMathBounds({ left: -3, right: 4, bottom: -2, top: 6 });
-        calc.setExpression({ id: "f", latex: "y=x^2", color: D.Colors.BLUE });
-        calc.setExpression({ id: "t", latex: "y=2x-1", color: D.Colors.RED });
-        calc.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        var det = elt.closest("details");
-        if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return; elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-tangent", function (c) {
+          c.setMathBounds({ left: -3, right: 4, bottom: -2, top: 6 });
+          c.setExpression({ id: "f", latex: "y=x^2", color: D.Colors.BLUE });
+          c.setExpression({ id: "t", latex: "y=2x-1", color: D.Colors.RED });
+          c.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-corner", function (c) {
+          c.setMathBounds({ left: -3, right: 3, bottom: -1, top: 3 });
+          c.setExpression({ id: "f", latex: "y=\\left|x\\right|", color: D.Colors.BLUE });
+          c.setExpression({ id: "p", latex: "(0,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
       });
     });
   </script>

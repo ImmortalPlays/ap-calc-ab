@@ -26,38 +26,65 @@
           <div class="eyebrow"><span>UNIT 8</span><span class="weight-tag">10–15% of the exam</span></div>
           <h1>Applications of Integration</h1>
         </header>
+        <p class="page-intro">Integrals add up area, volume, and total change. The hardest part isn't the integration — it's <em>setting up the right integral</em>. Draw the picture every time.</p>
+
+        <!-- ===================== CONCEPTS ===================== -->
+        <section class="concept">
+          <h2 id="c1">1. Area under a curve</h2>
+          <p>The area between \(y = f(x)\) and the \(x\)-axis from \(a\) to \(b\) is \(\displaystyle\int_a^b f(x)\,dx\) — when \(f\ge 0\). If the curve dips below the axis and you want <strong>geometric area</strong>, integrate \(|f(x)|\) (split at the zeros).</p>
+        </section>
 
         <section class="concept">
-          <h2>1. Area between two curves</h2>
+          <h2 id="c2">2. Area between two curves (in \(x\))</h2>
           <p>The area between a top curve and a bottom curve from \(a\) to \(b\):</p>
           <p>$$\int_a^b \big[\,\text{top}(x) - \text{bottom}(x)\,\big]\,dx$$</p>
+          <p>If the curves cross, find the intersection points first — those become your limits (and you may need to split the region).</p>
         </section>
 
         <section class="concept">
-          <h2>2. Average value of a function</h2>
-          <p>The average height of \(f\) over \([a, b]\):</p>
-          <p>$$f_{\text{avg}} = \frac{1}{b - a}\int_a^b f(x)\,dx$$</p>
+          <h2 id="c3">3. Area integrating in \(y\)</h2>
+          <p>Sometimes it's cleaner to slice horizontally. Then integrate <strong>right curve minus left curve</strong> with respect to \(y\):</p>
+          <p>$$\int_c^d \big[\,\text{right}(y) - \text{left}(y)\,\big]\,dy$$</p>
         </section>
 
         <section class="concept">
-          <h2>3. Volumes of revolution (disks)</h2>
-          <p>Rotate a region around the \(x\)-axis and you sweep out a solid made of thin disks of radius \(R(x)\):</p>
+          <h2 id="c4">4. Volume by disks</h2>
+          <p>Rotate a region around an axis and slice into thin <strong>disks</strong> of radius \(R\):</p>
           <p>$$V = \pi\int_a^b \big[R(x)\big]^2\,dx$$</p>
         </section>
 
         <section class="concept">
-          <h2>4. Motion: displacement vs. distance</h2>
-          <ul>
-            <li><strong>Displacement:</strong> \(\displaystyle\int_a^b v(t)\,dt\) (net change in position)</li>
-            <li><strong>Total distance:</strong> \(\displaystyle\int_a^b |v(t)|\,dt\)</li>
-          </ul>
+          <h2 id="c5">5. Volume by washers</h2>
+          <p>If there's a gap between the region and the axis, each slice is a <strong>washer</strong> (a disk with a hole) — outer radius \(R\), inner radius \(r\):</p>
+          <p>$$V = \pi\int_a^b \Big(\big[R(x)\big]^2 - \big[r(x)\big]^2\Big)\,dx$$</p>
         </section>
 
+        <section class="concept">
+          <h2 id="c6">6. Volume by known cross-sections</h2>
+          <p>No rotation needed: if each slice perpendicular to the axis is a known shape (square, semicircle, triangle), integrate the slice's <strong>area</strong>. For squares with side \(s(x)\): \(V = \displaystyle\int_a^b \big[s(x)\big]^2\,dx\).</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c7">7. Average value</h2>
+          <p>The average height of \(f\) over \([a,b]\): \(f_{\text{avg}} = \dfrac{1}{b-a}\displaystyle\int_a^b f(x)\,dx\).</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c8">8. Motion: displacement vs. total distance</h2>
+          <p>From a velocity function \(v(t)\):</p>
+          <ul>
+            <li><strong>Displacement</strong> (net change in position): \(\displaystyle\int_a^b v(t)\,dt\)</li>
+            <li><strong>Total distance</strong> traveled: \(\displaystyle\int_a^b |v(t)|\,dt\)</li>
+          </ul>
+          <p>This is the <strong>Net Change Theorem</strong>: integrating a rate gives the total accumulated change.</p>
+        </section>
+
+        <!-- ===================== EXAMPLES ===================== -->
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
-        <p class="intro">Click any example to expand the full solution.</p>
+        <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 1 — Area between \(y = x\) and \(y = x^2\) from 0 to 1</span></summary>
+          <summary><span class="caret">▶</span><span id="x1">Example 1 — Area between \(y = x\) and \(y = x^2\) from 0 to 1</span></summary>
           <ol class="steps">
             <li>On \([0, 1]\), the line \(y = x\) sits above the parabola \(y = x^2\), so top \(-\) bottom \(= x - x^2\).</li>
             <li>Set up: \(\displaystyle\int_0^1 (x - x^2)\,dx\).</li>
@@ -70,22 +97,68 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 2 — Average value of \(f(x) = x^2\) on \([0, 3]\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Area needing intersection points: \(y = 2x\) and \(y = x^2\)</span></summary>
           <ol class="steps">
-            <li>Use \(f_{\text{avg}} = \dfrac{1}{b-a}\displaystyle\int_a^b f(x)\,dx\) with \(a = 0,\ b = 3\).</li>
-            <li>\(\displaystyle\int_0^3 x^2\,dx = \left[\dfrac{x^3}{3}\right]_0^3 = \dfrac{27}{3} = 9\).</li>
-            <li>Divide by \(b - a = 3\): \(\dfrac{1}{3}(9)\).</li>
+            <li>Find where they meet: \(2x = x^2 \Rightarrow x^2 - 2x = 0 \Rightarrow x(x-2) = 0\), so \(x = 0\) and \(x = 2\).</li>
+            <li>Between them the line \(2x\) is on top: top \(-\) bottom \(= 2x - x^2\).</li>
+            <li>Set up: \(\displaystyle\int_0^2 (2x - x^2)\,dx = \left[x^2 - \dfrac{x^3}{3}\right]_0^2\).</li>
+            <li>Evaluate: \(4 - \dfrac{8}{3} = \dfrac{12 - 8}{3}\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{4}{3}}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Average value of \(f(x) = x^2\) on \([0, 3]\)</span></summary>
+          <ol class="steps">
+            <li>Use \(f_{\text{avg}} = \dfrac{1}{b-a}\displaystyle\int_a^b f\,dx\) with \(a = 0,\ b = 3\).</li>
+            <li>\(\displaystyle\int_0^3 x^2\,dx = \left[\dfrac{x^3}{3}\right]_0^3 = 9\).</li>
+            <li>Divide by \(3\): \(\dfrac{1}{3}(9)\).</li>
             <li>Answer: \(\;\boxed{3}\)</li>
           </ol>
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span>Example 3 — Volume by disks: \(y = \sqrt{x}\) rotated about the \(x\)-axis, 0 to 4</span></summary>
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — Volume by disks: \(y = \sqrt{x}\) about the \(x\)-axis, 0 to 4</span></summary>
           <ol class="steps">
             <li>Radius of each disk is \(R(x) = \sqrt{x}\), so \([R(x)]^2 = x\).</li>
             <li>Set up: \(V = \pi\displaystyle\int_0^4 x\,dx\).</li>
             <li>Integrate: \(\pi\left[\dfrac{x^2}{2}\right]_0^4 = \pi \cdot \dfrac{16}{2}\).</li>
             <li>Answer: \(\;\boxed{8\pi}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — Volume by washers: region between \(y = \sqrt{x}\) and \(y = x\), about the \(x\)-axis</span></summary>
+          <ol class="steps">
+            <li>The curves meet at \(x = 0\) and \(x = 1\); on \((0,1)\), \(\sqrt{x}\) is the <strong>outer</strong> radius and \(x\) is the <strong>inner</strong> radius.</li>
+            <li>Washer area: \(\pi\big[(\sqrt{x})^2 - (x)^2\big] = \pi\big[x - x^2\big]\).</li>
+            <li>Set up: \(V = \pi\displaystyle\int_0^1 (x - x^2)\,dx = \pi\left[\dfrac{x^2}{2} - \dfrac{x^3}{3}\right]_0^1\).</li>
+            <li>Evaluate the bracket: \(\dfrac{1}{2} - \dfrac{1}{3} = \dfrac{1}{6}\).</li>
+            <li>Answer: \(\;\boxed{\dfrac{\pi}{6}}\)</li>
+          </ol>
+          <p class="note">The solid is what you get spinning the sliver between these two curves around the \(x\)-axis — each slice is a washer.</p>
+          <div id="graph-washer" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — Known cross-sections: squares on a base under \(y = \sqrt{x}\)</span></summary>
+          <p>The base is the region under \(y = \sqrt{x}\) from \(0\) to \(4\). Each slice perpendicular to the \(x\)-axis is a square. Find the volume.</p>
+          <ol class="steps">
+            <li>The side of each square equals the height of the region: \(s(x) = \sqrt{x}\).</li>
+            <li>Square's area: \([s(x)]^2 = (\sqrt{x})^2 = x\).</li>
+            <li>Set up: \(V = \displaystyle\int_0^4 x\,dx = \left[\dfrac{x^2}{2}\right]_0^4 = \dfrac{16}{2}\).</li>
+            <li>Answer: \(\;\boxed{8}\) (note: <em>no</em> \(\pi\) — there's no rotation here).</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — Displacement vs. total distance: \(v(t) = t^2 - 4\) on \([0, 3]\)</span></summary>
+          <ol class="steps">
+            <li><strong>Displacement</strong> \(= \displaystyle\int_0^3 (t^2 - 4)\,dt = \left[\dfrac{t^3}{3} - 4t\right]_0^3 = 9 - 12 = -3\).</li>
+            <li>For distance, find where \(v = 0\): \(t^2 = 4 \Rightarrow t = 2\). \(v < 0\) on \([0,2]\), \(v > 0\) on \([2,3]\).</li>
+            <li>\(\displaystyle\int_0^2 (4 - t^2)\,dt = \left[4t - \dfrac{t^3}{3}\right]_0^2 = 8 - \dfrac{8}{3} = \dfrac{16}{3}\).</li>
+            <li>\(\displaystyle\int_2^3 (t^2 - 4)\,dt = \left[\dfrac{t^3}{3} - 4t\right]_2^3 = (-3) - \left(-\dfrac{16}{3}\right) = \dfrac{7}{3}\).</li>
+            <li>Answer: \(\;\boxed{\text{displacement } -3,\ \text{total distance } \dfrac{16}{3} + \dfrac{7}{3} = \dfrac{23}{3}}\)</li>
           </ol>
         </details>
 
@@ -110,14 +183,27 @@
         }, 200);
       }
       whenDesmos(function () {
-        var D = window.Desmos, elt = document.getElementById("graph-between");
-        if (!elt || elt._ds) return; elt._ds = true;
-        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-        calc.setMathBounds({ left: -0.5, right: 1.5, bottom: -0.5, top: 1.5 });
-        calc.setExpression({ id: "l", latex: "y=x", color: D.Colors.BLUE });
-        calc.setExpression({ id: "p", latex: "y=x^2", color: D.Colors.GREEN });
-        var det = elt.closest("details");
-        if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return; elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-between", function (c) {
+          c.setMathBounds({ left: -0.5, right: 1.5, bottom: -0.5, top: 1.5 });
+          c.setExpression({ id: "l", latex: "y=x", color: D.Colors.BLUE });
+          c.setExpression({ id: "p", latex: "y=x^2", color: D.Colors.GREEN });
+          c.setExpression({ id: "shade", latex: "x^2\\le y\\le x\\left\\{0\\le x\\le1\\right\\}", color: D.Colors.PURPLE, fillOpacity: 0.3, lines: false });
+        });
+        initGraph("graph-washer", function (c) {
+          c.setMathBounds({ left: -0.3, right: 1.4, bottom: -0.3, top: 1.4 });
+          c.setExpression({ id: "o", latex: "y=\\sqrt{x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "i", latex: "y=x", color: D.Colors.RED });
+          c.setExpression({ id: "shade", latex: "x\\le y\\le\\sqrt{x}\\left\\{0\\le x\\le1\\right\\}", color: D.Colors.PURPLE, fillOpacity: 0.3, lines: false });
+        });
       });
     });
   </script>
