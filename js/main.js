@@ -97,6 +97,14 @@
     ].forEach(function (c) {
       idx.push({ label: c[0], tag: "FAQ", dot: "#c6cdf0", href: url("resources/faq.html"), kw: c[1] });
     });
+    idx.push({ label: "Official College Board practice", tag: "Practice", dot: "#f7c9c2", href: url("resources/practice.html"), kw: "college board official released free response frq exam practice apclassroom" });
+    UNITS.forEach(function (u) {
+      idx.push({
+        label: "Practice — Unit " + u.n + ": " + u.title, tag: "Practice",
+        dot: u.pastel, href: url("resources/practice.html") + "#u" + u.n,
+        kw: "practice problems questions exam " + u.title.toLowerCase()
+      });
+    });
     return idx;
   }
 
@@ -154,9 +162,10 @@
     aside.appendChild(el("div", "sb-section-label spaced", "RESOURCES"));
     var rnav = el("div", "sb-nav");
     var res = [
-      { key: "cheat", label: "Cheat Sheet",      sq: "#f3c97a", href: url("resources/cheat-sheet.html"), bg: "#f7e7c4" },
-      { key: "calc",  label: "Calculator Guide", sq: "#cfe3b0", href: url("resources/calculator.html"),  bg: "#d9ebc2" },
-      { key: "faq",   label: "FAQ",              sq: "#c6cdf0", href: url("resources/faq.html"),          bg: "#d6dcf5" }
+      { key: "practice", label: "Practice",        sq: "#f7c9c2", href: url("resources/practice.html"),    bg: "#fbe0db" },
+      { key: "cheat",    label: "Cheat Sheet",      sq: "#f3c97a", href: url("resources/cheat-sheet.html"), bg: "#f7e7c4" },
+      { key: "calc",     label: "Calculator Guide", sq: "#cfe3b0", href: url("resources/calculator.html"),  bg: "#d9ebc2" },
+      { key: "faq",      label: "FAQ",              sq: "#c6cdf0", href: url("resources/faq.html"),          bg: "#d6dcf5" }
     ];
     res.forEach(function (r) {
       var row = el("a", "sb-row" + (PAGE === r.key ? " active" : ""));

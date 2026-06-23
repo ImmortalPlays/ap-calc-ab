@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Questions — AP Calculus AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/main.js"></script>
+</head>
+<body data-page="practice" data-base="../" style="--pastel:#f7c9c2;--deep:#cf7d72">
+  <div class="layout">
+    <aside id="sidebar"></aside>
+
+    <div class="main">
+      <div class="container">
+        <a class="back-link" href="../index.html">← Home</a>
+
+        <header class="page-header" style="background:#f7c9c2">
+          <div class="eyebrow" style="color:#cf7d72">PRACTICE</div>
+          <h1>Practice Questions</h1>
+        </header>
+        <p class="page-intro">Original AP-style problems for every unit, each with a full step-by-step solution you can reveal when you're ready. For the real thing, use College Board's official released exams below.</p>
+
+        <!-- ===================== OFFICIAL COLLEGE BOARD ===================== -->
+        <section class="concept" style="border-left-color:#bcdcec">
+          <h2 style="color:#4e8db8">Official College Board practice</h2>
+          <p>College Board publishes <strong>real past free-response questions</strong> with scoring guidelines — the single best practice you can get. They're free:</p>
+          <ul>
+            <li><a href="https://apcentral.collegeboard.org/courses/ap-calculus-ab/exam" target="_blank" rel="noopener"><strong>AP Calculus AB Exam page</strong></a> — released free-response questions (going back years) plus scoring guidelines and sample responses.</li>
+            <li><a href="https://apclassroom.collegeboard.org" target="_blank" rel="noopener"><strong>AP Classroom</strong></a> — official topic questions and full practice exams (log in with the account your school gives you).</li>
+            <li><a href="https://apstudents.collegeboard.org/courses/ap-calculus-ab" target="_blank" rel="noopener"><strong>AP Students: Calculus AB</strong></a> — the official course overview and exam-day info.</li>
+          </ul>
+          <p class="note" style="margin-bottom:0">Those questions are College Board's copyrighted material, so we link to the official source instead of reposting them. The problems below are <strong>original</strong>, written in the same style.</p>
+        </section>
+
+        <p class="intro" style="margin-top:26px">Try each problem first, then open <em>Show solution</em>. Problems are grouped by unit and colour-coded to match the sidebar.</p>
+
+        <!-- ===================== UNIT 1 ===================== -->
+        <h2 class="section-heading sub" id="u1"><span class="chip" style="background:#f7c9c2"></span>Unit 1 · Limits &amp; Continuity</h2>
+
+        <section class="concept" style="border-left-color:#f7c9c2">
+          <p><strong>P1.</strong> Evaluate \(\displaystyle\lim_{x \to 3}\frac{x^2 - 9}{x^2 - 2x - 3}\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Direct substitution gives \(\frac{0}{0}\) — factor both.</li>
+              <li>\(\dfrac{(x-3)(x+3)}{(x-3)(x+1)}\); cancel \((x-3)\): \(\dfrac{x+3}{x+1}\).</li>
+              <li>Substitute \(x = 3\): \(\dfrac{6}{4}\).</li>
+              <li>Answer: \(\;\boxed{\tfrac{3}{2}}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#f7c9c2">
+          <p><strong>P2.</strong> Find \(\displaystyle\lim_{x \to \infty}\frac{4x^2 - 3}{2x^2 + x}\) and identify the horizontal asymptote of \(f(x) = \dfrac{4x^2-3}{2x^2+x}\).</p>
+          <div id="graph-p-u1" class="example-graph"></div>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Same degree (both \(x^2\)) → compare leading coefficients.</li>
+              <li>Divide every term by \(x^2\): \(\dfrac{4 - 3/x^2}{2 + 1/x}\).</li>
+              <li>As \(x \to \infty\) the small terms vanish: \(\dfrac{4}{2}\).</li>
+              <li>Answer: limit \(= \boxed{2}\); horizontal asymptote \(y = 2\) (the dashed line).</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 2 ===================== -->
+        <h2 class="section-heading sub" id="u2"><span class="chip" style="background:#f8d9b8"></span>Unit 2 · Differentiation: Definition &amp; Basic Rules</h2>
+
+        <section class="concept" style="border-left-color:#f8d9b8">
+          <p><strong>P1.</strong> For \(f(x) = x^3 - 4x^2 + 2x - 7\), find \(f'(x)\) and then \(f'(2)\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Power rule term by term: \(f'(x) = 3x^2 - 8x + 2\).</li>
+              <li>Evaluate at \(x = 2\): \(3(4) - 8(2) + 2 = 12 - 16 + 2\).</li>
+              <li>Answer: \(f'(x) = 3x^2 - 8x + 2\) and \(\;\boxed{f'(2) = -2}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#f8d9b8">
+          <p><strong>P2.</strong> Find the equation of the tangent line to \(f(x) = x^3\) at \(x = 1\).</p>
+          <div id="graph-p-u2" class="example-graph"></div>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>\(f'(x) = 3x^2\), so the slope at \(x = 1\) is \(f'(1) = 3\).</li>
+              <li>Point on the curve: \((1, f(1)) = (1, 1)\).</li>
+              <li>Point-slope: \(y - 1 = 3(x - 1)\).</li>
+              <li>Answer: \(\;\boxed{y = 3x - 2}\) (the red tangent line).</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 3 ===================== -->
+        <h2 class="section-heading sub" id="u3"><span class="chip" style="background:#f5e6a6"></span>Unit 3 · Composite, Implicit &amp; Inverse</h2>
+
+        <section class="concept" style="border-left-color:#f5e6a6">
+          <p><strong>P1.</strong> Differentiate \(y = e^{\sin x}\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Chain rule: outside \(e^{(\cdot)}\), inside \(\sin x\).</li>
+              <li>\(\dfrac{dy}{dx} = e^{\sin x}\cdot \dfrac{d}{dx}(\sin x)\).</li>
+              <li>\(\dfrac{d}{dx}\sin x = \cos x\).</li>
+              <li>Answer: \(\;\boxed{\dfrac{dy}{dx} = \cos x \cdot e^{\sin x}}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#f5e6a6">
+          <p><strong>P2.</strong> Use implicit differentiation to find \(\dfrac{dy}{dx}\) for \(x^3 + y^3 = 6xy\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Differentiate in \(x\); the right side needs the product rule: \(3x^2 + 3y^2\dfrac{dy}{dx} = 6y + 6x\dfrac{dy}{dx}\).</li>
+              <li>Gather \(\dfrac{dy}{dx}\) terms: \(3y^2\dfrac{dy}{dx} - 6x\dfrac{dy}{dx} = 6y - 3x^2\).</li>
+              <li>Factor: \(\dfrac{dy}{dx}(3y^2 - 6x) = 6y - 3x^2\).</li>
+              <li>Answer: \(\;\boxed{\dfrac{dy}{dx} = \dfrac{2y - x^2}{y^2 - 2x}}\) (dividing through by 3).</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 4 ===================== -->
+        <h2 class="section-heading sub" id="u4"><span class="chip" style="background:#cfe3b0"></span>Unit 4 · Contextual Applications</h2>
+
+        <section class="concept" style="border-left-color:#cfe3b0">
+          <p><strong>P1.</strong> A spherical snowball melts so its volume decreases at \(\dfrac{dV}{dt} = -2\ \text{cm}^3/\text{min}\). How fast is the radius shrinking when \(r = 3\) cm?</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>\(V = \tfrac{4}{3}\pi r^3 \Rightarrow \dfrac{dV}{dt} = 4\pi r^2 \dfrac{dr}{dt}\).</li>
+              <li>Substitute \(\dfrac{dV}{dt} = -2\), \(r = 3\): \(-2 = 4\pi(9)\dfrac{dr}{dt}\).</li>
+              <li>Solve: \(\dfrac{dr}{dt} = \dfrac{-2}{36\pi}\).</li>
+              <li>Answer: \(\;\boxed{\dfrac{dr}{dt} = -\dfrac{1}{18\pi}\ \text{cm/min}}\) (negative = shrinking).</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#cfe3b0">
+          <p><strong>P2.</strong> Evaluate \(\displaystyle\lim_{x \to 0}\frac{e^x - 1}{x}\) using L'Hôpital's Rule.</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Substitution gives \(\frac{0}{0}\) — L'Hôpital applies.</li>
+              <li>Differentiate top and bottom: \(\dfrac{(e^x - 1)'}{(x)'} = \dfrac{e^x}{1}\).</li>
+              <li>Substitute \(x = 0\): \(e^0 = 1\).</li>
+              <li>Answer: \(\;\boxed{1}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 5 ===================== -->
+        <h2 class="section-heading sub" id="u5"><span class="chip" style="background:#bbe3d0"></span>Unit 5 · Analytical Applications</h2>
+
+        <section class="concept" style="border-left-color:#bbe3d0">
+          <p><strong>P1.</strong> Find and classify all local extrema of \(f(x) = x^4 - 8x^2\).</p>
+          <div id="graph-p-u5" class="example-graph"></div>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>\(f'(x) = 4x^3 - 16x = 4x(x-2)(x+2)\); critical points \(x = -2, 0, 2\).</li>
+              <li>\(f''(x) = 12x^2 - 16\).</li>
+              <li>\(f''(0) = -16 < 0\) → local <strong>max</strong> at \((0, 0)\).</li>
+              <li>\(f''(\pm 2) = 32 > 0\) → local <strong>min</strong> at \((\pm 2, -16)\).</li>
+              <li>Answer: \(\;\boxed{\text{max } (0,0);\ \text{mins } (\pm 2, -16)}\) — the "W" shape.</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#bbe3d0">
+          <p><strong>P2.</strong> Find the absolute maximum and minimum of \(f(x) = x^3 - 12x\) on \([0, 3]\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>\(f'(x) = 3x^2 - 12 = 3(x-2)(x+2)\); critical points \(x = \pm 2\). Only \(x = 2\) is in \([0,3]\).</li>
+              <li>Candidates test — evaluate at \(x = 0, 2, 3\):</li>
+              <li>\(f(0) = 0\), \(f(2) = 8 - 24 = -16\), \(f(3) = 27 - 36 = -9\).</li>
+              <li>Answer: \(\;\boxed{\text{abs max } 0 \text{ at } x=0,\ \text{abs min } -16 \text{ at } x=2}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 6 ===================== -->
+        <h2 class="section-heading sub" id="u6"><span class="chip" style="background:#bcdcec"></span>Unit 6 · Integration &amp; Accumulation</h2>
+
+        <section class="concept" style="border-left-color:#bcdcec">
+          <p><strong>P1.</strong> Evaluate \(\displaystyle\int_1^3 (2x + 1)\,dx\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Antiderivative: \(x^2 + x\).</li>
+              <li>Evaluate top minus bottom: \((3^2 + 3) - (1^2 + 1)\).</li>
+              <li>\(= 12 - 2\).</li>
+              <li>Answer: \(\;\boxed{10}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#bcdcec">
+          <p><strong>P2.</strong> Evaluate \(\displaystyle\int x\sqrt{x^2 + 1}\,dx\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Let \(u = x^2 + 1\), so \(du = 2x\,dx\), meaning \(x\,dx = \tfrac{1}{2}\,du\).</li>
+              <li>Rewrite: \(\displaystyle\int \sqrt{u}\cdot\tfrac{1}{2}\,du = \tfrac{1}{2}\int u^{1/2}\,du\).</li>
+              <li>Integrate: \(\tfrac{1}{2}\cdot\dfrac{u^{3/2}}{3/2} = \tfrac{1}{3}u^{3/2}\).</li>
+              <li>Substitute back: \(\;\boxed{\tfrac{1}{3}(x^2 + 1)^{3/2} + C}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 7 ===================== -->
+        <h2 class="section-heading sub" id="u7"><span class="chip" style="background:#c6cdf0"></span>Unit 7 · Differential Equations</h2>
+
+        <section class="concept" style="border-left-color:#c6cdf0">
+          <p><strong>P1.</strong> Solve the initial value problem \(\dfrac{dy}{dx} = 3y,\ y(0) = 4\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Recognize the growth model \(\dfrac{dy}{dx} = ky\) with \(k = 3\): \(y = y_0 e^{3x}\).</li>
+              <li>Apply \(y(0) = 4\): \(4 = y_0 e^0 = y_0\).</li>
+              <li>Answer: \(\;\boxed{y = 4e^{3x}}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#c6cdf0">
+          <p><strong>P2.</strong> Solve \(\dfrac{dy}{dx} = \dfrac{x}{2y}\) with \(y(1) = 2\).</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Separate: \(2y\,dy = x\,dx\).</li>
+              <li>Integrate: \(y^2 = \dfrac{x^2}{2} + C\).</li>
+              <li>Apply \(y(1) = 2\): \(4 = \dfrac{1}{2} + C \Rightarrow C = \dfrac{7}{2}\).</li>
+              <li>Answer: \(\;\boxed{y = \sqrt{\dfrac{x^2}{2} + \dfrac{7}{2}}}\) (positive root, since \(y(1) = 2 > 0\)).</li>
+            </ol>
+          </details>
+        </section>
+
+        <!-- ===================== UNIT 8 ===================== -->
+        <h2 class="section-heading sub" id="u8"><span class="chip" style="background:#e2c9ec"></span>Unit 8 · Applications of Integration</h2>
+
+        <section class="concept" style="border-left-color:#e2c9ec">
+          <p><strong>P1.</strong> Find the area of the region bounded by \(y = 4 - x^2\) and the \(x\)-axis.</p>
+          <div id="graph-p-u8" class="example-graph"></div>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>The curve meets the \(x\)-axis where \(4 - x^2 = 0\): \(x = -2\) and \(x = 2\).</li>
+              <li>Area: \(\displaystyle\int_{-2}^{2} (4 - x^2)\,dx = \left[4x - \dfrac{x^3}{3}\right]_{-2}^{2}\).</li>
+              <li>\(\left(8 - \dfrac{8}{3}\right) - \left(-8 + \dfrac{8}{3}\right) = \dfrac{16}{3} + \dfrac{16}{3}\).</li>
+              <li>Answer: \(\;\boxed{\dfrac{32}{3}}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <section class="concept" style="border-left-color:#e2c9ec">
+          <p><strong>P2.</strong> The region under \(y = x^2\) from \(x = 0\) to \(x = 2\) is rotated about the \(x\)-axis. Find the volume.</p>
+          <details class="solution">
+            <summary><span class="caret">▶</span><span>Show solution</span></summary>
+            <ol class="steps">
+              <li>Disks of radius \(R(x) = x^2\), so \([R(x)]^2 = x^4\).</li>
+              <li>Set up: \(V = \pi\displaystyle\int_0^2 x^4\,dx\).</li>
+              <li>Integrate: \(\pi\left[\dfrac{x^5}{5}\right]_0^2 = \pi\cdot\dfrac{32}{5}\).</li>
+              <li>Answer: \(\;\boxed{\dfrac{32\pi}{5}}\)</li>
+            </ol>
+          </details>
+        </section>
+
+        <footer class="site-footer">
+          <p class="footer-contact">Contact: <a href="mailto:davidh.manson@gmail.com">davidh.manson@gmail.com</a> &nbsp;·&nbsp; <a href="https://immortalplays.github.io" target="_blank" rel="noopener">My Portfolio</a></p>
+          <p class="footer-credit">Made by David Manson · © 2026 · Practice problems are original; official questions linked above belong to College Board.</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function whenDesmos(cb) {
+        if (window.Desmos) return cb();
+        var t = 0, iv = setInterval(function () {
+          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+        }, 200);
+      }
+      whenDesmos(function () {
+        var D = window.Desmos;
+        function initGraph(divId, build) {
+          var elt = document.getElementById(divId);
+          if (!elt || elt._ds) return; elt._ds = true;
+          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+          build(calc);
+          var det = elt.closest("details");
+          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+        }
+        initGraph("graph-p-u1", function (c) {
+          c.setMathBounds({ left: -10, right: 10, bottom: -3, top: 7 });
+          c.setExpression({ id: "f", latex: "y=\\frac{4x^2-3}{2x^2+x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "ha", latex: "y=2", color: "#888888", lineStyle: D.Styles.DASHED });
+        });
+        initGraph("graph-p-u2", function (c) {
+          c.setMathBounds({ left: -2, right: 3, bottom: -4, top: 6 });
+          c.setExpression({ id: "f", latex: "y=x^3", color: D.Colors.BLUE });
+          c.setExpression({ id: "t", latex: "y=3x-2", color: D.Colors.RED });
+          c.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-p-u5", function (c) {
+          c.setMathBounds({ left: -3.5, right: 3.5, bottom: -20, top: 8 });
+          c.setExpression({ id: "f", latex: "y=x^4-8x^2", color: D.Colors.BLUE });
+          c.setExpression({ id: "mx", latex: "(0,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "m1", latex: "(-2,-16)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "m2", latex: "(2,-16)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-p-u8", function (c) {
+          c.setMathBounds({ left: -3, right: 3, bottom: -1, top: 5 });
+          c.setExpression({ id: "f", latex: "y=4-x^2", color: D.Colors.BLUE });
+          c.setExpression({ id: "shade", latex: "0\\le y\\le4-x^2\\left\\{-2\\le x\\le2\\right\\}", color: D.Colors.PURPLE, fillOpacity: 0.3, lines: false });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
