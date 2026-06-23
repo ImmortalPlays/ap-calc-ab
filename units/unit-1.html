@@ -26,52 +26,95 @@
           <div class="eyebrow"><span>UNIT 1</span><span class="weight-tag">10–12% of the exam</span></div>
           <h1>Limits &amp; Continuity</h1>
         </header>
+        <p class="page-intro">Limits are the foundation everything else in calculus is built on. This unit takes you from the intuitive idea all the way to continuity and the Intermediate Value Theorem — with worked examples and graphs you can drag for every idea.</p>
 
-        <!-- Concepts -->
+        <!-- ===================== CONCEPTS ===================== -->
         <section class="concept">
           <h2 id="c1">1. What is a limit?</h2>
           <p>A <strong>limit</strong> describes the value a function <em>approaches</em> as the input gets close to some number. We write:</p>
           <p>$$\lim_{x \to a} f(x) = L$$</p>
-          <p>This reads: "as \(x\) gets close to \(a\), \(f(x)\) gets close to \(L\)." We care about what happens <em>near</em> \(a\), not necessarily <em>at</em> \(a\).</p>
+          <p>and read it "as \(x\) gets close to \(a\), \(f(x)\) gets close to \(L\)." The single most important idea: a limit is about what happens <em>near</em> \(a\), <strong>not</strong> what happens <em>at</em> \(a\). The function might not even be defined at \(a\) — the limit can still exist.</p>
         </section>
 
         <section class="concept">
-          <h2 id="c2">2. One-sided limits</h2>
-          <p>You can approach \(a\) from the left or the right:</p>
+          <h2 id="c2">2. Estimating limits from tables &amp; graphs</h2>
+          <p>Before any algebra, you can <em>estimate</em> a limit two ways:</p>
           <ul>
-            <li>Left-hand limit (from values below \(a\)): \(\lim_{x \to a^-} f(x)\)</li>
-            <li>Right-hand limit (from values above \(a\)): \(\lim_{x \to a^+} f(x)\)</li>
+            <li><strong>From a table:</strong> plug in \(x\)-values creeping toward \(a\) from both sides and watch where \(f(x)\) heads.</li>
+            <li><strong>From a graph:</strong> trace the curve toward \(x = a\) from the left and from the right and see what height it aims for.</li>
+          </ul>
+          <p>If both sides aim for the same height, that height is the limit — even if there's a hole or a different dot exactly at \(a\).</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c3">3. One-sided limits &amp; when a limit fails to exist</h2>
+          <p>You can approach \(a\) from one side at a time:</p>
+          <ul>
+            <li>Left-hand limit (from below \(a\)): \(\lim_{x \to a^-} f(x)\)</li>
+            <li>Right-hand limit (from above \(a\)): \(\lim_{x \to a^+} f(x)\)</li>
           </ul>
           <p>The two-sided limit <strong>exists only if both sides agree</strong>:</p>
           <p>$$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$$</p>
-          <p>If the two sides disagree, the limit <strong>does not exist (DNE)</strong>.</p>
+          <p>A limit <strong>does not exist (DNE)</strong> when: the two sides disagree (a <em>jump</em>), the function blows up to \(\pm\infty\), or it oscillates forever without settling.</p>
         </section>
 
         <section class="concept">
-          <h2 id="c3">3. Evaluating limits</h2>
-          <p>Start by <strong>plugging the number in</strong> (direct substitution). If you get a real number, that's your answer. If you get the indeterminate form \(\frac{0}{0}\), rewrite the function first — usually by <strong>factoring</strong> or <strong>rationalizing</strong>.</p>
+          <h2 id="c4">4. The limit laws</h2>
+          <p>If \(\lim_{x\to a} f(x)\) and \(\lim_{x\to a} g(x)\) both exist, limits behave exactly how you'd hope — they split across sums, products, and quotients:</p>
+          <ul>
+            <li>\(\lim (f \pm g) = \lim f \pm \lim g\)</li>
+            <li>\(\lim (f \cdot g) = \lim f \cdot \lim g\)</li>
+            <li>\(\lim \dfrac{f}{g} = \dfrac{\lim f}{\lim g}\) &nbsp;(as long as \(\lim g \neq 0\))</li>
+            <li>\(\lim \big[c\,f\big] = c\,\lim f\) for any constant \(c\)</li>
+          </ul>
+          <p>These are what justify "just plug the number in" for nice functions.</p>
         </section>
 
         <section class="concept">
-          <h2 id="c4">4. Infinite limits &amp; limits at infinity</h2>
+          <h2 id="c5">5. Evaluating limits algebraically</h2>
+          <p>Always <strong>try direct substitution first</strong>. If you get a real number, you're done. If you get the indeterminate form \(\frac{0}{0}\), the function needs rewriting before it will cooperate:</p>
+          <ul>
+            <li><strong>Factor &amp; cancel</strong> when top and bottom are polynomials.</li>
+            <li><strong>Rationalize</strong> (multiply by the conjugate) when there's a square root.</li>
+            <li><strong>Combine fractions</strong> when you have a complex fraction.</li>
+          </ul>
+          <p>The form \(\frac{0}{0}\) is "indeterminate" — it doesn't mean DNE, it means <em>do more work</em>.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c6">6. Special trig limits &amp; the Squeeze Theorem</h2>
+          <p>Two trig limits are worth memorizing cold:</p>
+          <p>$$\lim_{x \to 0}\frac{\sin x}{x} = 1, \qquad \lim_{x \to 0}\frac{1 - \cos x}{x} = 0$$</p>
+          <p>The <strong>Squeeze (Sandwich) Theorem</strong> handles functions trapped between two others: if \(g(x) \le f(x) \le h(x)\) near \(a\) and \(\lim_{x\to a} g = \lim_{x\to a} h = L\), then \(\lim_{x\to a} f = L\) too. It's the classic tool for wild oscillating functions.</p>
+        </section>
+
+        <section class="concept">
+          <h2 id="c7">7. Infinite limits &amp; limits at infinity</h2>
           <ul>
             <li><strong>Infinite limit:</strong> the function blows up near a point (like \(\frac{1}{x-2}\) at \(x = 2\)). The limit is \(\pm\infty\) and you get a <strong>vertical asymptote</strong>.</li>
             <li><strong>Limit at infinity:</strong> \(x\) itself grows without bound. \(\lim_{x \to \pm\infty} f(x)\) describes the <strong>end behavior</strong>, often a <strong>horizontal asymptote</strong>.</li>
           </ul>
+          <p>Shortcut for rational functions \(\frac{p(x)}{q(x)}\) as \(x\to\pm\infty\): compare degrees. Bottom bigger → limit \(0\); degrees equal → ratio of leading coefficients; top bigger → \(\pm\infty\).</p>
         </section>
 
         <section class="concept">
-          <h2 id="c5">5. Continuity</h2>
+          <h2 id="c8">8. Continuity at a point</h2>
           <p>A function is <strong>continuous at \(x = a\)</strong> if all three are true:</p>
           <ol>
             <li>\(f(a)\) is defined</li>
             <li>\(\lim_{x \to a} f(x)\) exists</li>
             <li>\(\lim_{x \to a} f(x) = f(a)\)</li>
           </ol>
-          <p>If any one fails, there is a discontinuity. The three common types are <strong>removable</strong> (a hole), <strong>jump</strong>, and <strong>infinite</strong> (a vertical asymptote).</p>
+          <p>If any one fails there's a discontinuity. The three types: <strong>removable</strong> (a hole), <strong>jump</strong>, and <strong>infinite</strong> (a vertical asymptote). "Continuous" intuitively means you can draw it without lifting your pencil.</p>
         </section>
 
-        <!-- Worked examples -->
+        <section class="concept">
+          <h2 id="c9">9. The Intermediate Value Theorem</h2>
+          <p>If \(f\) is <strong>continuous</strong> on \([a, b]\) and \(N\) is any value between \(f(a)\) and \(f(b)\), then \(f\) hits \(N\) at least once in \((a, b)\).</p>
+          <p>In practice it's how you prove a solution <em>exists</em>: if \(f\) is continuous and changes sign across an interval, there must be a root in between.</p>
+        </section>
+
+        <!-- ===================== EXAMPLES ===================== -->
         <h2 class="solutions-heading"><span class="chip"></span>Step-by-step solutions</h2>
         <p class="intro">Click any example to expand the full solution. Examples with a graph let you drag and zoom.</p>
 
@@ -86,7 +129,19 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span id="x2">Example 2 — Factoring a \(\tfrac{0}{0}\) form: \(\lim_{x \to 2}\dfrac{x^2 - 4}{x - 2}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x2">Example 2 — Estimating from a table: \(\lim_{x \to 1}\dfrac{x^3 - 1}{x - 1}\)</span></summary>
+          <p>Direct substitution gives \(\frac{0}{0}\), so build a table closing in on \(x = 1\) from both sides:</p>
+          <ol class="steps">
+            <li>\(x = 0.9 \Rightarrow 2.710\); &nbsp; \(x = 0.99 \Rightarrow 2.970\); &nbsp; \(x = 0.999 \Rightarrow 2.997\)</li>
+            <li>\(x = 1.1 \Rightarrow 3.310\); &nbsp; \(x = 1.01 \Rightarrow 3.030\); &nbsp; \(x = 1.001 \Rightarrow 3.003\)</li>
+            <li>Both sides march toward the same value.</li>
+            <li>Estimate: \(\;\boxed{3}\) &nbsp;(and factoring \(x^3-1=(x-1)(x^2+x+1)\) confirms it exactly).</li>
+          </ol>
+          <p class="note">On a TI-84 you'd build this with <strong>2ND → GRAPH</strong> (TABLE) — see the Calculator Guide.</p>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x3">Example 3 — Factoring a \(\tfrac{0}{0}\) form: \(\lim_{x \to 2}\dfrac{x^2 - 4}{x - 2}\)</span></summary>
           <ol class="steps">
             <li>Direct substitution: \(\dfrac{2^2 - 4}{2 - 2} = \dfrac{0}{0}\) — indeterminate, so rewrite.</li>
             <li>Factor the numerator: \(x^2 - 4 = (x - 2)(x + 2)\).</li>
@@ -99,7 +154,7 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span id="x3">Example 3 — Rationalizing: \(\lim_{x \to 0}\dfrac{\sqrt{x+4} - 2}{x}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x4">Example 4 — Rationalizing: \(\lim_{x \to 0}\dfrac{\sqrt{x+4} - 2}{x}\)</span></summary>
           <ol class="steps">
             <li>Direct substitution gives \(\dfrac{\sqrt{4} - 2}{0} = \dfrac{0}{0}\) — indeterminate.</li>
             <li>Multiply top and bottom by the conjugate \(\sqrt{x+4} + 2\):</li>
@@ -111,7 +166,18 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span id="x4">Example 4 — One-sided limits &amp; a jump: \(f(x)=\begin{cases}x^2 &amp; x&lt;1\\ x+1 &amp; x\ge 1\end{cases}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x5">Example 5 — A complex fraction: \(\lim_{x \to 0}\dfrac{\frac{1}{x+2} - \frac{1}{2}}{x}\)</span></summary>
+          <ol class="steps">
+            <li>Substitution gives \(\frac{0}{0}\). First combine the top over a common denominator \(2(x+2)\):</li>
+            <li>$$\frac{1}{x+2} - \frac{1}{2} = \frac{2 - (x+2)}{2(x+2)} = \frac{-x}{2(x+2)}$$</li>
+            <li>Now divide by \(x\) (multiply by \(\frac{1}{x}\)): \(\dfrac{-x}{2(x+2)}\cdot\dfrac{1}{x} = \dfrac{-1}{2(x+2)}\).</li>
+            <li>Substitute \(x = 0\): \(\dfrac{-1}{2(2)}\).</li>
+            <li>Answer: \(\;\boxed{-\tfrac{1}{4}}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x6">Example 6 — One-sided limits &amp; a jump: \(f(x)=\begin{cases}x^2 &amp; x&lt;1\\ x+1 &amp; x\ge 1\end{cases}\)</span></summary>
           <ol class="steps">
             <li><strong>From the left</strong> (use \(x^2\)): \(\lim_{x \to 1^-} f(x) = 1^2 = 1\).</li>
             <li><strong>From the right</strong> (use \(x+1\)): \(\lim_{x \to 1^+} f(x) = 1 + 1 = 2\).</li>
@@ -123,7 +189,43 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span id="x5">Example 5 — Infinite limit: \(\lim_{x \to 2}\dfrac{1}{x-2}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x7">Example 7 — A limit that DNE: \(\lim_{x \to 0}\dfrac{|x|}{x}\)</span></summary>
+          <ol class="steps">
+            <li>For \(x &gt; 0\), \(|x| = x\), so \(\dfrac{|x|}{x} = 1\): the right-hand limit is \(1\).</li>
+            <li>For \(x &lt; 0\), \(|x| = -x\), so \(\dfrac{|x|}{x} = -1\): the left-hand limit is \(-1\).</li>
+            <li>The sides disagree (\(-1 \neq 1\)).</li>
+            <li>Answer: the limit \(\;\boxed{\text{does not exist}}\).</li>
+          </ol>
+          <p class="note">The graph is two flat rays — height \(+1\) for positive \(x\), height \(-1\) for negative \(x\) — with a break at the origin.</p>
+          <div id="graph-abs" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x8">Example 8 — Squeeze Theorem: \(\lim_{x \to 0} x^2 \cos\!\left(\tfrac{1}{x}\right)\)</span></summary>
+          <ol class="steps">
+            <li>\(\cos\) of anything stays between \(-1\) and \(1\): \(-1 \le \cos\!\left(\tfrac{1}{x}\right) \le 1\).</li>
+            <li>Multiply through by \(x^2\) (never negative): \(-x^2 \le x^2\cos\!\left(\tfrac{1}{x}\right) \le x^2\).</li>
+            <li>As \(x \to 0\), both \(-x^2 \to 0\) and \(x^2 \to 0\).</li>
+            <li>Squeezed between two things going to \(0\): \(\;\boxed{0}\).</li>
+          </ol>
+          <p class="note">The middle curve wiggles infinitely fast near \(0\) but is trapped inside the two parabolas \(y = \pm x^2\), which pinch it to the origin.</p>
+          <div id="graph-squeeze" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x9">Example 9 — The famous trig limit: \(\lim_{x \to 0}\dfrac{\sin x}{x}\)</span></summary>
+          <ol class="steps">
+            <li>Substitution gives \(\frac{0}{0}\) — but this is a known special limit.</li>
+            <li>The table backs it up: \(\frac{\sin(0.1)}{0.1} \approx 0.9983\), \(\frac{\sin(0.01)}{0.01} \approx 0.99998\).</li>
+            <li>Both sides approach the same height.</li>
+            <li>Answer: \(\;\boxed{1}\). (Memorize this — it powers the derivative of \(\sin x\).)</li>
+          </ol>
+          <p class="note">Notice the curve has a hole at \(x = 0\) but clearly aims for height \(1\) there.</p>
+          <div id="graph-sinx" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x10">Example 10 — Infinite limit: \(\lim_{x \to 2}\dfrac{1}{x-2}\)</span></summary>
           <ol class="steps">
             <li>Substituting gives \(\dfrac{1}{0}\) — undefined, so check each side.</li>
             <li><strong>From the left</strong> (\(x\) just below 2): bottom is a tiny <em>negative</em>, so \(\lim_{x \to 2^-}\dfrac{1}{x-2} = -\infty\).</li>
@@ -135,9 +237,9 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span id="x6">Example 6 — Limit at infinity: \(\lim_{x \to \infty}\dfrac{3x^2 + 2}{x^2 + 1}\)</span></summary>
+          <summary><span class="caret">▶</span><span id="x11">Example 11 — Limit at infinity (rational): \(\lim_{x \to \infty}\dfrac{3x^2 + 2}{x^2 + 1}\)</span></summary>
           <ol class="steps">
-            <li>For a rational function, compare the highest powers — here both are \(x^2\).</li>
+            <li>Same degree on top and bottom (both \(x^2\)), so compare leading coefficients.</li>
             <li>Divide every term by \(x^2\): \(\dfrac{3 + 2/x^2}{1 + 1/x^2}\).</li>
             <li>As \(x \to \infty\), \(2/x^2\) and \(1/x^2\) shrink to \(0\): \(\dfrac{3 + 0}{1 + 0}\).</li>
             <li>Answer: \(\;\boxed{3}\). The line \(y = 3\) is a <strong>horizontal asymptote</strong>.</li>
@@ -147,7 +249,19 @@
         </details>
 
         <details class="solution">
-          <summary><span class="caret">▶</span><span id="x7">Example 7 — Checking continuity at a point</span></summary>
+          <summary><span class="caret">▶</span><span id="x12">Example 12 — Limit at infinity with a root: \(\lim_{x \to \infty}\dfrac{x}{\sqrt{x^2 + 1}}\)</span></summary>
+          <ol class="steps">
+            <li>For large \(x\), \(\sqrt{x^2+1}\) behaves like \(\sqrt{x^2} = |x| = x\).</li>
+            <li>Divide top and bottom by \(x\) (using \(x = \sqrt{x^2}\) inside the root): \(\dfrac{1}{\sqrt{1 + 1/x^2}}\).</li>
+            <li>As \(x \to \infty\), \(1/x^2 \to 0\): \(\dfrac{1}{\sqrt{1}} = 1\).</li>
+            <li>Answer: \(\;\boxed{1}\). (And \(\lim_{x\to-\infty} = -1\) — a second horizontal asymptote.)</li>
+          </ol>
+          <p class="note">The curve levels off toward \(y = 1\) on the right and \(y = -1\) on the left.</p>
+          <div id="graph-sqrt" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x13">Example 13 — Checking continuity at a point</span></summary>
           <p>Let \(f(x) = \dfrac{x^2 - 1}{x - 1}\) for \(x \neq 1\), and \(f(1) = 3\). Is \(f\) continuous at \(x = 1\)?</p>
           <ol class="steps">
             <li><strong>Is \(f(1)\) defined?</strong> Yes, \(f(1) = 3\).</li>
@@ -157,6 +271,30 @@
           </ol>
           <p class="note">The open hole sits at \((1, 2)\) where the curve naturally goes; the red dot is the separately-defined \(f(1) = 3\) floating above it.</p>
           <div id="graph-continuity" class="example-graph"></div>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x14">Example 14 — Make a piecewise function continuous</span></summary>
+          <p>Find \(a\) so that \(f(x)=\begin{cases}x^2 &amp; x \le 2\\ ax + 1 &amp; x &gt; 2\end{cases}\) is continuous at \(x = 2\).</p>
+          <ol class="steps">
+            <li>For continuity the two pieces must meet: \(\lim_{x\to 2^-} = \lim_{x\to 2^+} = f(2)\).</li>
+            <li>Left piece at \(2\): \(2^2 = 4\).</li>
+            <li>Right piece at \(2\): \(a(2) + 1 = 2a + 1\).</li>
+            <li>Set them equal: \(2a + 1 = 4 \Rightarrow 2a = 3\).</li>
+            <li>Answer: \(\;\boxed{a = \tfrac{3}{2}}\)</li>
+          </ol>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span id="x15">Example 15 — Intermediate Value Theorem: does \(x^3 + x - 1 = 0\) have a solution in \([0,1]\)?</span></summary>
+          <ol class="steps">
+            <li>\(f(x) = x^3 + x - 1\) is a polynomial, so it's <strong>continuous</strong> on \([0, 1]\).</li>
+            <li>Endpoints: \(f(0) = -1\) (negative) and \(f(1) = 1\) (positive).</li>
+            <li>\(0\) lies between \(-1\) and \(1\), and \(f\) is continuous.</li>
+            <li>By the IVT there is some \(c\) in \((0, 1)\) with \(\;\boxed{f(c) = 0}\) — a guaranteed root.</li>
+          </ol>
+          <p class="note">The curve starts below the \(x\)-axis at \(x=0\) and ends above it at \(x=1\), so it must cross somewhere in between (near \(x \approx 0.68\)).</p>
+          <div id="graph-ivt" class="example-graph"></div>
         </details>
 
         <nav class="unit-nav">
@@ -175,8 +313,7 @@
     document.addEventListener("DOMContentLoaded", function () {
       function whenDesmos(cb) {
         if (window.Desmos) return cb();
-        var t = 0;
-        var iv = setInterval(function () {
+        var t = 0, iv = setInterval(function () {
           if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
         }, 200);
       }
@@ -203,6 +340,23 @@
           c.setExpression({ id: "o", latex: "(1,1)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
           c.setExpression({ id: "cc", latex: "(1,2)", color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
         });
+        initGraph("graph-abs", function (c) {
+          c.setMathBounds({ left: -4, right: 4, bottom: -2.5, top: 2.5 });
+          c.setExpression({ id: "f", latex: "y=\\frac{\\left|x\\right|}{x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "r", latex: "(0,1)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "l", latex: "(0,-1)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+        });
+        initGraph("graph-squeeze", function (c) {
+          c.setMathBounds({ left: -0.6, right: 0.6, bottom: -0.4, top: 0.4 });
+          c.setExpression({ id: "f", latex: "y=x^2\\cos\\left(\\frac{1}{x}\\right)", color: D.Colors.BLUE });
+          c.setExpression({ id: "u", latex: "y=x^2", color: "#888888", lineStyle: D.Styles.DASHED });
+          c.setExpression({ id: "d", latex: "y=-x^2", color: "#888888", lineStyle: D.Styles.DASHED });
+        });
+        initGraph("graph-sinx", function (c) {
+          c.setMathBounds({ left: -10, right: 10, bottom: -0.5, top: 1.5 });
+          c.setExpression({ id: "f", latex: "y=\\frac{\\sin x}{x}", color: D.Colors.BLUE });
+          c.setExpression({ id: "p", latex: "(0,1)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
+        });
         initGraph("graph-infinite", function (c) {
           c.setMathBounds({ left: -3, right: 7, bottom: -6, top: 6 });
           c.setExpression({ id: "f", latex: "y=1/(x-2)", color: D.Colors.BLUE });
@@ -213,11 +367,23 @@
           c.setExpression({ id: "f", latex: "y=(3x^2+2)/(x^2+1)", color: D.Colors.BLUE });
           c.setExpression({ id: "ha", latex: "y=3", color: "#888888", lineStyle: D.Styles.DASHED });
         });
+        initGraph("graph-sqrt", function (c) {
+          c.setMathBounds({ left: -10, right: 10, bottom: -2, top: 2 });
+          c.setExpression({ id: "f", latex: "y=\\frac{x}{\\sqrt{x^2+1}}", color: D.Colors.BLUE });
+          c.setExpression({ id: "h1", latex: "y=1", color: "#888888", lineStyle: D.Styles.DASHED });
+          c.setExpression({ id: "h2", latex: "y=-1", color: "#888888", lineStyle: D.Styles.DASHED });
+        });
         initGraph("graph-continuity", function (c) {
           c.setMathBounds({ left: -4, right: 6, bottom: -3, top: 7 });
           c.setExpression({ id: "l", latex: "y=x+1", color: D.Colors.BLUE });
           c.setExpression({ id: "hole", latex: "(1,2)", pointStyle: D.Styles.OPEN, color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
           c.setExpression({ id: "def", latex: "(1,3)", color: D.Colors.RED, dragMode: D.DragModes.NONE, showLabel: true, label: "f(1)=3" });
+        });
+        initGraph("graph-ivt", function (c) {
+          c.setMathBounds({ left: -1, right: 2, bottom: -3, top: 3 });
+          c.setExpression({ id: "f", latex: "y=x^3+x-1", color: D.Colors.BLUE });
+          c.setExpression({ id: "a", latex: "(0,-1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
+          c.setExpression({ id: "b", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
         });
       });
     });

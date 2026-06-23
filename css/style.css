@@ -417,6 +417,13 @@ summary { list-style: none; }
 
 .katex { font-size: 1.04em; }
 
+code {
+  font-family: "DejaVu Sans Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: .92em; font-weight: 700;
+  background: #f3ead6; color: #6f5a36;
+  padding: 1px 6px; border-radius: 6px; white-space: nowrap;
+}
+
 /* --------------------------------------------------------------- footer */
 
 .site-footer {

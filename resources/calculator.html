@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator Guide — AP Calculus AB</title>
+  <title>Calculator Guide (TI-84) — AP Calculus AB</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,11 +22,12 @@
         <a class="back-link" href="../index.html">← Home</a>
 
         <header class="page-header" style="background:#cfe3b0">
-          <div class="eyebrow" style="color:#5f7d36">RESOURCE</div>
+          <div class="eyebrow" style="color:#5f7d36">RESOURCE · TI-84</div>
           <h1>Calculator Guide</h1>
         </header>
-        <p class="page-intro">On the exam you switch between calculator and no-calculator sections. Here's exactly when it's allowed — and how to use it without losing points.</p>
+        <p class="page-intro">A hands-on guide to the <strong>TI-84 Plus / TI-84 Plus CE</strong> — the exact keys to press for everything AP Calculus AB asks you to do. If you've never felt comfortable with your calculator, start at the top and work down.</p>
 
+        <!-- ============================ WHEN ============================ -->
         <h2 class="section-heading sub"><span class="chip" style="background:#cfe3b0"></span>When can you use it?</h2>
         <div class="must-grid">
           <div class="when-card top-sage">
@@ -44,35 +45,155 @@
             </ul>
           </div>
         </div>
+        <p class="note-line">You may bring <strong>two</strong> approved graphing calculators. The TI-84 family is approved. Clear or reset memory only if your teacher tells you to — you don't need to.</p>
 
-        <h2 class="section-heading sub tight"><span class="chip" style="background:#bcdcec"></span>The 4 things it must do</h2>
-        <p class="intro">On calculator sections you're expected to do these four things — no intermediate work required.</p>
+        <!-- ============================ KEYS ============================ -->
+        <h2 class="section-heading sub tight"><span class="chip" style="background:#f3c97a"></span>Know your keys</h2>
+        <p class="intro">Almost everything in calculus uses just a handful of keys. The blue/green words <em>above</em> a key are reached with the <strong>2ND</strong> key first.</p>
         <div class="must-grid">
           <div class="must-card">
-            <span class="badge" style="background:#fbe0db;color:#cf7d72">1</span>
-            <div><h3>Graph a function</h3><p>Plot in any viewing window you choose.</p></div>
+            <span class="badge" style="background:#cfe3b0;color:#5f7d36">Y=</span>
+            <div><h3>Y=</h3><p>Type the function(s) you want to graph. Up to 10 (Y1, Y2, …).</p></div>
           </div>
           <div class="must-card">
-            <span class="badge" style="background:#cfe3b0;color:#7c9c4e">2</span>
-            <div><h3>Solve equations</h3><p>Find zeros / where two graphs intersect.</p></div>
+            <span class="badge" style="background:#bcdcec;color:#4e8db8">WIN</span>
+            <div><h3>WINDOW</h3><p>Set the viewing box: Xmin, Xmax, Ymin, Ymax.</p></div>
           </div>
           <div class="must-card">
-            <span class="badge" style="background:#bcdcec;color:#4e8db8">3</span>
-            <div><h3>Derivative at a point</h3><p>Evaluate \(f'(a)\) numerically.</p></div>
+            <span class="badge" style="background:#f8d9b8;color:#cf9450">ZOOM</span>
+            <div><h3>ZOOM</h3><p><strong>6</strong> = standard (−10 to 10). <strong>0</strong> = ZoomFit auto-fits Y.</p></div>
           </div>
           <div class="must-card">
-            <span class="badge" style="background:#c6cdf0;color:#6a73c4">4</span>
-            <div><h3>Definite integral</h3><p>Evaluate \(\int_a^b f(x)\,dx\) numerically.</p></div>
+            <span class="badge" style="background:#e2c9ec;color:#9d6cbb">GRAPH</span>
+            <div><h3>GRAPH</h3><p>Draws what's in Y= using the current window.</p></div>
+          </div>
+          <div class="must-card">
+            <span class="badge" style="background:#f7c9c2;color:#cf7d72">CALC</span>
+            <div><h3>2ND → TRACE</h3><p>Opens the <strong>CALC</strong> menu — zeros, intersect, dy/dx, ∫. This is the big one.</p></div>
+          </div>
+          <div class="must-card">
+            <span class="badge" style="background:#c6cdf0;color:#6a73c4">MATH</span>
+            <div><h3>MATH</h3><p>Holds <strong>nDeriv(</strong> and <strong>fnInt(</strong> for derivatives &amp; integrals without a graph.</p></div>
           </div>
         </div>
 
+        <!-- ============================ MODE ============================ -->
+        <h2 class="section-heading sub"><span class="chip" style="background:#bbe3d0"></span>First: set RADIAN mode</h2>
+        <section class="concept left-sage">
+          <p style="margin:0 0 10px">Calculus runs on radians. A wrong mode silently gives wrong trig answers, so check this <strong>before every exam</strong>.</p>
+          <ol style="margin:0;padding-left:22px">
+            <li style="margin-bottom:4px">Press <strong>MODE</strong>.</li>
+            <li style="margin-bottom:4px">Arrow down to the <strong>RADIAN / DEGREE</strong> row.</li>
+            <li style="margin-bottom:4px">Highlight <strong>RADIAN</strong> and press <strong>ENTER</strong>.</li>
+            <li>Press <strong>2ND → MODE</strong> (QUIT) to leave.</li>
+          </ol>
+        </section>
+
+        <!-- ============================ GRAPH STEPS ============================ -->
+        <h2 class="section-heading sub"><span class="chip" style="background:#bcdcec"></span>Graph a function, step by step</h2>
+        <p class="intro">Say you want to graph \(f(x) = x^3 - 4x\).</p>
+        <section class="concept" style="border-left-color:#bcdcec">
+          <ol style="margin:0;padding-left:22px">
+            <li style="margin-bottom:6px">Press <strong>Y=</strong>. Next to <strong>Y1=</strong> type <code>X^3 − 4X</code>. (The <strong>X</strong> key is <strong>X,T,θ,n</strong>, just under MODE. Use the white <strong>(−)</strong> key for negatives, not the blue minus.)</li>
+            <li style="margin-bottom:6px">Press <strong>ZOOM</strong> then <strong>6</strong> for the standard window. You'll see the curve.</li>
+            <li style="margin-bottom:6px">If the graph runs off the top or bottom, press <strong>ZOOM</strong> then <strong>0</strong> (ZoomFit), or open <strong>WINDOW</strong> and widen Ymin/Ymax by hand.</li>
+            <li>Press <strong>TRACE</strong> and use ◄ ► to walk a blinking dot along the curve and read off coordinates.</li>
+          </ol>
+        </section>
+        <p class="note-line">Tip: to graph two functions at once (for an intersection), just put one in <strong>Y1</strong> and the other in <strong>Y2</strong>.</p>
+
+        <!-- ============================ 4 SKILLS ============================ -->
+        <h2 class="section-heading tight"><span class="chip" style="background:#f7c9c2"></span>The 4 exam skills</h2>
+        <p class="intro">On calculator sections you're expected to do these four things directly — no algebra shown. Each opens from the <strong>CALC</strong> menu (<strong>2ND → TRACE</strong>). Tap a skill for the full keystrokes.</p>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>1 · Graph a function &amp; read a value — <code>1: value</code></span></summary>
+          <ol class="steps">
+            <li>Enter the function in <strong>Y1</strong> and press <strong>GRAPH</strong>.</li>
+            <li>Press <strong>2ND → TRACE</strong> to open <strong>CALC</strong>, choose <strong>1: value</strong>.</li>
+            <li>Type the \(x\) you want (e.g. <code>2</code>) and press <strong>ENTER</strong>.</li>
+            <li>The calculator marks the point and shows \(y = f(2)\) at the bottom.</li>
+          </ol>
+          <p class="note">Great for "find \(f(2)\)" or checking a point lies on the curve.</p>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>2 · Solve an equation — zeros &amp; intersections (<code>2: zero</code>, <code>5: intersect</code>)</span></summary>
+          <p style="margin:6px 0 8px"><strong>To solve \(f(x) = 0\)</strong> (find an x-intercept / "zero" / "root"):</p>
+          <ol class="steps">
+            <li>Put \(f\) in <strong>Y1</strong>, press <strong>GRAPH</strong>.</li>
+            <li><strong>2ND → TRACE</strong>, choose <strong>2: zero</strong>.</li>
+            <li><strong>Left Bound?</strong> — move the cursor just left of the crossing, press <strong>ENTER</strong>.</li>
+            <li><strong>Right Bound?</strong> — move just right of it, press <strong>ENTER</strong>.</li>
+            <li><strong>Guess?</strong> — press <strong>ENTER</strong> again. The zero appears as <code>X=…</code>.</li>
+          </ol>
+          <p style="margin:6px 0 8px"><strong>To solve \(f(x) = g(x)\)</strong> (where two graphs meet):</p>
+          <ol class="steps">
+            <li>Put \(f\) in <strong>Y1</strong> and \(g\) in <strong>Y2</strong>, press <strong>GRAPH</strong>.</li>
+            <li><strong>2ND → TRACE</strong>, choose <strong>5: intersect</strong>.</li>
+            <li>Press <strong>ENTER</strong> for <strong>First curve?</strong>, <strong>ENTER</strong> for <strong>Second curve?</strong>, then <strong>ENTER</strong> for <strong>Guess?</strong> near the crossing.</li>
+            <li>The intersection point shows as <code>X=…  Y=…</code>.</li>
+          </ol>
+          <p class="note">Trick for solving any equation like \(e^x = 3x\): move everything to one side (\(e^x - 3x = 0\)) and use <strong>zero</strong>, <em>or</em> graph each side and use <strong>intersect</strong>.</p>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>3 · Derivative at a point — <code>6: dy/dx</code> (and MATH <code>nDeriv(</code>)</span></summary>
+          <p style="margin:6px 0 8px">This evaluates \(f'(a)\) — the slope at a point — numerically.</p>
+          <p style="margin:6px 0 6px"><strong>From the graph:</strong></p>
+          <ol class="steps">
+            <li>Put \(f\) in <strong>Y1</strong>, press <strong>GRAPH</strong>.</li>
+            <li><strong>2ND → TRACE</strong>, choose <strong>6: dy/dx</strong>.</li>
+            <li>Type the \(x\)-value (e.g. <code>1</code>) and press <strong>ENTER</strong>. The slope \(f'(1)\) appears.</li>
+          </ol>
+          <p style="margin:6px 0 6px"><strong>From the home screen (no graph needed):</strong></p>
+          <ol class="steps">
+            <li>Press <strong>MATH</strong>, choose <strong>8: nDeriv(</strong>.</li>
+            <li>Fill the template \(\frac{d}{dx}\big(\,\square\,\big)\big|_{x=\square}\): the function, then the value. Example for \(f(x)=x^2\) at \(x=3\): <code>nDeriv(X², X, 3)</code> → <strong>6</strong>.</li>
+          </ol>
+          <p class="note">Older OS shows <code>nDeriv(expr, X, a)</code>; the CE shows a tidy \(d/dx\) template — same result.</p>
+        </details>
+
+        <details class="solution">
+          <summary><span class="caret">▶</span><span>4 · Definite integral — <code>7: ∫f(x)dx</code> (and MATH <code>fnInt(</code>)</span></summary>
+          <p style="margin:6px 0 8px">This evaluates \(\displaystyle\int_a^b f(x)\,dx\) — the (signed) area — numerically.</p>
+          <p style="margin:6px 0 6px"><strong>From the graph:</strong></p>
+          <ol class="steps">
+            <li>Put \(f\) in <strong>Y1</strong>, press <strong>GRAPH</strong>.</li>
+            <li><strong>2ND → TRACE</strong>, choose <strong>7: ∫f(x)dx</strong>.</li>
+            <li><strong>Lower Limit?</strong> — type \(a\), press <strong>ENTER</strong>. <strong>Upper Limit?</strong> — type \(b\), press <strong>ENTER</strong>.</li>
+            <li>The region shades and the value of the integral appears.</li>
+          </ol>
+          <p style="margin:6px 0 6px"><strong>From the home screen:</strong></p>
+          <ol class="steps">
+            <li>Press <strong>MATH</strong>, choose <strong>9: fnInt(</strong>.</li>
+            <li>Fill \(\displaystyle\int_\square^\square \square\,dx\): lower, upper, function, variable. Example \(\int_0^2 3x^2\,dx\): <code>fnInt(3X², X, 0, 2)</code> → <strong>8</strong>.</li>
+          </ol>
+          <p class="note">On a free-response question, still <strong>write the integral</strong> on paper — e.g. "\(\int_0^4 v(t)\,dt = 12.5\)". The setup earns points, not just the number.</p>
+        </details>
+
+        <!-- ============================ EXTRAS ============================ -->
+        <h2 class="section-heading sub"><span class="chip" style="background:#f5e6a6"></span>Two more worth knowing</h2>
+        <div class="must-grid">
+          <div class="when-card" style="border-top:6px solid #f5e6a6">
+            <div class="eyebrow" style="color:#bb9a34">MAX / MIN</div>
+            <p style="margin:10px 0 0;font-size:14.5px;color:var(--body)">In <strong>CALC</strong> use <strong>3: minimum</strong> or <strong>4: maximum</strong> exactly like <em>zero</em> (left bound, right bound, guess) to find a peak or valley — handy for optimization checks.</p>
+          </div>
+          <div class="when-card" style="border-top:6px solid #bcdcec">
+            <div class="eyebrow" style="color:#4e8db8">TABLE</div>
+            <p style="margin:10px 0 0;font-size:14.5px;color:var(--body)">Press <strong>2ND → GRAPH</strong> to see a table of \(x\) and \(y\) values for whatever's in Y=. Set the start/step with <strong>2ND → WINDOW</strong> (TBLSET). Great for estimating limits.</p>
+          </div>
+        </div>
+
+        <!-- ============================ HABITS / MISTAKES ============================ -->
         <h2 class="section-heading sub"><span class="chip" style="background:#bbe3d0"></span>Smart habits</h2>
         <section class="concept left-sage">
           <ul class="bullet-list">
-            <li>Keep <strong>full decimals</strong> in the calculator and round only the <strong>final</strong> answer — to 3 decimal places.</li>
-            <li>Always <strong>write the setup first</strong> (the integral, equation or derivative). Graders score the setup, not just the number.</li>
+            <li>Keep <strong>full decimals</strong> in the calculator and round only the <strong>final</strong> answer — to <strong>3 decimal places</strong>, the AP standard.</li>
+            <li>Always <strong>write the setup first</strong> (the integral, equation, or derivative). Graders score the setup, not just the number.</li>
             <li>Stay in <strong>radian mode</strong> unless a problem clearly uses degrees.</li>
-            <li>Label what you typed so your work reads clearly: e.g. "\(\int_0^4 v(t)\,dt = 12.5\)".</li>
+            <li>Store messy numbers instead of retyping: type a value then <strong>STO→</strong> and a letter (e.g. <strong>A</strong>) to reuse it exactly.</li>
+            <li>Use the white <strong>(−)</strong> key for negative numbers and the blue <strong>−</strong> key only for subtraction — mixing them throws a <em>SYNTAX</em> error.</li>
           </ul>
         </section>
 
@@ -81,7 +202,9 @@
           <ul class="bullet-list">
             <li>Being in <strong>degree mode</strong> for a trig problem — answers come out wrong with no warning.</li>
             <li><strong>Rounding too early</strong> and carrying the rounded number forward.</li>
-            <li>Writing only the final number on a free-response question with <strong>no setup</strong> shown.</li>
+            <li>Forgetting to <strong>close parentheses</strong> in <code>nDeriv(</code> / <code>fnInt(</code>.</li>
+            <li>A <em>flat line</em> or <em>nothing</em> on screen usually means a bad <strong>WINDOW</strong> — try <strong>ZOOM 6</strong> then <strong>ZOOM 0</strong>.</li>
+            <li>Writing only the final number on free response with <strong>no setup</strong> shown.</li>
           </ul>
         </section>
 

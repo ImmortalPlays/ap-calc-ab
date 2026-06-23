@@ -40,21 +40,33 @@
     var u1 = UNITS[0].pastel;
     [
       ["c1", "What is a limit?", "limit definition approaches"],
-      ["c2", "One-sided limits", "one-sided left right dne does not exist"],
-      ["c3", "Evaluating limits", "evaluate substitution factor rationalize indeterminate"],
-      ["c4", "Infinite limits & limits at infinity", "infinity asymptote vertical horizontal end behavior"],
-      ["c5", "Continuity", "continuity continuous discontinuity removable jump hole"]
+      ["c2", "Estimating limits from tables & graphs", "estimate table graph numeric"],
+      ["c3", "One-sided limits & when a limit fails to exist", "one-sided left right dne does not exist jump"],
+      ["c4", "The limit laws", "limit laws sum product quotient algebra"],
+      ["c5", "Evaluating limits algebraically", "evaluate substitution factor rationalize indeterminate complex fraction"],
+      ["c6", "Special trig limits & the Squeeze Theorem", "sin x over x squeeze sandwich theorem trig"],
+      ["c7", "Infinite limits & limits at infinity", "infinity asymptote vertical horizontal end behavior"],
+      ["c8", "Continuity at a point", "continuity continuous discontinuity removable jump hole"],
+      ["c9", "The Intermediate Value Theorem", "ivt intermediate value theorem root exists"]
     ].forEach(function (c) {
       idx.push({ label: c[1], tag: "Unit 1 · Concept", dot: u1, href: unitUrl(1) + "#" + c[0], kw: c[2] });
     });
     [
       ["x1", "Direct substitution", "substitution polynomial direct"],
-      ["x2", "Factoring a 0/0 form", "factor factoring zero over zero indeterminate"],
-      ["x3", "Rationalizing a limit", "rationalize conjugate square root"],
-      ["x4", "One-sided limits & a jump", "jump piecewise one-sided discontinuity"],
-      ["x5", "Infinite limit", "infinite vertical asymptote"],
-      ["x6", "Limit at infinity", "infinity end behavior horizontal asymptote"],
-      ["x7", "Checking continuity at a point", "continuity removable hole"]
+      ["x2", "Estimating a limit from a table", "table estimate numeric"],
+      ["x3", "Factoring a 0/0 form", "factor factoring zero over zero indeterminate"],
+      ["x4", "Rationalizing a limit", "rationalize conjugate square root"],
+      ["x5", "A complex fraction limit", "complex fraction common denominator"],
+      ["x6", "One-sided limits & a jump", "jump piecewise one-sided discontinuity"],
+      ["x7", "A limit that DNE (|x|/x)", "absolute value dne does not exist"],
+      ["x8", "Squeeze Theorem", "squeeze sandwich oscillate cosine"],
+      ["x9", "The sin x / x limit", "sin x over x trig special limit"],
+      ["x10", "Infinite limit", "infinite vertical asymptote"],
+      ["x11", "Limit at infinity (rational)", "infinity end behavior horizontal asymptote rational"],
+      ["x12", "Limit at infinity with a root", "infinity square root horizontal asymptote"],
+      ["x13", "Checking continuity at a point", "continuity removable hole"],
+      ["x14", "Make a piecewise function continuous", "piecewise continuous solve constant"],
+      ["x15", "Intermediate Value Theorem", "ivt root exists sign change"]
     ].forEach(function (e) {
       idx.push({ label: "Example: " + e[1], tag: "Unit 1 · Worked example", dot: u1, href: unitUrl(1) + "#" + e[0], kw: e[2] });
     });
