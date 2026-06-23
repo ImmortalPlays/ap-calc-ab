@@ -355,6 +355,41 @@
       if (panel.classList.contains("open")) close(); else open();
     });
     panel.querySelector(".calc-panel-close").addEventListener("click", close);
+
+    // Drag the panel around by its header.
+    var head = panel.querySelector(".calc-panel-head");
+    var dragging = false, startX = 0, startY = 0, startLeft = 0, startTop = 0;
+    head.addEventListener("pointerdown", function (e) {
+      if (e.target.closest(".calc-panel-close")) return;   // let the close button work
+      var r = panel.getBoundingClientRect();
+      // pin to left/top so we can move freely (it starts anchored bottom-right)
+      panel.style.left = r.left + "px";
+      panel.style.top = r.top + "px";
+      panel.style.right = "auto";
+      panel.style.bottom = "auto";
+      dragging = true;
+      startX = e.clientX; startY = e.clientY; startLeft = r.left; startTop = r.top;
+      panel.classList.add("dragging");
+      head.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    head.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var nx = startLeft + (e.clientX - startX);
+      var ny = startTop + (e.clientY - startY);
+      var maxX = window.innerWidth - panel.offsetWidth;
+      var maxY = window.innerHeight - panel.offsetHeight;
+      panel.style.left = Math.max(0, Math.min(nx, maxX)) + "px";
+      panel.style.top = Math.max(0, Math.min(ny, maxY)) + "px";
+    });
+    function endDrag(e) {
+      if (!dragging) return;
+      dragging = false;
+      panel.classList.remove("dragging");
+      try { head.releasePointerCapture(e.pointerId); } catch (_) {}
+    }
+    head.addEventListener("pointerup", endDrag);
+    head.addEventListener("pointercancel", endDrag);
   }
 
   // Give each concept heading on a unit page a stable id (c1, c2, …) so

@@ -459,7 +459,12 @@ code {
   display: flex; align-items: center; justify-content: space-between;
   padding: 10px 14px; background: var(--sidebar-bg);
   border-bottom: 1px solid var(--card-border);
+  cursor: move; user-select: none; touch-action: none;
 }
+.calc-panel-title::before {
+  content: "⠿"; margin-right: 8px; color: var(--faint); letter-spacing: -2px;
+}
+.calc-panel.dragging { box-shadow: 0 24px 60px -16px rgba(90,66,30,.8); }
 .calc-panel-title { font-family: var(--display); font-weight: 700; font-size: 14px; color: var(--ink); }
 .calc-panel-close {
   background: none; border: none; cursor: pointer;
