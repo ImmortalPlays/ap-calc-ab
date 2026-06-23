@@ -331,10 +331,27 @@
 
     var calc = null, loading = false;
 
+    var STORAGE_KEY = "apcalc-graph-state";
+
     function makeCalc() {
       var graphEl = document.getElementById("calc-widget-graph");
       graphEl.innerHTML = "";
       calc = window.Desmos.GraphingCalculator(graphEl, { border: false });
+
+      // Restore anything the student saved last time.
+      try {
+        var saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) calc.setState(JSON.parse(saved));
+      } catch (e) {}
+
+      // Persist on change (debounced — panning/zoom fire often).
+      var saveTimer = null;
+      calc.observeEvent("change", function () {
+        if (saveTimer) clearTimeout(saveTimer);
+        saveTimer = setTimeout(function () {
+          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(calc.getState())); } catch (e) {}
+        }, 400);
+      });
     }
 
     function ensureCalc() {
