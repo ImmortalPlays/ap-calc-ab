@@ -12,6 +12,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/graphs.js"></script>
   <script defer src="../js/main.js"></script>
 </head>
 <body data-page="unit" data-unit="5" data-base="../" style="--pastel:#bbe3d0;--deep:#4c9e78">
@@ -211,45 +212,5 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function whenDesmos(cb) {
-        if (window.Desmos) return cb();
-        var t = 0, iv = setInterval(function () {
-          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
-        }, 200);
-      }
-      whenDesmos(function () {
-        var D = window.Desmos;
-        function initGraph(divId, build) {
-          var elt = document.getElementById(divId);
-          if (!elt || elt._ds) return; elt._ds = true;
-          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-          build(calc);
-          var det = elt.closest("details");
-          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-        }
-        initGraph("graph-extrema", function (c) {
-          c.setMathBounds({ left: -3, right: 3, bottom: -4, top: 4 });
-          c.setExpression({ id: "f", latex: "y=x^3-3x", color: D.Colors.BLUE });
-          c.setExpression({ id: "mx", latex: "(-1,2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-          c.setExpression({ id: "mn", latex: "(1,-2)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-        initGraph("graph-mvt", function (c) {
-          c.setMathBounds({ left: -0.5, right: 2.5, bottom: -1.5, top: 4.5 });
-          c.setExpression({ id: "f", latex: "y=x^2", color: D.Colors.BLUE });
-          c.setExpression({ id: "sec", latex: "y=2x", color: "#888888", lineStyle: D.Styles.DASHED });
-          c.setExpression({ id: "tan", latex: "y=2x-1", color: D.Colors.RED });
-          c.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-        initGraph("graph-fprime", function (c) {
-          c.setMathBounds({ left: -4, right: 4, bottom: -5, top: 5 });
-          c.setExpression({ id: "fp", latex: "y=x^2-4", color: D.Colors.GREEN });
-          c.setExpression({ id: "z1", latex: "(-2,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-          c.setExpression({ id: "z2", latex: "(2,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-      });
-    });
-  </script>
 </body>
 </html>

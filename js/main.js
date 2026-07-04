@@ -409,6 +409,36 @@
     head.addEventListener("pointercancel", endDrag);
   }
 
+  // ----- in-page graphs (unit & practice pages) ---------------------------
+
+  // Graph definitions live in js/graphs.js (loaded only on the pages that
+  // need them) as window.APCALC_GRAPHS: { "graph-id": function (c, D) {…} }.
+  // The Desmos script is loaded in those pages' <head>; wait for it, then
+  // render every graph whose container is present on the current page.
+  function whenDesmos(cb) {
+    if (window.Desmos) return cb();
+    var t = 0, iv = setInterval(function () {
+      if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
+    }, 200);
+  }
+
+  function initPageGraphs() {
+    var defs = window.APCALC_GRAPHS;
+    if (!defs) return;
+    whenDesmos(function () {
+      var D = window.Desmos;
+      Object.keys(defs).forEach(function (divId) {
+        var elt = document.getElementById(divId);
+        if (!elt || elt._ds) return;
+        elt._ds = true;
+        var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
+        defs[divId](calc, D);
+        var det = elt.closest("details");
+        if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
+      });
+    });
+  }
+
   // Give each concept heading on a unit page a stable id (c1, c2, …) so
   // search results can deep-link to a specific concept.
   function tagConcepts() {
@@ -425,6 +455,7 @@
     buildSidebar();
     tagConcepts();
     buildCalcWidget();
+    initPageGraphs();
     renderMath();
   });
   window.addEventListener("load", openTarget);

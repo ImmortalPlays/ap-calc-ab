@@ -12,6 +12,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/graphs.js"></script>
   <script defer src="../js/main.js"></script>
 </head>
 <body data-page="unit" data-unit="3" data-base="../" style="--pastel:#f5e6a6;--deep:#bb9a34">
@@ -211,40 +212,5 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function whenDesmos(cb) {
-        if (window.Desmos) return cb();
-        var t = 0, iv = setInterval(function () {
-          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
-        }, 200);
-      }
-      whenDesmos(function () {
-        var D = window.Desmos;
-        function initGraph(divId, build) {
-          var elt = document.getElementById(divId);
-          if (!elt || elt._ds) return; elt._ds = true;
-          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-          build(calc);
-          var det = elt.closest("details");
-          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-        }
-        initGraph("graph-implicit", function (c) {
-          c.setMathBounds({ left: -8, right: 8, bottom: -7, top: 7 });
-          c.setExpression({ id: "c", latex: "x^2+y^2=25", color: D.Colors.BLUE });
-          c.setExpression({ id: "t", latex: "y-4=-0.75(x-3)", color: D.Colors.RED });
-          c.setExpression({ id: "p", latex: "(3,4)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-        initGraph("graph-inverse", function (c) {
-          c.setMathBounds({ left: -1, right: 5, bottom: -1, top: 5 });
-          c.setExpression({ id: "f", latex: "y=x^2\\left\\{x\\ge0\\right\\}", color: D.Colors.BLUE });
-          c.setExpression({ id: "g", latex: "y=\\sqrt{x}", color: D.Colors.GREEN });
-          c.setExpression({ id: "line", latex: "y=x", color: "#888888", lineStyle: D.Styles.DASHED });
-          c.setExpression({ id: "p1", latex: "(2,4)", color: D.Colors.BLUE, dragMode: D.DragModes.NONE });
-          c.setExpression({ id: "p2", latex: "(4,2)", color: D.Colors.GREEN, dragMode: D.DragModes.NONE });
-        });
-      });
-    });
-  </script>
 </body>
 </html>

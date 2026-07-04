@@ -12,6 +12,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/graphs.js"></script>
   <script defer src="../js/main.js"></script>
 </head>
 <body data-page="practice" data-base="../" style="--pastel:#f7c9c2;--deep:#cf7d72">
@@ -285,49 +286,5 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function whenDesmos(cb) {
-        if (window.Desmos) return cb();
-        var t = 0, iv = setInterval(function () {
-          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
-        }, 200);
-      }
-      whenDesmos(function () {
-        var D = window.Desmos;
-        function initGraph(divId, build) {
-          var elt = document.getElementById(divId);
-          if (!elt || elt._ds) return; elt._ds = true;
-          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-          build(calc);
-          var det = elt.closest("details");
-          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-        }
-        initGraph("graph-p-u1", function (c) {
-          c.setMathBounds({ left: -10, right: 10, bottom: -3, top: 7 });
-          c.setExpression({ id: "f", latex: "y=\\frac{4x^2-3}{2x^2+x}", color: D.Colors.BLUE });
-          c.setExpression({ id: "ha", latex: "y=2", color: "#888888", lineStyle: D.Styles.DASHED });
-        });
-        initGraph("graph-p-u2", function (c) {
-          c.setMathBounds({ left: -2, right: 3, bottom: -4, top: 6 });
-          c.setExpression({ id: "f", latex: "y=x^3", color: D.Colors.BLUE });
-          c.setExpression({ id: "t", latex: "y=3x-2", color: D.Colors.RED });
-          c.setExpression({ id: "p", latex: "(1,1)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-        initGraph("graph-p-u5", function (c) {
-          c.setMathBounds({ left: -3.5, right: 3.5, bottom: -20, top: 8 });
-          c.setExpression({ id: "f", latex: "y=x^4-8x^2", color: D.Colors.BLUE });
-          c.setExpression({ id: "mx", latex: "(0,0)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-          c.setExpression({ id: "m1", latex: "(-2,-16)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-          c.setExpression({ id: "m2", latex: "(2,-16)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-        initGraph("graph-p-u8", function (c) {
-          c.setMathBounds({ left: -3, right: 3, bottom: -1, top: 5 });
-          c.setExpression({ id: "f", latex: "y=4-x^2", color: D.Colors.BLUE });
-          c.setExpression({ id: "shade", latex: "0\\le y\\le4-x^2\\left\\{-2\\le x\\le2\\right\\}", color: D.Colors.PURPLE, fillOpacity: 0.3, lines: false });
-        });
-      });
-    });
-  </script>
 </body>
 </html>
