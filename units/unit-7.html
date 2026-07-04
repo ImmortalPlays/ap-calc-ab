@@ -12,6 +12,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/graphs.js"></script>
   <script defer src="../js/main.js"></script>
 </head>
 <body data-page="unit" data-unit="7" data-base="../" style="--pastel:#c6cdf0;--deep:#6a73c4">
@@ -164,36 +165,5 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function whenDesmos(cb) {
-        if (window.Desmos) return cb();
-        var t = 0, iv = setInterval(function () {
-          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
-        }, 200);
-      }
-      whenDesmos(function () {
-        var D = window.Desmos;
-        function initGraph(divId, build) {
-          var elt = document.getElementById(divId);
-          if (!elt || elt._ds) return; elt._ds = true;
-          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-          build(calc);
-          var det = elt.closest("details");
-          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-        }
-        initGraph("graph-growth", function (c) {
-          c.setMathBounds({ left: -1, right: 8, bottom: -50, top: 1200 });
-          c.setExpression({ id: "f", latex: "y=100e^{0.5x}", color: D.Colors.BLUE });
-          c.setExpression({ id: "p", latex: "(0,100)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-        initGraph("graph-decay", function (c) {
-          c.setMathBounds({ left: -1, right: 10, bottom: -10, top: 120 });
-          c.setExpression({ id: "f", latex: "y=100e^{-0.5x}", color: D.Colors.BLUE });
-          c.setExpression({ id: "p", latex: "(0,100)", color: D.Colors.RED, dragMode: D.DragModes.NONE });
-        });
-      });
-    });
-  </script>
 </body>
 </html>

@@ -12,6 +12,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
   <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=05a281a9888d40d784b1b7c4f6497abd"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer src="../js/graphs.js"></script>
   <script defer src="../js/main.js"></script>
 </head>
 <body data-page="unit" data-unit="6" data-base="../" style="--pastel:#bcdcec;--deep:#4e8db8">
@@ -216,39 +217,5 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      function whenDesmos(cb) {
-        if (window.Desmos) return cb();
-        var t = 0, iv = setInterval(function () {
-          if (window.Desmos || ++t > 80) { clearInterval(iv); if (window.Desmos) cb(); }
-        }, 200);
-      }
-      whenDesmos(function () {
-        var D = window.Desmos;
-        function initGraph(divId, build) {
-          var elt = document.getElementById(divId);
-          if (!elt || elt._ds) return; elt._ds = true;
-          var calc = D.GraphingCalculator(elt, { expressions: false, settingsMenu: false, lockViewport: false });
-          build(calc);
-          var det = elt.closest("details");
-          if (det) det.addEventListener("toggle", function () { if (det.open) calc.resize(); });
-        }
-        initGraph("graph-area", function (c) {
-          c.setMathBounds({ left: -1, right: 4, bottom: -2, top: 14 });
-          c.setExpression({ id: "f", latex: "y=3x^2", color: D.Colors.BLUE });
-          c.setExpression({ id: "shade", latex: "0\\le y\\le3x^2\\left\\{0\\le x\\le2\\right\\}", color: D.Colors.BLUE, fillOpacity: 0.25, lines: false });
-          c.setExpression({ id: "a", latex: "x=0", color: "#888888", lineStyle: D.Styles.DASHED });
-          c.setExpression({ id: "b", latex: "x=2", color: "#888888", lineStyle: D.Styles.DASHED });
-        });
-        initGraph("graph-net", function (c) {
-          c.setMathBounds({ left: -1.6, right: 1.6, bottom: -1.6, top: 1.6 });
-          c.setExpression({ id: "f", latex: "y=x^3", color: D.Colors.BLUE });
-          c.setExpression({ id: "pos", latex: "0\\le y\\le x^3\\left\\{0\\le x\\le1\\right\\}", color: D.Colors.GREEN, fillOpacity: 0.3, lines: false });
-          c.setExpression({ id: "neg", latex: "x^3\\le y\\le0\\left\\{-1\\le x\\le0\\right\\}", color: D.Colors.RED, fillOpacity: 0.3, lines: false });
-        });
-      });
-    });
-  </script>
 </body>
 </html>
